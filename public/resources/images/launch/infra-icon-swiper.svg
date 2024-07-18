@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="104" height="60" viewBox="0 0 104 60">
+    <defs>
+        <linearGradient id="w12bwtiq8b" x1=".663" y1="1" x2="1" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#fff"/>
+            <stop offset="1" stop-color="gray" stop-opacity="0"/>
+        </linearGradient>
+        <clipPath id="slcsv25k3a">
+            <path data-name="사각형 462099" transform="translate(133 350)" style="stroke:#707070;fill:#fff" d="M0 0h104v60H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="그룹 630181" transform="translate(-133 -350)" style="clip-path:url(#slcsv25k3a)">
+        <g data-name="그룹 630180" transform="rotate(-17 32377.68 -43055.909)">
+            <path data-name="패스 1507930" d="M6.846.339a5.669 5.669 0 0 1 2.175-.388h4.443c1.96 0 3.548 1.936 3.548 4.324v10.937a2.819 2.819 0 0 1-2.5 3.052H4.18A4.589 4.589 0 0 1-.1 13.94l-.029-4.066a9.358 9.358 0 0 1 .421-2.856 6.033 6.033 0 0 1 1.383-2.107L3.78 2.847A18.667 18.667 0 0 1 6.846.339z" transform="translate(-11122 -10927.734)" style="fill:#fff"/>
+            <rect data-name="사각형 462095" width="5.218" height="27.759" rx="2.609" transform="translate(-11110.206 -10939)" style="fill:#fff"/>
+            <path data-name="패스 1507929" d="M2.75 0A3.088 3.088 0 0 1 5.5 3.339l.049 10.536s-1.281 2.386-2.8 2.386A3.088 3.088 0 0 1 0 12.922V3.339A3.088 3.088 0 0 1 2.75 0z" transform="rotate(53 5401.196 -16583.808)" style="fill:#fff"/>
+        </g>
+        <path data-name="사각형 462097" transform="translate(139.75 362.5)" style="fill:url(#w12bwtiq8b)" d="M0 0h86v2H0z"/>
+        <g data-name="타원 4890" transform="translate(212 354)" style="opacity:.3;stroke:#fff;fill:none">
+            <circle cx="9.5" cy="9.5" r="9.5" style="stroke:none"/>
+            <circle cx="9.5" cy="9.5" r="9" style="fill:none"/>
+        </g>
+        <g data-name="타원 4891" transform="translate(215 357)" style="stroke:#fff;fill:none">
+            <circle cx="6.5" cy="6.5" r="6.5" style="stroke:none"/>
+            <circle cx="6.5" cy="6.5" r="6" style="fill:none"/>
+        </g>
+        <path data-name="다각형 14" d="M2.5 0 5 6H0z" transform="rotate(-90 251.422 114.578)" style="fill:#fff"/>
+    </g>
+</svg>

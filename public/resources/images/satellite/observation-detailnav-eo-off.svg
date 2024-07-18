@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56.5" height="56.5" viewBox="0 0 56.5 56.5">
+    <g data-name="그룹 630578" style="opacity:.3">
+        <g data-name="그룹 630384">
+            <g data-name="타원 4947" transform="translate(16.25 16.25)" style="stroke:#fff;fill:none">
+                <circle cx="12" cy="12" r="12" style="stroke:none"/>
+                <circle cx="12" cy="12" r="11.5" style="fill:none"/>
+            </g>
+            <g data-name="그룹 630379">
+                <path data-name="패스 1508159" d="m8.6 0 2.86 4.987L8.6 9.974H2.865L0 4.987 2.865 0z" transform="translate(22.52 23.369)" style="stroke:#fff;fill:none"/>
+                <path data-name="패스 1508160" d="M3517.7 6887h-13.624" transform="translate(-3486.636 -6853.656)" style="stroke:#fff;fill:none"/>
+            </g>
+            <g data-name="그룹 630380">
+                <g data-name="그룹 630381">
+                    <path data-name="패스 1508160" d="M3517.7 6887h-13.624" transform="translate(-3486.636 -6853.656)" style="stroke:#fff;fill:none"/>
+                    <path data-name="패스 1508161" d="M3517.7 6887h-13.624" transform="translate(-3478.571 -6863.631)" style="stroke:#fff;fill:none"/>
+                </g>
+                <g data-name="그룹 630382">
+                    <path data-name="패스 1508160" d="M13.624 0H0" transform="rotate(60 -9.31 26.79)" style="stroke:#fff;fill:none"/>
+                    <path data-name="패스 1508161" d="M13.624 0H0" transform="rotate(60 -4.704 38.761)" style="stroke:#fff;fill:none"/>
+                </g>
+                <g data-name="그룹 630383">
+                    <path data-name="패스 1508160" d="M13.624 0H0" transform="rotate(120 9.94 16.72)" style="stroke:#fff;fill:none"/>
+                    <path data-name="패스 1508161" d="M13.624 0H0" transform="rotate(120 8.788 24.035)" style="stroke:#fff;fill:none"/>
+                </g>
+            </g>
+        </g>
+        <path data-name="패스 1508163" d="M1866.039 7669.448v-6h6" transform="translate(-1865.789 -7663.198)" style="stroke-width:.5px;stroke:#fff;fill:none"/>
+        <path data-name="패스 1508167" d="M1872.039 7669.448v-6h-6" transform="translate(-1815.789 -7663.198)" style="stroke-width:.5px;stroke:#fff;fill:none"/>
+        <path data-name="패스 1508165" d="M1866.039 7663.448v6h6" transform="translate(-1865.789 -7613.198)" style="stroke-width:.5px;stroke:#fff;fill:none"/>
+        <path data-name="패스 1508166" d="M1872.039 7663.448v6h-6" transform="translate(-1815.789 -7613.198)" style="stroke-width:.5px;stroke:#fff;fill:none"/>
+    </g>
+</svg>

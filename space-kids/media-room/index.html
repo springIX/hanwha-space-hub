@@ -1,0 +1,66 @@
+<%- include('./src/include/header.ejs', { title: '우주의 조약돌 미디어룸', gnbActive: 5 }) %>
+
+<main class="media-room space-kids-mediaroom">
+
+	<div class="titles">
+		<strong><img src="/resources/images/space-kids/media-room/logo-spacekids.svg" alt="우주의 조약돌"></strong>
+		<h2>미디어룸</h2>
+	</div>
+	
+	<header class="media-room-header">
+		<h2 class="page-title blind">미디어룸</h2>
+		<div class="list-tabs">
+			<button id="press-release" class="active">Press Release</button>
+			<button id="space-hub-tv"><span>Space Hub</span> TV</button>
+			<button id="news">News</button>
+		</div>
+		<div class="bg-frame"></div>
+	</header>
+
+	<section class="contens-list">
+		<ul class="list-wrap active" data-filter="Press Release">
+			<% for (let i = 0; i < spaceKidsMediaRoomData.pressRelease.length; i++) { %>
+				<li class="list-item" data-category="<%= spaceKidsMediaRoomData.pressRelease[i].category %>" data-item-id="<%= spaceKidsMediaRoomData.pressRelease[i].id %>">
+					<a href="/space-kids/media-room/press-release/<%= spaceKidsMediaRoomData.pressRelease[i].id %>/">
+						<div class="img-wrap">
+							<img src="/resources/images/media-room/<%= spaceKidsMediaRoomData.pressRelease[i].thumbnail %>" alt="">							
+						</div>
+						<p class="title"><%= spaceKidsMediaRoomData.pressRelease[i].title %></p>
+						<p class="category"><%= spaceKidsMediaRoomData.pressRelease[i].category %></p>
+					</a>
+				</li>
+			<% } %>
+		</ul>
+
+		<ul class="list-wrap" data-filter="Space Hub TV">
+			<% for (let i = 0; i < spaceKidsMediaRoomData.spaceHubTv.length; i++) { %>
+				<li class="list-item" data-category="<%= spaceKidsMediaRoomData.spaceHubTv[i].category %>" data-item-id="<%= spaceKidsMediaRoomData.spaceHubTv[i].id %>">
+					<a href="<%= spaceKidsMediaRoomData.spaceHubTv[i].url %>" target="_blank">
+						<div class="img-wrap">
+							<img src="/resources/images/media-room/<%= spaceKidsMediaRoomData.spaceHubTv[i].thumbnail %>" alt="">							
+						</div>
+						<p class="title"><%= spaceKidsMediaRoomData.spaceHubTv[i].title %></p>
+						<p class="category"><%= spaceKidsMediaRoomData.spaceHubTv[i].category %></p>
+					</a>
+				</li>
+			<% } %>
+		</ul>
+
+		<ul class="list-wrap" data-filter="News">
+			<% for (let i = 0; i < spaceKidsMediaRoomData.news.length; i++) { %>
+				<li class="list-item" data-category="<%= spaceKidsMediaRoomData.news[i].category %>" data-item-id="<%= spaceKidsMediaRoomData.news[i].id %>">
+					<a href="/space-kids/media-room/news/<%= spaceKidsMediaRoomData.news[i].id %>/">
+						<div class="img-wrap">
+							<img src="/resources/images/media-room/<%= spaceKidsMediaRoomData.news[i].thumbnail %>" alt="">
+						</div>
+						<p class="title"><%= spaceKidsMediaRoomData.news[i].title %></p>
+						<p class="category"><%= spaceKidsMediaRoomData.news[i].category %></p>
+					</a>
+				</li>
+			<% } %>
+		</ul>
+		<span class="space-bg"></span>
+	</section>
+</main>
+
+<%- include('./src/include/footer.ejs') %>

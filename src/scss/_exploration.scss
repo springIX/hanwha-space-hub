@@ -1,0 +1,629 @@
+main.exploration {
+  padding: 0; white-space: keep-all;
+
+  .sticky {overflow: hidden; position: sticky; top: 0; height: 100vh;}
+
+  .vision {height: auto;
+    .intro {
+      position: relative; height: 15000px; z-index: 1;
+      .video-wrap {width: 100%; height: 100%; position: relative; }
+			video {width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; pointer-events: none;}
+      .dimmed{width: 100%; height: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background-color: rgba(0,0,0,.26);}
+			h2, p {z-index: 2;}
+      h2 {font-size: 160px; font-weight: 300; }
+			p {position: absolute; left: 50%; top: 50%; white-space: nowrap; transform: translate(-50%, -50%); -visibility: hidden;
+        font-size: 40px; font-weight: 300; line-height: 64px; z-index: 2;
+        .monly {display: none;}
+        &.sub {font-size: 72px; line-height: 1.33;}
+        &:last-of-type {text-align: center;}
+				span {display: block;}
+      }
+      
+      .moon-and-earth {
+        width: 100%; height: 100%; 
+        .moon-container {
+          position: absolute; left: 50%; top: 50%; width: 100%; height: 100%; transform: translate3d(-50%,-50%, 0); z-index: -1;
+        }
+        .moon {
+          width: 100%; height: 100%;
+          background: url('#{ $image-path }exploration/vision-moon-surface.webp') no-repeat center / cover; 
+        }
+        .earth {
+          position: absolute; left: 50%; top: 50%; width: 265px; height: auto; transform: translate(-50%,-50%);
+        }
+      }
+		}
+
+    @include laptop {
+			.intro {
+				h3 {font-size: 60px; line-height: 66px;}
+        p.sub {font-size: 40px; line-height: 64px;}
+			}
+		}
+
+		@include tablet {
+			.intro {
+				h2 {font-size: 90px; line-height: 105px;}
+				h3,
+				p,
+        p.sub {font-size: 30px; line-height: 48px;}
+			}
+		}
+
+		@include mobile {
+			.intro {
+				h2 {font-size: 40px; line-height: 56px;}
+				h3,
+				p {font-size: 17px; line-height: 28px; text-align: left;}
+        p.sub {font-size: 20px; line-height: 32px; text-align: center;}
+        p {
+          .monly {display: block;}
+          .wonly {display: none;}
+        }
+        .moon-and-earth {
+          .earth {width: 172px;}
+          .moon{ background: url('#{ $image-path }exploration/vision-moon-surface-m.webp') no-repeat center / cover; }
+        }
+
+        html[lang="en"] & {
+          h2, h3, p:not(.moon-container) { 
+            width: 100%; max-width: 350px; padding: 0 16px; box-sizing: border-box; white-space: initial;
+            br:not(.mobile) { display: none; }
+          }
+          h2{ text-align: center; }
+          p:nth-child(4) { max-width: 340px; }
+          p:nth-child(5) { max-width: 302px; }
+          p:nth-child(7) { max-width: 320px; padding-top: 90px; }
+        }
+			}
+		}
+	}
+
+  .header{
+    .eyebrow{
+      display: block; margin-bottom: 14px;
+      font-size: 17px; font-weight: 300; color: $key-color; line-height: 1;
+      @include tablet{ margin-bottom: 12px; font-size: 15px; font-weight: 500; }
+      @include mobile{ margin-bottom: 7px; font-size: 12px; }
+    }
+    .title{ 
+      display: block; margin-bottom: 26px; font-size: 40px; font-weight: 200; color: #fff; line-height: 1.6; 
+      @include laptop{ font-size: 36px; }
+      @include tablet{ margin-bottom: 18px; font-size: 24px; }
+      // @include mobile{ font-size: 17px; }
+    }
+    
+  }
+
+  .desc{
+    .text{
+      font-size: 17px; font-weight: 300; color: #e6e6e6; line-height: 1.65;
+      @include laptop-only{
+        word-break: keep-all;
+        br{ display: none; } 
+      }
+      @include tablet{
+        font-size: 15px; font-weight: 200;
+        & + .text{ margin-top: 20px; }
+      }
+      @include mobile{
+        font-size: 12px; word-break: keep-all; padding-right: 10px;
+        br{ display: none; }
+      }
+    }
+  }
+  
+  .copy {font-size: 12px; line-height: 1.67; margin-top: 16px;}
+
+  .thrust {
+    position: relative; margin-top: -100vh;
+    @include mobile {margin-top: -200vh;}
+    article {height: 8000px; z-index: 1;
+      @include mobile {height: 4000px;}
+    }
+
+    .bg {
+      position: absolute; left: 50%; top: 50%; width: 100%; height: 100%; transform: translate(-50%,-50%);
+      background: url('#{ $image-path }exploration/star-bg.webp') no-repeat center / cover; z-index: -1;
+    }
+
+    .inwrap{
+      position: absolute; top:50%; left: 50%; transform: translate(-50%,-50%);
+      display: flex; justify-content: space-between; width: 100%; max-width: 1919px; margin: 0 auto; box-sizing: border-box; height: 100vh;
+      
+      .contents{position: relative; display: flex; flex-direction: column; justify-content: space-between; width: 100%; max-width: 519px; height: auto;}
+      .propel {position: absolute; bottom: 40px; left:80px; display: block; width: 328px;
+        .text {position:relative; margin-bottom:4px; font-size: 15px; line-height: 1.6; color: #e6e6e6;
+          &::before {content:''; position: absolute; left:0; top:0; display: block; width: 4px;height: 4px; margin: 9px 4px 9px 0; background-color:#fff;}
+          &::after {content:''; position: absolute; right:0; top:7px; display: block; width: 44px;height: 8px; background: url('#{ $image-path }exploration/on.svg') no-repeat center / contain; }
+          strong {padding-left: 8px; font-family: "Hanwha";}
+        }
+        .image {
+          // position: relative; width: 100%; max-height: 381px; height: 35vh; display: block;
+          position: relative; width: 328px; height: 381px; display: block;
+          background: url('#{ $image-path }exploration/propulsion-range.png') no-repeat left / contain; 
+          &::before {content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width:24px; height:16px; background: url('#{ $image-path }exploration/center.webp') no-repeat center / contain; z-index: 2;}
+          .propulsion {
+            position: absolute; top: 50%; left: 50%; transform-origin: center; width: 41.77%; max-height: 254px; height: 66%; display: block;
+            background: url('#{ $image-path }exploration/propulsion.webp') no-repeat -50% -50% / contain; 
+            animation: propulsionRotate 5s infinite; animation-timing-function: ease-in-out;
+          }
+          @keyframes propulsionRotate {
+            0% {transform: translate(-72px,-111px) rotate(-32deg);}
+            50% {transform: translate(-72px,-111px) rotate(32deg);}
+            100% {transform: translate(-72px,-111px) rotate(-32deg);}
+          }
+          @keyframes tabletPropulsionRotate {
+            0% {transform: translate(-30px,-47px) rotate(-32deg);}
+            50% {transform: translate(-30px,-47px) rotate(32deg);}
+            100% {transform: translate(-30px,-47px) rotate(-32deg);}
+          }
+        }
+      }
+      @include desktop{ 
+        html[lang="en"] & { 
+          &.guide .contents { max-width: 540px; } 
+          .propel{
+            .text{ 
+              font-size: 12px;
+              strong{ font-size: 15px; }
+            }
+          }
+        }
+      }
+      @include tablet{ 
+        .contents {width: 100%; max-width: 100%; height: auto;}
+        .propel {position: relative; top: 48px; left: 0; width: 100%; transform: translateY(0);
+          .system-inner {display: flex;flex-direction: row-reverse;justify-content: flex-end;}
+          .text {font-size: 10px; line-height: 12px; padding-left: 22px;
+            &::before {width: 2px;height: 2px;margin: 5px 4px 9px 16px;}
+            &::after {top: auto; bottom: 0; left: 22px; right: 0;}
+            strong {padding-left: 0; padding-bottom: 4px;}
+          }
+          .image {width: 138px; height: 160px;
+            .propulsion {width: 58px; height: 106px;
+              animation: tabletPropulsionRotate 5s infinite; animation-timing-function: ease-in-out;;
+            }
+          }
+        }
+      }
+      @include mobile {
+        .propel {top: 13.8%;
+          .image{
+            &::before {width: 10px; height: 7px;}
+            .propulsion {width: 58px; height: 106px;}
+          } 
+          .text strong {display: block;}
+        }
+      }
+
+      &.guide {
+        padding: 0 199px 0 80px; 
+        .header {padding-top: 20vh;}
+        .lottiewrap {position: absolute; top:50%; right: 10.36%; max-width: 1054px; width: 54.89vw; margin-top: -15vw; height: auto; 
+          &::after {
+            content: '달 목표\A궤도 진입'; white-space:pre; position: absolute; top: 50%; left: calc(100% - 20px); display: block;z-index: 2; margin-top: -100px;
+            font-size: 12px; line-height: 1.67; font-weight: 300; color: $key-color;
+            html[lang="en"] & { content: 'Reaching the \Atarget lunar orbit'; }
+          }
+          .orbit01 {width: 21%; height: auto; position: absolute; top: 19.9%; right: 6.6%;}
+          .path01 {max-width: 1054px; width:100%; height: auto; transform: translateZ(0);
+          }
+          .satellite {width: 120px;}
+          .moon-video {position:absolute; top: 37.2%; right:19.1%; width: 5.124%; border-radius: 50%; transform-origin: center;}
+          .earth-video {position:absolute; top: 52%; right: 16.2%; width: 12.334%; border-radius: 50%; transform-origin: center; z-index: -1;}
+        }
+        @include laptop {
+          padding: 0 80px;
+        }
+        @include tablet {
+          height: 100%; top: 100px; transform: translate(-50%, 0); display: block; padding: 0 40px; justify-content: normal;
+          .header {padding-top: 0;}
+          .desc { display: flex; flex-direction: column-reverse;}
+          .lottiewrap {position: relative; top: 0; left: 0; right: auto; max-width:unset; width:calc(100% - 28px); margin-top: 48px;
+            // &::after {top: 32.5%; right: -6%;}
+            .satellite {width: 9.7%;}
+            .moon-video {top: 37.7%;}
+            .earth-video {top: 53%;}
+          }
+        }
+        @include mobile {
+          padding: 0 16px; top: 13.8%; height: 26.7%;
+          .lottiewrap {margin-top:6.67%; transform: translate3d(0, 0, 0) scale(1);
+            &::after {
+              margin-top:-60px; font-size: 1vw; line-height: 1.25;
+            }
+            .satellite {width: 35px;}
+            .moon-video {top: 36.8%;}
+            .earth-video {top: 55%;}
+          }
+
+          html[lang="en"] & {
+            .text{ max-width: 310px; }
+            .lottiewrap { 
+              &::after { left: calc(100% - 40px); font-size: 10px; zoom: 0.8; }
+            }
+          }
+        }
+      }
+
+      &.space-hub {
+        height: 100vh; padding: 0 80px; 
+        .contents {position: relative; bottom: 40px; max-width: unset; width: 100%; padding-right: 52px; flex-direction: row; align-items: flex-end; box-sizing: border-box;}
+        .desc {
+          width: 590px; padding-bottom: 59px;
+          .text{
+            &:last-of-type {padding-top: 28px;}
+          }
+        }
+        .header {
+          padding-bottom: 80px;
+          .title {margin-bottom: 0;}
+          .desc {padding-bottom: 0;}
+        }
+        .copy {position: absolute; bottom:40px; left:80px; margin-top: 0;}
+        .image {
+          position:absolute; top: -50px; left: 0; width: 100%; height: 100%; z-index: -1;
+          .orbit02 {position:absolute; top: 50%; left:50%;
+            &.pconly {display: block;}
+            &.monly {display: none;}
+          }
+          .path02 {position: absolute; top: 50%; left:50%; width: 718px; transform: translate(-506px, -65px);}
+          .satellite {width: 171px;}
+          .moon-video {position:absolute; top: 50%; left:50%; transform: translate(-360px, 60px); width: 372px; height: 377px; border-radius: 50%; z-index: -1;}
+        }
+        html[lang="en"] & {
+          .copy{ color: #ccc; }
+        }
+        
+        @include desktop {
+          html[lang="en"] & {
+            .desc{ width: 640px; }
+          }
+        }
+        @include laptop-only {
+          html[lang="en"] & {
+            .heading + .desc{ width: 570px; margin-right: 30px; }
+          }
+        }
+        @include tablet {max-width: unset; padding: 0 40px; top: 100px; left: 0; transform: translate(0,0); height: 83.6%; 
+          .contents {align-items: flex-start;flex-direction: column; padding-right: 0; bottom: auto; top: 0;}
+          .copy {left: 40px; bottom: 0; padding-top: 20px;}
+          .desc {
+            width: auto; padding-bottom: 0;
+            .text{
+              &:last-of-type {padding-top: 0; padding-bottom: 40px;}
+              br {display: none;}
+            }
+          }
+          .image {
+            .orbit02 {width: 100%; transform: translate(-50%,-50%);}
+            .path02 {width: 55%; transform: translate(-74%,-20%);}
+            .satellite {width: 14.7%;}
+            .moon-video {width: 28%; height: auto; transform: translate(-108%, 4%);}
+          }
+        }
+        @include mobile {padding: 0 16px; top: 11%; left: 0; transform: translate(0,0);
+          .contents {bottom: auto;}
+          .copy {left: 16px; bottom: 0;}
+          .header{
+            .title{line-height: 1.33;}
+            .desc .text{ margin-top: 18px; }
+          }
+          .image {width: 125%; left: -10%;
+            .orbit02 {width: 100%; transform: translate(-49%,-63.3%);
+              &.pconly {display: none;}
+              &.monly {display: block;}
+            }
+            .path02 {width: 53%; transform: translate(-83%,-43%);}
+            .satellite {width: 14.7%;}
+            .moon-video {width: 23%; height: auto; transform: translate(-153%, -30%);}
+          }
+          // html[lang="en"] & {
+          //   .text{ max-width: 320px; }
+          //   .desc .text{ max-width: 323px; }
+          // }
+        }
+      }
+    }
+  }
+
+  .isru {
+    position: relative; margin-top: -150vh;
+    @include tablet {margin-top: -100vh;}
+    article {height: 3000px; }
+
+    .bg {
+      position: absolute; left: 50%; top: 50%; width: 100%; height: 100%; transform: translate(-50%,-50%);
+      background: url('#{ $image-path }exploration/star-bg.webp') no-repeat center / cover; z-index: -2;
+    }
+    .inwrap {
+      position: absolute; top:50%; left: 50%; transform: translate(-50%,-50%);display: flex; justify-content: space-between;
+      width: 100%; max-width: 1919px; margin: 0 auto; padding:0 80px;align-items: center; height: 100%; box-sizing: border-box;
+      
+
+      .contents{
+        display: flex; flex-direction: column; justify-content: space-between;width: 485px; max-width: 51%; height: 100%;
+        .header {padding-top: 228px;}
+        .desc {
+          .text{
+            &:last-of-type {padding-top: 28px;padding-bottom: 59px;}
+          }
+        }
+        .quote-box {
+          max-width: 451px; width: 100%; box-sizing: border-box;padding: 28px 32px; margin-bottom: 80px; border-radius: 24px; border: solid 1px #333;
+          font-size: 12px; line-height: 1.67; font-weight: 300; color: #fff; 
+          .quote { margin-top: 12px; opacity: 0.8;}
+          @include desktop {
+            html[lang="en"] & { max-width: 480px; }
+          }
+        }
+      }
+    }
+    .basecamp {
+      position:absolute; bottom: 0; left:50%; transform: translate(-50%, 0); width: 100%; height: 100%; z-index: -1;
+      background: url('#{ $image-path }exploration/isru-bg.webp') no-repeat bottom / contain; 
+    }
+    .earth-wrap {position:absolute; top:20%; left:calc(50% + 190px); width: 161px; z-index: -1;
+      &::before {content: ''; position: absolute;top: 0; left: 0; width: 119px; height: 146px; background: url('#{ $image-path }exploration/earth-dimmed.webp') no-repeat center / contain; z-index: 1; }
+      .earth {width: 100%;}
+    }
+
+    @include desktop {
+      html[lang="en"] & {
+        .contents{ width: 590px; }
+      }
+    }
+    @include tablet {
+      .inwrap {
+        height: 100%; flex-direction: column;padding: 0 40px;
+        .contents{ width: 100%; max-width: 100%; height: calc(100% - 24px);
+          .header {padding-top: 100px;}
+          .desc {
+            .text{
+              &:last-of-type {
+                padding-top: 0;
+                padding-bottom: 40px;
+              }
+            }
+          }
+          .quote-box {font-size: 10px; line-height: 14px; padding: 19px 67px 19px 20px; border-radius: 10px; margin-bottom: 0;
+            .quote {padding-top: 12px;}
+          }
+        }
+      }
+      .earth-wrap {top: calc(50% - 10px); left: calc(50% + 30px); width: 96px;}
+      .basecamp {width: 1023px;}
+    }
+
+    @media (max-width: 530px) {
+      .basecamp {width: 750px; margin-left: -110px;}
+    }
+
+    @include mobile {
+      article {height: 1500px; }
+      .inwrap {padding: 0 16px;
+        .contents {
+          .quote-box {max-width: unset;}
+          .desc .text br {display: none;}
+        }
+      }
+    }
+  }
+
+  .artemis {
+    position: relative; z-index: 1;
+    &::after {position: absolute;left: 0;right: 0;top: -200px;height: 400px;content: "";background: linear-gradient(to bottom, transparent, #000 40%, #000 60%, transparent);pointer-events: none;
+      @include tablet {top: -20px; height: 40px;}
+    }
+
+    .list {
+      position: relative; /* overflow: hidden; */ bottom: 0;
+      background: url('#{ $image-path }exploration/artemis-bg.webp') no-repeat bottom / contain;
+
+      .list-in{ position: relative; width: 100%; height: 100%; padding-bottom: 437px; overflow: hidden; }
+
+      &:before {position: absolute; left: 50%; top: 826px; bottom: 0; width: 1px; content: ''; background: rgba(255, 255, 255, 0.2);}
+      .sticky {width: 100%; height: 346px; top: auto; bottom: 0;}
+      .path {
+				position: absolute; left: calc(50% - 6px); top: 826px; bottom: calc(40px / 2 - 11px / 2); width: 11px; -background: rgba(255, 255, 255, 0.1); overflow: visible; z-index: 1;
+        .path-inner {
+          &:before {position: absolute; left: -4px; top: 210px; width: 20px; height: 20px; content: ''; background: url('#{ $image-path }exploration/scroll.svg') no-repeat center / cover; }
+          &:after {position: absolute; left: 0; bottom: -90px; margin-top:-6px; width: 12px; height: 90px; content: ''; transform: translate3d(0, var(--path-y), 0); background: url('#{ $image-path }exploration/rocket.png') no-repeat center / cover; }
+        }
+        @keyframes rocketAnim {
+          0% {transform: translate3d(0, -560px, 0); top: 0; bottom: auto; opacity: 0;}
+          100% {transform: translate3d(0, 0, 0); top: 0; bottom: auto; opacity: 1;}
+        }
+			}
+			.group {position: relative; padding: 820px 0 0 calc(50% + 38px); /* padding: 0 61px 8px 0; */ max-width: 555px; width: 100%;}
+      h4 {padding-bottom:40px; font-size: 40px; font-weight: 200; color: #fff; letter-spacing: 0.84px; text-align: left; line-height: 1.6; }
+      .ment {
+        font-size: 17px; line-height: 1.65; font-weight:300; color: #e6e6e6;
+        &:nth-child(even) {
+          left: 0; text-align: left;
+        }
+      }
+      .participation {position: relative; margin-top: 507px;
+        h4 {max-width: 560px; width: 100%; margin: 0 calc(50% + 38px) 40px auto; padding: 0 0 8px 30px; box-sizing: border-box;}
+        ol {
+          li {
+            max-width: 530px; width: 100%;
+            &:nth-child(even) {margin: 0 auto 120px calc(50% + 38px); padding-right: 61px;}
+            &:nth-child(odd) {margin: 0 calc(50% + 38px) 120px auto; padding-left: 61px;}
+            .number {margin-bottom:2px; font-size: 15px; line-height: 1.6; color: $key-color;}
+          }
+        }
+      }
+
+      .moon-images {
+        position:absolute; top:50%; left: 50%; transform: translate(-50%,-50%); max-width:$size-desktop; width: 100%; height: 100%; 
+        .moon {
+          position: absolute;
+          &:not(:first-of-type){background: url('#{ $image-path }exploration/moon.webp') no-repeat center / contain; }
+          &-video  {width: 100%; border-radius: 50%;}
+          &.xlarge {top: 762px; left:0; max-width: 604px; width: 100%; height: 623px;}
+          &.large  {top: 350px; left:443px; max-width: 450px; width: 100%; height: 457px; opacity: 0.64;}
+          &.medium {top: 33px; left:925px; max-width: 400px; width: 100%; height: 405px; opacity: 0.54;}
+          &.small  {top: 111px; left:1504px; max-width: 324px; width: 100%; height: 327px; opacity: 0.28;}
+        }
+      }
+
+      .moon-surface {
+        // position:absolute; top: 0; left: 50%; transform: translateX(-50%, -90px); width: 1630px; border-radius: 50%; margin: 0 auto; z-index: 2; 
+        position:absolute; bottom: -490px; left: 50%; transform: translateX(-50%); width: 100%; margin: 0 auto; z-index: 2; overflow: hidden;
+        video {width: 1630px; position: relative; margin-left: calc(50% - 815px); }
+      }
+
+      .mars {
+        position:absolute; bottom: 230px; left: 50%; transform: translateX(-50%); width: 117px; height: 117px; margin: 0 auto;
+        background: url('#{ $image-path }exploration/mars.webp') no-repeat center / contain; 
+      }
+
+      .artemis-logo {
+        position:absolute; left: 50%; bottom: 72px; width: 102px; height: 92px; transform: translate(-50%,0); display: block; cursor: pointer;
+        background: url('#{ $image-path }exploration/artemis-logo.webp') no-repeat center / contain; z-index: 4;
+      }
+		}
+    .artemis-ending {
+      position: relative; width: 100%; height: 4000px;margin-top: -100vh;
+      .galaxy {
+        position:absolute; left: 50%; top:50%; width: 100%; height: 100vh; transform: translate(-50%,-50%);z-index: -10;
+        video {position: fixed;top: 0;left: 0;width: 100%;height: 100%;object-fit: cover; opacity: 0.9;}
+      }
+      // .dimmed-bg {
+      //   position: absolute; left:50%; top:50%; width: 100%; height: 100vh; transform: translate(-50%,-50%);
+      //   background-color: rgba(0,0,0,.09);
+      // }
+      p {
+        position: absolute; left: 50%; top: 50%; white-space: nowrap; transform: translate(-50%, -50%); -visibility: hidden;
+        font-size: 40px; font-weight: 300; text-align: center; line-height: 64px; z-index: 2; 
+        .monly {display: none;}
+      }
+    }
+
+    @include desktop {
+      html[lang="en"] & {
+        .list {
+          .group { max-width: 665px; }
+          .participation {
+            h4{ max-width: 590px; }
+            ol li{ max-width: 560px; }
+          }
+        }
+      }
+    }
+    @include laptop-only {
+      .list {
+        .group {
+          max-width: 410px; width: 100%;
+          html[lang="en"] & { 
+            max-width: 480px;
+            br{ display: none; }
+          }
+        }
+        .participation { 
+          h4 {
+            max-width: 418px;
+            html[lang="en"] & { max-width: 560px; }
+          }
+          ol {
+            li{ 
+              max-width: 418px;
+              html[lang="en"] & { max-width: 560px; }
+              &:nth-child(odd){margin: 0 calc(50% + 38px) 60px auto;}
+              &:nth-child(even){margin: 0 auto 60px calc(50% + 38px);}
+            }
+          }
+        }
+      }
+    }
+
+    @include laptop{ 
+      .list {
+        h4 {font-size: 36px;}
+      }
+    }
+    @include tablet {
+      .list {
+        h4 {font-size: 24px; line-height: 32px; margin-bottom: 24px; padding-bottom: 0;}
+        .ment {font-size: 12px;word-break: keep-all;}
+        .moon-images {
+          .moon {
+            &.xlarge {top: 780px; left: calc(50% - 510px); max-width: unset; width: 325px; height: 325px;}
+            &.large  {top: 570px; left: calc(50% - 270px); max-width: unset; width: 239px; height: 239px;}
+            &.medium {top: 380px; left: calc(50% - 20px);  max-width: unset; width: 212px; height: 212px;}
+            &.small  {top: 450px; left: calc(50% + 290px); max-width: unset; width: 172px; height: 172px;}
+          }
+        }
+        .group {margin: 820px 0 0 calc(50% + 38px); max-width: unset; width: auto; box-sizing: border-box;}
+        .moon-surface {bottom: -520px;}
+        .participation { margin-top: 267px;
+          h4 {margin: 0 calc(50% + 38px) 0 0; padding: 0 0 8px 40px;}
+          ol {
+            li{ max-width: 410px;
+              &:nth-child(odd){margin: 0 calc(50% + 38px) 60px auto; padding-left: 40px; max-width: calc(50% - 60px);}
+              &:nth-child(even){margin: 0 auto 60px calc(50% + 38px);max-width: calc(50% - 60px);}
+            }
+          }
+        }
+        .mars {bottom: 210px;}
+      }
+      
+      .artemis-ending {
+        p {font-size: 30px; line-height: 48px;}
+      }
+    }
+    @include mobile {
+      .list {
+        padding: 0; background: url('#{ $image-path }exploration/artemis-bg.webp') no-repeat center / cover; background-size: 300%;
+        .list-in{ padding: 0; }
+        &::before {display: none;}
+        h4 {line-height: 32px;}
+        .group { width: 100%; margin: 0 auto; padding: 546px 19px 0; box-sizing: border-box;}
+        .moon-surface {
+          bottom: -400px;
+          video{ width: 1043px; margin-left: calc(50% - 521px); }
+        }
+        .moon-images {top: 0; left: 0; transform: translate(0,0); max-width: unset;
+          .moon {
+            &.xlarge {top: 283px; left: 50%; transform: translateX(-288px); max-width: unset; width: 193px; height: 193px;}
+            &.large  {top: 163px; left: 50%; transform: translateX(-146px); max-width: unset; width: 141px; height: 143px;}
+            &.medium {top: 79px; left: 50%; transform: translateX(-23px); max-width: unset; width: 125px; height: 128px;}
+            &.small  {top: 110px; left: 50%; transform: translateX(135px); max-width: unset; width: 102px; height: 103px;}
+          }
+        }
+        .participation {margin-top: 136px;
+          h4 {max-width: unset; padding: 0 16px 56px; margin: 0;}
+          ol {padding-bottom: 158px;
+            li{box-sizing: border-box;
+              &:nth-child(odd){padding: 0 16px; margin: 0; max-width: unset}
+              &:nth-child(even){padding: 0 16px; margin: 0; max-width: unset}
+              .ment {padding-bottom: 20px;}
+
+              html[lang="en"] & { br { display: none; } }
+            }
+          }
+        }
+        .artemis-logo {width: 58px; height: 52px; bottom: 20px;}
+        .mars {width: 82px; height: 82px; bottom: 56px;}
+        .aurora {bottom: -760px;}
+      }
+      .artemis-ending {
+        z-index: -2; height: 3000px;
+
+        p {font-size: 17px; line-height: 1.65;
+          .monly {display: block;}
+          .wonly {display: none;}
+
+          html[lang="en"] & { 
+            width: 100%; max-width: 320px; padding: 0 16px; box-sizing: border-box; white-space: initial;
+            br{ display: none; }
+          }
+        }
+      }
+      .path {display: none;}
+    }
+  }
+}
+

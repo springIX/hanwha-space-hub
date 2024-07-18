@@ -1,0 +1,27 @@
+{
+  "name": "hanwha-space-hub",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 6001 --open=/",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 6002 --open=/"
+  },
+  "devDependencies": {
+    "dat.gui": "^0.7.9",
+    "ejs": "^3.1.9",
+    "sass": "^1.59.3",
+    "stats.js": "^0.17.0",
+    "vite": "^4.1.0",
+    "vite-plugin-beautify": "^1.0.0"
+  },
+  "dependencies": {
+    "gsap": "^3.11.4",
+    "lottie-web": "^5.10.2",
+    "pace-js": "^1.2.4",
+    "swiper": "^9.1.1",
+    "three": "^0.150.1",
+    "youtube-player": "^5.6.0"
+  }
+}

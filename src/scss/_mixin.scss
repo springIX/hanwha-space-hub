@@ -1,0 +1,148 @@
+@use 'sass:math';
+
+// size media query
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mobile-rotate {
+  @media (max-height: 450px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin laptop-only {
+  @media (min-width: 1024px) and (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin hoverable {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+// font
+@mixin font-size($size) {
+  font-size: calculateRem($size);
+}
+
+@mixin font($name: null, $size: null, $line-height: null, $weight: null, $color: null, $spacing: null) {
+  @if type-of($name) != null {
+    font-family: $name;
+  }
+  @if type-of($size) != null {
+    font-size: $size;
+  }
+  @if type-of($line-height) != null {
+    line-height: $line-height;
+  }
+  @if type-of($weight) != null {
+    font-weight: $weight;
+  }
+  @if type-of($color) != null {
+    color: $color;
+  }
+  @if type-of($spacing) != null {
+    letter-spacing: $spacing;
+  }
+}
+
+
+@function vw($px, $width) {
+  $width: $width;
+  $w: math.div(1, math.div($width, 1px)) * 100;
+  $vws: null;
+  $max-width: 768;
+  $topx: $px * math.div($max-width, $width);
+
+  @each $v in $px {
+    @if type-of($v) == number {
+      $px: math.div($v, 1px);
+      $vw: $px * $w;
+      $vws: append($vws, if($vw == 0, 0, $vw + vw));
+    } @else {
+      $vws: append($vws, $v);
+    }
+  }
+
+  @return #{$vws};
+  // @return min(#{$vws}, #{$topx}px);
+}
+
+
+////
+/// Helper function to easily use an SVG inline in CSS
+/// without encoding it to base64, saving bytes.
+/// It also helps with browser support.
+////
+
+/// A small function allowing skipping base64 encoding
+/// and simply pasting the SVG markup right in the CSS.
+/// @author Jakob Eriksen
+/// @link http://codepen.io/jakob-e/pen/doMoML
+/// @param {String} $svg - SVG image to encode
+/// @return {String} - Encoded SVG data uri
+@function svg-uri($svg) {
+  $encoded: '';
+  $slice: 2000;
+  $index: 0;
+  $loops: ceil(math.div(str-length($svg), $slice));
+
+  @for $i from 1 through $loops {
+      $chunk: str-slice($svg, $index, $index + $slice - 1);
+      $chunk: str-replace($chunk, '"', "'");
+      $chunk: str-replace($chunk, '<', '%3C');
+      $chunk: str-replace($chunk, '>', '%3E');
+      $chunk: str-replace($chunk, '&', '%26');
+      $chunk: str-replace($chunk, '#', '%23');
+      $encoded: #{$encoded}#{$chunk};
+      $index: $index + $slice;
+  }
+
+  @return url("data:image/svg+xml;charset=utf8,#{$encoded}");
+}
+
+/// Replace `$search` with `$replace` in `$string`
+/// @author Hugo Giraudel
+/// @link http://sassmeister.com/gist/1b4f2da5527830088e4d
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+      @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}

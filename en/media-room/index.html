@@ -1,0 +1,60 @@
+<%- include('./src/include/header-en.ejs', { lang: 'en', title: 'Media Room', gnbActive: 4 }) %>
+
+<main class="media-room">
+	<header class="media-room-header">
+		<h2 class="page-title blind">Media Room</h2>
+		<div class="list-tabs">
+			<button id="press-release" class="active">Press Release</button>
+			<button id="space-hub-tv"><span>Space Hub</span> TV</button>
+			<button id="pr-archive">PR Archive</button>
+		</div>
+		<div class="bg-frame"></div>
+	</header>
+
+	<section class="contens-list">
+		<ul class="list-wrap active" data-filter="Press Release">
+			<% for (let i = 0; i < mediaRoomDataEn.pressRelease.length; i++) { %>
+				<li class="list-item" data-category="<%= mediaRoomDataEn.pressRelease[i].category %>" data-item-id="<%= mediaRoomDataEn.pressRelease[i].id %>">
+					<a href="/en/media-room/press-release/<%= mediaRoomDataEn.pressRelease[i].id %>/">
+						<div class="img-wrap">
+							<img src="/resources/images/media-room/<%= mediaRoomDataEn.pressRelease[i].thumbnail %>" alt="">							
+						</div>
+						<p class="title"><%= mediaRoomDataEn.pressRelease[i].title %></p>
+						<p class="category"><%= mediaRoomDataEn.pressRelease[i].category %></p>
+					</a>
+				</li>
+			<% } %>
+		</ul>
+
+		<ul class="list-wrap" data-filter="Space Hub TV">
+			<% for (let i = 0; i < mediaRoomDataEn.spaceHubTv.length; i++) { %>
+				<li class="list-item" data-category="<%= mediaRoomDataEn.spaceHubTv[i].category %>" data-item-id="<%= mediaRoomDataEn.spaceHubTv[i].id %>">
+					<a href="<%= mediaRoomDataEn.spaceHubTv[i].url %>" target="_blank">
+						<div class="img-wrap">
+							<img src="/resources/images/media-room/<%= mediaRoomDataEn.spaceHubTv[i].thumbnail %>" alt="">							
+						</div>
+						<p class="title"><%= mediaRoomDataEn.spaceHubTv[i].title %></p>
+						<p class="category"><%= mediaRoomDataEn.spaceHubTv[i].category %></p>
+					</a>
+				</li>
+			<% } %>
+		</ul>
+
+		<ul class="list-wrap" data-filter="PR Archive">
+			<% for (let i = 0; i < mediaRoomDataEn.PrArchive.length; i++) { %>
+				<li class="list-item" data-category="<%= mediaRoomDataEn.PrArchive[i].category %>" data-item-id="<%= mediaRoomDataEn.PrArchive[i].id %>">
+					<a href="/en/media-room/pr-archive/<%= mediaRoomDataEn.PrArchive[i].id %>/">
+						<div class="img-wrap">
+							<img src="/resources/images/media-room/<%= mediaRoomDataEn.PrArchive[i].thumbnail %>" alt="">							
+						</div>
+						<p class="title"><%= mediaRoomDataEn.PrArchive[i].title %></p>
+						<p class="category"><%= mediaRoomDataEn.PrArchive[i].category %></p>
+					</a>
+				</li>
+			<% } %>
+		</ul>
+		<span class="space-bg"></span>
+	</section>
+</main>
+
+<%- include('./src/include/footer-en.ejs') %>

@@ -1,0 +1,24 @@
+@charset 'utf-8';
+
+// common
+@import './_reset.scss';
+@import './_mixin.scss';
+@import './_variables.scss';
+@import './_fonts.scss';
+@import './_common.scss';
+
+// component
+@import './_main.scss';
+@import './_main-spacekids.scss';
+@import './_space-hub.scss';
+@import './_space-kids.scss';
+@import './_space-kids-introduce.scss';
+@import './_space-kids-program.scss';
+@import './_space-kids-apply.scss';
+@import './_launch.scss';
+@import './_satellite.scss';
+@import './_exploration.scss';
+@import './_media-room.scss';
+@import './_etc.scss';
+@import './media-room-detail';
+

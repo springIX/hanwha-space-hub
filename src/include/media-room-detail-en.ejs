@@ -1,0 +1,49 @@
+<%
+  let data, index, dateTime;
+  let selectData = (path == 'press-release') ? mediaRoomDataEn.pressRelease : mediaRoomDataEn.PrArchive
+  
+  for (let i = 0; i < selectData.length; i++) {
+    if (parseInt(selectData[i].id) === locals.id) {
+      data = selectData[i];
+      dateTime = selectData[i].date.replaceAll('.','-')
+      index = i;
+      break;
+    }
+  }
+%>
+
+<main class="media-room-detail" data-category="<%= data.category %>">
+  <article class="detail-page" data-table-id="<%= data.id %>">
+    <strong class="item-category"><%= data.category %></strong>
+    <h2 class="item-title"><%= data.title %></h2>
+    <time class="item-date" datetime="<%= dateTime %>"><%= data.date %></time>
+    <div class="item-desc">
+      <% if (data.desc) { %>
+        <% for (let i = 0; i < selectData[index].desc.length; i ++) { %>
+        <%- selectData[index].desc[i] %>
+        <% } %>
+      <% } else { %>
+        No content
+      <% } %>
+    </div>
+  </article>
+  <div class="detail-bottom">
+    <% if (selectData[index - 1]) { %>
+      <a href="/en/media-room/<%= path %>/<%= selectData[index - 1].id %>/" class="page-move prev-btn">
+        <span>Previous Post</span>
+        <strong><%= selectData[index - 1].title %></strong>
+      </a>
+    <% } else { %>
+      <p class="page-move prev-btn page-empty"><span>Previous Post</span> <strong>There is no previous post.</strong></p>
+    <% } %>
+    <% if (selectData[index + 1]) { %>
+      <a href="/en/media-room/<%= path %>/<%= selectData[index + 1].id %>/" class="page-move next-btn">
+        <span>Next Post</span>
+        <strong><%= selectData[index + 1].title %></strong>
+      </a>
+    <% } else { %>
+      <p class="page-move page-empty"><span>Next Post</span> <strong>There is no next post.</strong></p>
+    <% } %>
+    <a href="/en/media-room/" class="list-btn">Back to the list</a>
+  </div>
+</main>

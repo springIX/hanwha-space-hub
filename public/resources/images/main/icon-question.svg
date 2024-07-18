@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <g data-name="그룹 631002">
+        <path data-name="합치기 113" d="M4.5 21.4A4.5 4.5 0 0 1 0 16.9V8.644a4.5 4.5 0 0 1 4.5-4.5h1.463V0l4.145 4.145h7.707a4.5 4.5 0 0 1 4.5 4.5V16.9a4.5 4.5 0 0 1-4.5 4.5z" transform="rotate(180 19 19.043)" style="opacity:.648;stroke:#fff;fill:none"/>
+        <path data-name="합치기 112" d="M5.963 17.256H4.5a4.5 4.5 0 0 1-4.5-4.5V4.5A4.5 4.5 0 0 1 4.5 0h13.314a4.5 4.5 0 0 1 4.5 4.5v8.256a4.5 4.5 0 0 1-4.5 4.5h-7.708L5.963 21.4z" transform="translate(2 3)" style="stroke:#fff;fill:none"/>
+        <path data-name="패스 1509129" d="M2.6-19.729v.042h.875v-.042a1.687 1.687 0 0 1 .875-1.666 1.943 1.943 0 0 0 1.02-1.729 1.929 1.929 0 0 0-2.1-1.937 1.978 1.978 0 0 0-2.15 1.938h.916a1.162 1.162 0 0 1 1.229-1.167 1.116 1.116 0 0 1 1.208 1.125 1.408 1.408 0 0 1-.75 1.229A2.126 2.126 0 0 0 2.6-19.729zm-.187 1.52a.671.671 0 0 0 .666.666.66.66 0 0 0 .646-.666.649.649 0 0 0-.646-.646.66.66 0 0 0-.668.647z" transform="translate(9.99 33.547)" style="fill:#fff"/>
+        <g data-name="타원 5039" transform="translate(22.083 25.463)" style="fill:#fff;stroke:#fff">
+            <circle cx=".595" cy=".595" r=".595" style="stroke:none"/>
+            <circle cx=".595" cy=".595" r=".095" style="fill:none"/>
+        </g>
+        <g data-name="타원 5040" transform="translate(25.951 25.463)" style="fill:#fff;stroke:#fff">
+            <circle cx=".595" cy=".595" r=".595" style="stroke:none"/>
+            <circle cx=".595" cy=".595" r=".095" style="fill:none"/>
+        </g>
+        <g data-name="타원 5041" transform="translate(30.711 25.463)" style="fill:#fff;stroke:#fff">
+            <circle cx=".595" cy=".595" r=".595" style="stroke:none"/>
+            <circle cx=".595" cy=".595" r=".095" style="fill:none"/>
+        </g>
+    </g>
+    <path data-name="사각형 462584" style="fill:none" d="M0 0h40v40H0z"/>
+</svg>

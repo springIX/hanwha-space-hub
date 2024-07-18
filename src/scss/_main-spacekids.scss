@@ -1,0 +1,579 @@
+
+main.main-spacekids {	
+  --side-margin: 40px;
+  *, *::after, *::before{ box-sizing: border-box; word-break: keep-all; }
+
+  // * common
+  section{
+    position: relative; width: 100%;
+  }
+  .sticky{
+    overflow: hidden; position: sticky; top: 0; width: 100%; height: 100vh;
+  }
+  section:not(.visual) {
+    .title{ display: block; font-size: 60px; font-weight: 300; color: #fff; line-height: 1.33; }  
+    .ment{ display: block; font-size: 32px; font-weight: 400; color: #fff; line-height: 1.75;
+      & > span{ display: block; }
+    }
+    .point{ 
+      overflow: hidden; display: block; position: absolute; z-index: 2; width: 100px; padding-left: 22px; font-size: 8px; opacity: 0.8;
+      span{ display: block; width: 122px; font-weight: 400; color: $key-color; line-height: 1.5; letter-spacing: 1px; }
+      &::before{ content: ''; display: block; position: absolute; top: 6px; left: 4px; transform: translate3d(0, -50%, 0); width: 4px; height: 4px; background-color: $key-color; border-radius: 50%; }
+      &::after{ content: ''; display: block; position: absolute; top: 6px; left: 0; transform: translate3d(0, -50%, 0); width: 12px; height: 12px; border: 1px solid $key-color; border-radius: 50%; opacity: 0.2; }
+    }
+    
+    @include laptop-only{
+      .title{ font-size: 40px; }
+    }
+    @include tablet-only{
+      .title{ font-size: 30px; }
+      .ment{ font-size: 24px; line-height: 1.6; }
+    }
+    @include mobile{
+      .title{ font-size: 24px; }
+      .ment{ font-size: 20px; line-height: 1.6; }
+      .web{ display: none; }
+    }
+  }
+
+
+  // * section
+  // visual
+  #visual{
+    height: 200vh;
+    .bg{
+      overflow: hidden; position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+      video{ width: 100%; height: 100%; object-fit: cover; }
+    }
+    .inwrap{
+      display: flex; align-items: center;
+      position: absolute; left: 40px; right: 40px; top: 86px; bottom: 112px; padding: 0 20px;
+      @include tablet{
+        left: 16px; right: 16px; top: 84px; bottom: 48px; padding: 0;
+      }
+
+			&::before{
+        pointer-events: none;
+				content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        background:
+          linear-gradient(to right, $key-color 1px, transparent 1px) 0 0,
+          linear-gradient(to right, $key-color 1px, transparent 1px) 0 100%,
+          linear-gradient(to left, $key-color 1px, transparent 1px) 100% 0,
+          linear-gradient(to left, $key-color 1px, transparent 1px) 100% 100%,
+          linear-gradient(to bottom, $key-color 1px, transparent 1px) 0 0,
+          linear-gradient(to bottom, $key-color 1px, transparent 1px) 100% 0,
+          linear-gradient(to top, $key-color 1px, transparent 1px) 0 100%,
+          linear-gradient(to top, $key-color 1px, transparent 1px) 100% 100%;
+				background-repeat: no-repeat;
+				background-size: 120px 120px;
+				opacity: 0.4;
+        @include tablet { background-size: 24px 24px; }
+			}
+
+      .texts{
+        transition: transform .3s ease-out; 
+        .title{ display: block; font-size: 56px; font-weight: 400; color: #fff; line-height: 1.3; }
+        .ment{ width: 490px; max-width: 100%; margin-top: 32px; font-size: 20px; font-weight: 300; color: #fff; line-height: 1.6; }
+        .btns{ display: flex; margin-top: 60px;
+          .btn-hud + .btn-hud{ margin-left: 20px; }
+        }
+
+        @include desktop{
+          margin-top: 10%;
+        }
+        @include laptop-only {
+          .title{ font-size: 40px; }
+        }
+        @include tablet-only{
+          .title{ font-size: 30px; }
+          .ment{ font-size: 17px; }
+          .btns{
+            margin-top: 40px;
+            .btn-hud + .btn-hud{ margin-left: 12px; }
+          }
+        }
+        @include mobile{
+          .title{ font-size: 24px; }
+          .ment{ margin-top: 20px; width: 294px; font-size: 12px; }
+          .btns{
+            margin-top: 40px;
+            .btn-hud + .btn-hud{ margin-left: 8px; }
+            .btn-hud{ 
+              --btn-width: 160px;
+              --btn-height: 48px;
+              --angle-gap: 6px;
+              --line-gap: 1px;
+              span{ font-size: 12px;
+                &::after{ display: none; }  
+              }
+              &-em::before{ --angle-gap: 7px }
+            }
+          }
+        }
+      }
+
+      .period{
+        position: absolute; top: 0; left: 0; margin: 20px;
+        strong{ display: block; font-size: 14px; font-weight: 400; color: $key-color; }
+        span{ display: block; margin-top: 16px; font-size: 20px; font-weight: 300; color: $key-color; }
+        @include tablet-only{
+          span{ font-size: 15px; }
+        }
+        @include mobile{
+          strong{ font-size: 12px; }
+          span{ margin-top: 7px; font-size: 12px; }
+        }
+      }
+
+      .spacemap{
+        @include desktop{
+          position: absolute; top: 0; right: 0; margin: 20px; width: 237px; height: 168px;
+          span{ display: block; }
+          .map{ 
+            position: absolute; top: 0; right: 0; width: 168px; height: 168px; 
+            // background: url('#{ $image-path }main-spacekids/visual-spacemap-map.webp') center / contain;
+            &::before{ content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('#{ $image-path }main-spacekids/visual-spacemap-galaxy.webp') no-repeat center / contain; }
+            &::after{ content: ''; position: absolute; top: 15%; left: 15%; width: 40%; height: 40%; background: url('#{ $image-path }main-spacekids/visual-spacemap-point.svg') no-repeat top left / 67.2px; }
+          }
+          .heading{ position: absolute; top: 0; left: 0;
+            .earth{ position: relative; width: 42px; height: 9px;
+              &::before{ content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: $key-color; }
+              &::after{ content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('#{ $image-path }main-spacekids/visual-spacemap-earth.svg') no-repeat left / 42px; }
+            }
+            .pebble{ width: 88px; height: 9px; margin-top: 4px; background: url('#{ $image-path }main-spacekids/visual-spacemap-pebble.svg') no-repeat left / 88px; }
+          }
+          .text-1{ position: absolute; bottom: 0; left: 0; width: 90px; height: 45px; background: url('#{ $image-path }main-spacekids/visual-spacemap-text-1.svg') no-repeat left / 90px; }
+          .text-2{ position: absolute; bottom: 0; right: 0; width: 122px; height: 45px; background: url('#{ $image-path }main-spacekids/visual-spacemap-text-2.svg') no-repeat right / 122px; }
+        }
+        @include tablet{ display: none; }
+      }
+    }
+
+    .mark-scroll{
+      @include desktop{
+        position: absolute; bottom: 42px; left: 50%; transform: translate3d(-50%, 0, 0);
+        font-size: 12px; font-weight: 400; color: #fff; line-height: 3.33; letter-spacing: 2px; text-transform: uppercase;
+      }
+      @include tablet{ display: none; }
+    }
+
+
+    &:not(.active) {
+      .inwrap{
+        &::before{ opacity: 0; transform: scale(1.15); transition: opacity .3s, transform 0s .3s; }
+        .texts .btns{ opacity: 0; transform: translate3d(-100px, 0, 0); }
+        .period{ opacity: 0; transform: translate3d(-100px, 0, 0); }
+        .spacemap{ opacity: 0; transform: translate3d(100px, 0, 0);
+          .map{
+            &::before{ transform: rotate(30deg); }
+            &::after{ width: 0; height: 0; }
+          }
+          .heading{ 
+            .earth{ 
+              &::before{ transform: scaleX(0); }
+              &::after{ opacity: 0; }
+            }
+            .pebble{ width: 0; }
+          }
+          .text-1{ width: 0; }
+          .text-2{ width: 0; }
+        }
+      }
+      .banner-link a{ opacity: 0; transform: translate3d(100px, 0, 0); }
+      .bg{ opacity: 0; }
+      
+    }
+    &.active{
+      .inwrap{
+        &::before{ transition: opacity .6s ease-out, transform .8s cubic-bezier(.18,.89,.26,1.23); }
+        .texts .btns{ transition: opacity .8s ease-out, transform .8s cubic-bezier(.18,.89,.26,1.23); }
+        .period{ transition: opacity .8s ease-out, transform .8s cubic-bezier(.18,.89,.26,1.23); }
+        .spacemap{ transition: opacity .8s ease-out, transform .8s cubic-bezier(.18,.89,.26,1.23);
+          .map{
+            &::before{ transition: transform 1.2s ease-out; }
+            &::after{ transition: width 1s ease-out, height 1s ease-out; }
+          }
+          .heading{ 
+            .earth{ 
+              &::before{ transition: transform .5s .3s ease-out; transform-origin: right; }
+              &::after{ transition: opacity 1s .8s ease-out; }
+            }
+            .pebble{ transition: width 1s .8s ease-out; }
+          }
+          .text-1{ transition: width 1s .8s ease-out; }
+          .text-2{ transition: width 1s .8s ease-out; }
+        }
+      }
+      .banner-link a{ transition: opacity .8s ease-out, transform .8s cubic-bezier(.18,.89,.26,1.23); }
+      .bg{ transition: opacity .8s ease-out; }
+    }
+  }
+
+  // exploration
+  #exploration{
+    --exploration-height: 0;
+    --exploration-bg-height: 335vh;
+    z-index: 1; margin-top: -100vh;
+
+    .bg{
+      @include desktop{
+        position: absolute; top: 0; left: 0; z-index: -1; width: 100%; height: 2000px; 
+        .sticky{ 
+          overflow: visible;
+          &::before{ 
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: calc(var(--exploration-bg-height) + 100px); 
+            background: linear-gradient(to bottom, #000 var(--exploration-bg-height), transparent);
+          }
+          &::after{ 
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: var(--exploration-bg-height); 
+            background: url('#{ $image-path }main-spacekids/exploration-bg.webp') no-repeat 50% 0 / max(100%, 1440px);
+          }
+        }
+      }
+      @include tablet{
+        display: none;
+      }
+    }
+
+    .intro{
+      height: 2000px; 
+      .sticky{ 
+        display: flex; justify-content: center; align-items: center;
+        @include desktop{ }
+        @include tablet{ background: #000; }
+      } 
+      .orbit{
+        --orbit-rotate: 0deg;
+        position: absolute; border: 1px dashed rgba(255, 255, 255, 0.2); border-radius: 50%;
+
+        .mars,
+        .moon{
+          position: absolute; transform: rotate(var(--orbit-rotate));
+          &::before{ content: ''; position: absolute; top: 50%; left: 50%; transform: translate3d(-50%, -50%, 0); width: 100%; height: 100%; }
+          &::after{ content: ''; position: absolute; top: 50%; left: 50%; transform: translate3d(-50%, -50%, 0); width: 100%; height: 100%; border: 1px solid #333; border-radius: 50%;}
+          span{ 
+            display: block; position: absolute; top: 50%; left: 100%; transform: translate3d(0, -50%, 0); z-index: 2; padding-left: 16px; font-size: 8px; font-weight: 400; color: $key-color; letter-spacing: 1.6px;
+            &::before{ content: ''; display: block; position: absolute; top: 50%; left: 0; transform: translate3d(-50%, -50%, 0); width: 4px; height: 4px; background-color: $key-color; border-radius: 50%; }
+            &::after{ content: ''; display: block; position: absolute; top: 50%; left: 0; transform: translate3d(-50%, -50%, 0); width: 12px; height: 12px; border: 1px solid $key-color; border-radius: 50%; opacity: 0.2; }
+          }
+        }
+        .mars{ 
+          top: 4.1%; left: 29%; width: 50px; height: 50px;
+          &::before{ background: url('#{ $image-path }main-spacekids/exploration-deco-mars.webp') no-repeat center / contain; }
+          &::after{ width: 120%; height: 120%; }
+          span{ top: 30%; left: 105%; }
+        }
+        .moon{ 
+          top: -0.2%; left: 44.8%; width: 56px; height: 56px;
+          &::before{ background: url('#{ $image-path }main-spacekids/exploration-deco-moon.webp') no-repeat center / contain; }
+          span{ top: 45%; }
+        }
+
+        @include desktop{ top: 25%; left: -70%; width: 300vw; height: 300vw; }
+        @include tablet{ top: 50%; left: 50%; transform: translate3d(-50%, -50%, 0); width: 400px; height: 400px;
+          .mars, .moon{ width: 40px; height: 40px;
+            span{ padding-left: 10px; font-size: 6px; }
+          } 
+          .mars{ top: 85%; left: 15%; width: 36px; height: 36px; }
+          .moon{ top: 2%; left: 70%; }
+        }
+      }
+      .texts{ 
+        position: relative; text-align: center; width: 735px; transition: transform .3s ease-out;
+        .logo{ position: absolute; top: 0; left: 50%; transform: translate3d(-50%, 0, 0); width: 512px;
+          img{ max-width: 100%; }
+        }
+
+        @include laptop-only{
+          .logo{ width: 480px; }
+        }
+        @include tablet-only{
+          width: 320px; max-width: 100%;
+          .logo{ top: 50%; transform: translate3d(-50%, -50%, 0); width: 240px; }
+        }
+        @include mobile{
+          width: 280px; max-width: 100%;
+          .logo{ top: 50%; transform: translate3d(-50%, -50%, 0); width: 180px; }
+        }
+      }
+    }
+
+    .destination{
+      --earth-height: max(46vw, calc(1440px * 0.46));
+      position: relative; height: 100vh;
+      .inwrap{ display: flex; align-items: center; width: 100%; max-width: 2560px; height: 100%; margin: 0 auto; padding: 0 60px; }
+      .texts{ transition: transform .3s ease-out }
+      .title{ transition: transform .3s ease-out; }
+      .keywords{ 
+        overflow: hidden; display: inline-block; vertical-align: middle; position: relative; padding: 0 40px;
+        &::before{ content: '['; display: block; position: absolute; top: 0; left: 0; }
+        &::after{ content: ']'; display: block; position: absolute; top: 0; right: 0; }
+        span{ display: block; position: absolute; top: 0; left: 0; width: 100%; text-align: center; transform: translate3d(0, 100%, 0);
+          &:first-child{ position: relative; }
+        }
+      }
+      .earth{ position: absolute; transform: translate3d(-50%, -50%, 0); width: var(--earth-height); height: var(--earth-height);
+        .point{ top: 50%; left: 30%; transform: translate3d(-50%, 0, 0); }
+      }
+
+      @include desktop{
+        --bg-height: max(70.6vw, calc(1440px * 0.706));
+        margin-top: calc(var(--bg-height) - 100vh - (100vh - var(--earth-height))/2); // 지구 height : 46vw / 해당 bg height 비율 70.6vw / 지구와 위의 여백 : calc(70.6vw - 1000px)
+        .earth{ top: 49%; left: 58%; }
+      }
+      @include tablet{
+        --earth-height: max(45vw, calc(720px * 0.45));
+        position: relative; background: url('#{ $image-path }main-spacekids/exploration-bg-m.webp') no-repeat center / min(100%, 720px);
+        &::before{ content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 150px; background: linear-gradient(to bottom, #000, transparent) }
+        &::after{ content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 150px; background: linear-gradient(to bottom, transparent, #000) }
+        .inwrap{ justify-content: center; padding: 0 26px; }
+        .keywords{ padding: 0 15px; }
+        .earth{ top: 60%; left: 57%;
+          .point{ top: 40%; left: 45%; }
+        }
+      }
+    }
+
+    .invite{
+      position: relative; height: 1000px;
+      .inwrap{ display: flex; align-items: center; width: 100%; max-width: 2560px; height: 100%; margin: 0 auto; padding: 60px; padding-left: 50%; }
+      .texts{ 
+        max-width: 506px; transition: transform .3s ease-out;
+        .title{ margin-bottom: 80px; }
+        .text{ font-size: 17px; font-weight: 200; color: #fff; line-height: 1.65; }
+        .text + .text{ margin-top: 12px; }
+        .btn-hud{ margin-top: 160px; }
+      }
+      .meteor{
+        position: absolute; bottom: 30%; left: 10%; width: 168px; height: 168px;
+        .point{ 
+          top: 50%; left: 80%; transform: translate3d(0, -50%, 0); width: 170px; padding-left: 22px;
+          span{ width: 145px; }
+        }
+        
+        &::before{ content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('#{ $image-path }main-spacekids/exploration-stone.webp') no-repeat center / contain;}
+        &::after{ content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid #333; border-radius: 50%; }
+
+        // on animation
+        &:not(.on) {
+          &::before{ clip-path: circle(0%); transition: clip-path 1s ease-in-out; }
+          &::after{ opacity: 0; }
+          .point{ 
+            width: 0;
+            &::before{ transform: scale(0) translate3d(0, -50%, 0); }
+            &::after{ transform: scale(0) translate3d(0, -50%, 0); }
+          }
+        }
+        &.on{
+          &::before{ clip-path: circle(100%); transition: clip-path 1s ease-in-out; }
+          &::after{ transition: opacity .5s .5s; }
+          .point{ 
+            transition: width 1s .5s; 
+            &::before{ transform: scale(1) translate3d(0, -50%, 0); transition: all .5s .5s ease-out; }
+            &::after{ transform: scale(1) translate3d(0, -50%, 0); transition: all .5s .7s ease-out; }
+          }
+        }
+      }
+
+      @include tablet-only{
+        height: auto; padding: 80px 0 120px;
+        .inwrap{ 
+          display: flex; flex-direction: column-reverse; align-items: flex-start; padding: 0 26px;
+          .texts{ 
+            padding-left: 55px;
+            .title{ width: 300px; margin-bottom: 56px; }
+            .btn-hud{ margin-top: 80px; }
+          }
+          .meteor{  position: relative; top: 0; left: 0; margin-bottom: 60px; }
+        }
+        
+      }
+      @include mobile{
+        height: auto; padding: 80px 0 120px;
+        .inwrap{ 
+          display: flex; flex-direction: column-reverse; align-items: flex-start; padding: 0 26px;
+          .texts{ 
+            padding-left: 55px;
+            .title{ width: 120px; margin-bottom: 56px; }
+            .text{ width: 250px; font-size: 15px; line-height: 1.6; }
+            .text + .text{ margin-top: 10px; }
+            .btn-hud{ margin-top: 80px; }
+          }
+          .meteor{ 
+            position: relative; top: 0; left: 0; width: 86px; height: 86px; margin-bottom: 60px;
+            .point{
+              width: 120px; padding-top: 2px; font-size: 5px;
+              span{ width: 100px; }
+            }
+          }
+        }
+        
+      }
+    }
+  }
+  
+  // spacehub
+  #spacehub{
+    display: flex; justify-content: center;  
+    &::before{ content: ''; position: absolute; top: -100px; left: 0; width: 100%; height: 200px; background: linear-gradient(to bottom, transparent, #000, transparent); }
+    .bg{ position: absolute; top: 0; left: 0; z-index: -1; width: 100%; height: 100%; }
+    .inwrap{ padding-top: 30vw; text-align: center; }
+    .texts{
+      .text{ margin-top: 80px; font-size: 20px; font-weight: 300; color: #fff; line-height: 1.8; }
+      .btn-hud{ margin: 0 auto; margin-top: 60px; z-index: 2; }
+    }
+
+    @include desktop{
+      height: max(115vw, 2000px); margin-top: -10vw;
+      .bg{ background: url('#{ $image-path }main-spacekids/spacehub-bg.webp') no-repeat 50% 0 / cover; }
+    }
+    @include tablet{
+      padding: 120px 0 100px; margin-top: 0;
+      .bg{ background: url('#{ $image-path }main-spacekids/spacehub-bg-m.webp') no-repeat center 40% / 100%; }
+      .inwrap{ padding-top: 0; }
+      .texts{
+        .ment br:not(.mobile){ display: none; }
+        .text{ width: 310px; margin: 240px auto 0; font-size: 17px; line-height: 1.6;
+          br{ display: none; }
+        }
+        .btn-hud{ margin-top: 80px; }
+      }
+    }
+    @include mobile{
+      .texts{
+        .ment{ width: 248px; }
+        .text{ width: 246px; margin-top: 260px; font-size: 15px; }
+        .btn-hud{ margin-top: 80px; }
+      }
+    }
+  }
+
+  // network
+  #network {
+    -background: url('#{ $image-path }main/visual-network.webp') 50% 0 / cover; height: 100vh;
+		&:after {position: absolute; left: 0; right: 0; top: -200px; height: 400px; content: ''; background: linear-gradient(to bottom, transparent, #000 40%, #000 60%, transparent); pointer-events: none;}
+
+    &:not(.show) {
+      .visual .inwrap {opacity: 0; transform: scale(1.2);}
+      .texts h3,
+      .texts .ment,
+      .texts .link {opacity: 0; transform: translate3d(0, 50px, 0);}
+    }
+    &.show {
+      .visual .inwrap {transition: opacity 0.7s ease-out, transform 1s $ease-out-quart;}
+      .texts h3,
+      .texts .ment,
+      .texts .link {transition: opacity 0.3s ease-out, transform 1s $ease-out-expo; transition-delay: 0.3s;}
+      .texts .ment {transition-delay: 0.4s;}
+      .texts .link {transition-delay: 0.6s;}
+    }
+
+    .visual {
+      overflow: hidden;
+      position: absolute; left: 0; right: 0; top: 0; bottom: 0; -background: url('#{ $image-path }temp-network-light.webp') no-repeat 50% 50%;
+      .inwrap {position: relative; width: 100%; height: 100%;}
+      // video,
+      // img {width: 100%; height: 100%; padding: 0; box-sizing: border-box; object-fit: contain; object-position: 50% 50%;}
+      img,
+      video {position: absolute; left: 50%; top: 50%; width: 1920px; height: 1080px; transform: translate(-50%, -50%);}
+    }
+    .texts {
+      position: absolute; left: 0; right: 0; top: 50%; text-align: center; margin-top: -47px; pointer-events: none;
+      h3 {font-family: $font-h; font-size: 80px; font-weight: 400; letter-spacing: 1.28px; white-space: nowrap; line-height: 95px;}
+      .ment {font-size: 15px; font-weight: 400; line-height: 16px; margin-top: 8px; pointer-events: auto;}
+      .link {
+        margin-top: 50px;
+        a {
+          width: 204px; height: 72px; font-size: 12px; font-weight: 600; letter-spacing: 1.92px; text-transform: uppercase; line-height: 72px; border: 1px solid rgba(255, 255, 255, 0.6); border-radius: 24px; box-sizing: border-box; background: rgba(0, 0, 0, 0.59); display: inline-block; pointer-events: auto; transition: border-color 0.2s ease-out;
+          &:after {width: 20px; height: 20px; content: ''; vertical-align: middle; margin-left: 12px; background: url('#{ $image-path }icon-arrow-right.svg') no-repeat; display: inline-block; transform: translateY(-1px);}
+          @include hoverable {
+            &:hover {border-color: #fff;}
+          }
+        }
+      }
+    }
+    
+    @include tablet {
+      .network-texts {
+        position: absolute; left: 50%; top: 50%;
+        li {
+          span {display: none;}
+        }
+      }
+      &.show {
+        .texts .link {transition-delay: 0.4s;}
+      }
+      .visual {
+        .inwrap {top: -35px;}
+      }
+      .texts {
+        h3 {font-size: 24px; line-height: 1.14; letter-spacing: 0px;}
+        .ment {margin-top: 2px; font-size: 12px; line-height: 1.6;}
+        .link {
+          position: fixed; left: 16px; right: 16px; bottom: 122px; margin-top: 0;
+          a {
+            width: 100%; height: 56px; font-size: 10px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; line-height: 55px; border-radius: 12px;
+            &:after {width: 14px; height: 9px; content: ''; margin-left: 9px; background-size: 100% auto; background-position: 0 50%;}
+          }
+        }
+      }
+    }
+  }
+
+  // banner-link
+	.banner-link{
+		// position: absolute; left: 0; right: 0; top: 0; bottom: 0; overflow: hidden; pointer-events: none; z-index: 2;		
+		a{
+			// 배너 - 카운트다운, 우주의조약돌, 유튜브링크 공통
+			position: absolute; right: 60px; bottom: 132px; width: 328px; height: 180px; pointer-events: auto;
+			// 배너 - 유튜브링크만 추가 start
+			width: 320px; height: 180px;
+			// 배너 - 유튜브링크만 추가 end
+
+			&:after {position: absolute; left: -4px; right: -4px; top: -4px; bottom: -4px; content: ''; border: 1px solid rgba(#f37331, 0.4); transition: all 0.8s $ease-inout-quart; pointer-events: none;}
+			img{ width: 100%; height: auto;}
+
+			@include tablet-only {
+				right: 30px; bottom: 62px; width: 240px; height: 135px;
+				&:after {left: -2px; right: -2px; top: -2px; bottom: -2px;}
+			}
+			@include mobile {
+				right: 30px; bottom: 62px; width: 148px; height: 84px;
+				&:after {left: -2px; right: -2px; top: -2px; bottom: -2px;}
+			}
+		}
+	}
+
+  // hanwha-link
+	.hanwha-link {
+		position: fixed; left: 30px; bottom: 22px; z-index: 1;
+		a {padding: 10px; display: block;}
+		img {height: 38px;}
+	}
+	@include tablet {
+		.hanwha-link {
+			left: 6px; bottom: -2px;
+			img {height: 20px;}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

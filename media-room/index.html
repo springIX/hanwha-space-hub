@@ -1,0 +1,75 @@
+<%- include('./src/include/header.ejs', { title: 'Media Room', gnbActive: 4 }) %>
+
+<main class="media-room">
+	<header class="media-room-header">
+		<h2 class="page-title blind">Media Room</h2>
+		<div class="list-tabs">
+			<button id="press-release" class="active">Press Release</button>
+			<button id="space-hub-tv"><span>Space Hub</span> TV</button>
+			<button id="pr-archive">PR Archive</button>
+			<button id="news">News</button>
+		</div>
+		<div class="bg-frame"></div>
+	</header>
+
+	<section class="contens-list">
+		<ul class="list-wrap active" data-filter="Press Release">
+			<% for (let i = 0; i < mediaRoomData.pressRelease.length; i++) { %>
+				<li class="list-item" data-category="<%= mediaRoomData.pressRelease[i].category %>" data-item-id="<%= mediaRoomData.pressRelease[i].id %>">
+					<a href="/media-room/press-release/<%= mediaRoomData.pressRelease[i].id %>/">
+						<div class="img-wrap">
+							<img src="/resources/images/media-room/<%= mediaRoomData.pressRelease[i].thumbnail %>" alt="">							
+						</div>
+						<p class="title"><%= mediaRoomData.pressRelease[i].title %></p>
+						<p class="category"><%= mediaRoomData.pressRelease[i].category %></p>
+					</a>
+				</li>
+			<% } %>
+		</ul>
+
+		<ul class="list-wrap" data-filter="Space Hub TV">
+			<% for (let i = 0; i < mediaRoomData.spaceHubTv.length; i++) { %>
+				<li class="list-item" data-category="<%= mediaRoomData.spaceHubTv[i].category %>" data-item-id="<%= mediaRoomData.spaceHubTv[i].id %>">
+					<a href="<%= mediaRoomData.spaceHubTv[i].url %>" target="_blank">
+						<div class="img-wrap">
+							<img src="/resources/images/media-room/<%= mediaRoomData.spaceHubTv[i].thumbnail %>" alt="">							
+						</div>
+						<p class="title"><%= mediaRoomData.spaceHubTv[i].title %></p>
+						<p class="category"><%= mediaRoomData.spaceHubTv[i].category %></p>
+					</a>
+				</li>
+			<% } %>
+		</ul>
+
+		<ul class="list-wrap" data-filter="PR Archive">
+			<% for (let i = 0; i < mediaRoomData.PrArchive.length; i++) { %>
+				<li class="list-item" data-category="<%= mediaRoomData.PrArchive[i].category %>" data-item-id="<%= mediaRoomData.PrArchive[i].id %>">
+					<a href="/media-room/pr-archive/<%= mediaRoomData.PrArchive[i].id %>/">
+						<div class="img-wrap">
+							<img src="/resources/images/media-room/<%= mediaRoomData.PrArchive[i].thumbnail %>" alt="">							
+						</div>
+						<p class="title"><%= mediaRoomData.PrArchive[i].title %></p>
+						<p class="category"><%= mediaRoomData.PrArchive[i].category %></p>
+					</a>
+				</li>
+			<% } %>
+		</ul>
+
+		<ul class="list-wrap" data-filter="News">
+			<% for (let i = 0; i < mediaRoomData.news.length; i++) { %>
+				<li class="list-item" data-category="<%= mediaRoomData.news[i].category %>" data-item-id="<%= mediaRoomData.news[i].id %>">
+					<a href="/media-room/news/<%= mediaRoomData.news[i].id %>/">
+						<div class="img-wrap">
+							<img src="/resources/images/media-room/<%= mediaRoomData.news[i].thumbnail %>" alt="">
+						</div>
+						<p class="title"><%= mediaRoomData.news[i].title %></p>
+						<p class="category"><%= mediaRoomData.news[i].category %></p>
+					</a>
+				</li>
+			<% } %>
+		</ul>
+		<span class="space-bg"></span>
+	</section>
+</main>
+
+<%- include('./src/include/footer.ejs') %>

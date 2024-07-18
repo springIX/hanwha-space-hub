@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <g data-name="그룹 630034">
+        <g data-name="그룹 629489">
+            <g data-name="그룹 629488">
+                <path data-name="타원 4677" d="M8 2a6 6 0 1 0 6 6 6.007 6.007 0 0 0-6-6m0-2a8 8 0 1 1-8 8 8 8 0 0 1 8-8z" style="fill:#fff"/>
+            </g>
+        </g>
+    </g>
+    <path data-name="사각형 461958" transform="translate(7.167 .666)" style="fill:#fff" d="M0 0h1.667v3.333H0z"/>
+    <path data-name="사각형 461959" transform="translate(7.167 12)" style="fill:#fff" d="M0 0h1.667v3.333H0z"/>
+    <path data-name="사각형 461960" transform="rotate(90 4.083 11.25)" style="fill:#fff" d="M0 0h1.667v3.333H0z"/>
+    <path data-name="사각형 461961" transform="rotate(90 -1.583 5.583)" style="fill:#fff" d="M0 0h1.667v3.333H0z"/>
+</svg>
