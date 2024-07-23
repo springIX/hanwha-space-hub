@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-    <path data-name="사각형 462831" style="fill:none" d="M0 0h20v20H0z"/>
-    <g data-name="그룹 631338">
-        <path data-name="사각형 462808" transform="translate(2 9.5)" style="fill:#fff" d="M0 0h7v1H0z"/>
-        <path data-name="사각형 462811" transform="translate(11 9.5)" style="fill:#fff" d="M0 0h7v1H0z"/>
-        <path data-name="사각형 462809" transform="rotate(90 4.25 6.25)" style="fill:#fff" d="M0 0h7v1H0z"/>
-        <path data-name="사각형 462812" transform="rotate(90 -.25 10.75)" style="fill:#fff" d="M0 0h7v1H0z"/>
-    </g>
-</svg>

@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-    <g data-name="그룹 629489">
-        <g data-name="그룹 629488">
-            <path data-name="타원 4677" d="M8 2a6 6 0 1 0 6 6 6.007 6.007 0 0 0-6-6m0-2a8 8 0 1 1-8 8 8 8 0 0 1 8-8z" style="fill:#fff"/>
-        </g>
-    </g>
-    <path data-name="합치기 37" d="M2.907 3.959H.645L0 2.83h1.778v-1.7H0L.645 0H2.91l.646 1.133H8v1.7H3.555L2.91 3.959z" transform="rotate(45 -1.265 9.818)" style="fill:#fff"/>
-</svg>
