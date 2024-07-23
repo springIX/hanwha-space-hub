@@ -102,12 +102,12 @@ main.media-room-detail{
       }
       
       p{
-        // margin-top: 30px;
-        margin-top: 0px;
+        margin-top: 30px;
+        // margin-top: 0px;
 
-        // @include mobile{
-        //   margin-top:15px;
-        // }
+        @include mobile{
+          margin-top:15px;
+        }
       }
 
       .box{
@@ -121,11 +121,11 @@ main.media-room-detail{
       em{
         display: block; color: #666;
         & + p, & + blockquote {
-          // margin-top: 60px;
-          margin-top: 0px;
-          // @include mobile{
-          //   margin-top:30px;
-          // }
+          margin-top: 30px;
+          // margin-top: 0px;
+          @include mobile{
+            margin-top:30px;
+          }
         }
       }
 
