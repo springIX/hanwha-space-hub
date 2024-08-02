@@ -346,6 +346,20 @@
 
   "spaceHubTv" : [
     {
+      "id": "15",
+      "category" : "Space Hub TV",
+      "thumbnail": "spaceHubTv-img-15-en.webp",
+      "title": "[EN] An Establishment of Korea AeroSpace Administration, KASA",
+      "url": "https://youtu.be/QH0nQyYcwwM?si=qr4_tZCqWqH2Mqyz"
+    },
+    {
+      "id": "14",
+      "category" : "Space Hub TV",
+      "thumbnail": "spaceHubTv-img-14-en.webp",
+      "title": "[EN] South Korea’s first lunar landing scientific payload, LUSEM",
+      "url": "https://youtu.be/Bczb2Smkkf0?si=i2XGgSq8ruKvOf_O"
+    },
+    {
       "id": "13",
       "category" : "Space Hub TV",
       "thumbnail": "spaceHubTv-img-13-en.webp",
