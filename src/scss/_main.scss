@@ -1005,9 +1005,9 @@ main.main {
 		
 		a{
 			// 배너 - 카운트다운, 우주의조약돌, 유튜브링크 공통
-			position: absolute; right: 56px; bottom: 128px; width: 328px; height: 180px; transition: all 0.8s $ease-inout-quart; pointer-events: auto;
+			position: absolute; right: 56px; bottom: 128px; width: 400px; height: 225px; transition: all 0.8s $ease-inout-quart; pointer-events: auto;
 			// 배너 - 유튜브링크만 추가 start
-			width: 320px; height: 180px;
+			width: 400px; height: 225px;
 			// 배너 - 유튜브링크만 추가 end
 
 			&:after {position: absolute; left: -4px; right: -4px; top: -4px; bottom: -4px; content: ''; border: 1px solid rgba(#f37331, 0.4);; transition: all 0.8s $ease-inout-quart; pointer-events: none;}
@@ -1017,7 +1017,7 @@ main.main {
 			}
 
 			@include mobile {
-				right: 30px; bottom: 60px; width: 148px; height: 84px;
+				right: 30px; bottom: 60px; width: 185px; height: 105px;
 				&:after {left: -2px; right: -2px; top: -2px; bottom: -2px;}
 				span {font-size: 14px; padding: 0 10px;}
 			}
