@@ -305,6 +305,14 @@
 
   "spaceHubTv" : [
     {
+      "id": "6",
+      "category": "Space Hub TV",
+      "thumbnail": "spaceHubTv-img-36.jpg",
+      "title": "우주의조약돌 3기🪐 1, 2차 우주인문학 컨퍼런스 현장🌠 ( ˵•́ ᴗ •̀˵)(˵•́ ᴗ •̀˵ )",
+      "url": "https://youtu.be/gLmerMKHROk?si=QEPoK50kCW30ZVYR",
+      "videoId": "gLmerMKHROk"
+    },
+    {
       "id": "5",
       "category": "Space Hub TV",
       "thumbnail": "spaceHubTv-img-27.webp",
