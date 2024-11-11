@@ -124,7 +124,7 @@ main.main {
 
 			.wolf{ 
 				display: block; position: absolute; top: 0; left: 0; padding: 20px; font-size: 12px; font-weight: 300; color: #f37331; line-height: 1.67; letter-spacing: 0.96px; text-transform: uppercase;
-				overflow: hidden; white-space: nowrap; width: 140px;
+				overflow: hidden; white-space: nowrap; width: 200px;
 				&::before{ content: ''; display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; background-color: #f37331; }
 			}
 
