@@ -346,6 +346,20 @@
 
   "spaceHubTv" : [
     {
+      "id": "20",
+      "category" : "Space Hub TV",
+      "thumbnail": "spaceHubTv-img-20-en.jpg",
+      "title": "[EN] TOP 5 Remarkable Space Issue of the Year!",
+      "url": "https://youtu.be/p3X7As2iB-Y?si=H5duSgJtdF_l5lTN"
+    },
+    {
+      "id": "19",
+      "category" : "Space Hub TV",
+      "thumbnail": "spaceHubTv-img-19-en.jpg",
+      "title": "[EN] South Korea’s global space influence",
+      "url": "https://youtu.be/GBEwF20uCXg?si=yYIv2SpUiOfVG1gh"
+    },
+    {
       "id": "18",
       "category" : "Space Hub TV",
       "thumbnail": "spaceHubTv-img-18-en.jpg",
