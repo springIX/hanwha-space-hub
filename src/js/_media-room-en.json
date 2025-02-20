@@ -346,6 +346,13 @@
 
   "spaceHubTv" : [
     {
+      "id": "22",
+      "category" : "Space Hub TV",
+      "thumbnail": "spaceHubTv-img-22-en.jpg",
+      "title": "The 'New Space Race' among American private companies",
+      "url": "https://youtu.be/qhNn6FH4vkQ?si=tBvIcn89zYWCyvM0"
+    },
+    {
       "id": "21",
       "category" : "Space Hub TV",
       "thumbnail": "spaceHubTv-img-21-en.jpg",
