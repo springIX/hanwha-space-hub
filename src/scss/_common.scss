@@ -14,6 +14,12 @@ br.mobile {
 		& {display: initial;}
 	}
 }
+br.pc {
+  display: none;
+	@include desktop {
+    & {display: initial;}
+  }
+}
 
 .font-hh{ 
 	font-family: $font-h !important;

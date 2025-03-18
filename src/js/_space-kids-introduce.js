@@ -7,8 +7,8 @@ import YouTubePlayer from 'youtube-player';
 
 
 state.on('enter', () => {
-	document.querySelector('main.space-kids-introduce') && (() => {
-		const $main = document.querySelector('main.space-kids-introduce');
+  document.querySelector('main.space-kids-introduce') && (() => {
+    const $main = document.querySelector('main.space-kids-introduce');
 
     let isTablet = areaWidth > 1023 ? false : true;
     state.on('resize', (areaWidth, areaHeight) => {
@@ -18,8 +18,8 @@ state.on('enter', () => {
     // youtube player
     (() => {
       let $youtube = $main.querySelectorAll('[data-youtubeid]');
-      const _on_event = function(event){
-        if(event.data==1) this && this.classList.add("playing");
+      const _on_event = function (event) {
+        if (event.data == 1) this && this.classList.add("playing");
         else this && this.classList.remove("playing");
       };
 
@@ -31,14 +31,14 @@ state.on('enter', () => {
         _el_wrap.player.on('stateChange', _on_event.bind(_el_wrap));
         _el_wrap.playbtn = _el_wrap.querySelector(".control-play");
         _el_wrap.playbtn.onclick = () => {
-          _el_wrap.player.playVideo().then(function () {});
+          _el_wrap.player.playVideo().then(function () { });
         };
       });
     })();
 
-		// introduce
-		(() => {
-			const $section = $main.querySelector('.introduce');
+    // introduce
+    (() => {
+      const $section = $main.querySelector('.introduce');
       const $accordion = $section.querySelector('.accordion');
       const $video = $section.querySelector('.bg video');
       const $children = $section.querySelectorAll('.texts > *:not(video)');
@@ -57,7 +57,7 @@ state.on('enter', () => {
           if ($video.paused) {
             $video.play();
           }
-        } 
+        }
         else if (!$video.paused) {
           $video.pause();
         }
@@ -72,7 +72,7 @@ state.on('enter', () => {
       });
 
 
-      function createTimeline () {
+      function createTimeline() {
         timeline && timeline.kill();
         timeline = gsap.timeline({ paused: true });
 
@@ -81,14 +81,14 @@ state.on('enter', () => {
         timeline.to($children[1], { y: -100, opacity: 0, duration: 1, ease: 'cubic.in' });
         timeline.fromTo($children[2], { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, delay: .3, ease: 'power3.out' });
 
-				$mentHighlights.forEach(($highlight, index) => {
-					if (index > 0) {
-						timeline.to($highlight, { opacity: 1, duration: 1, ease: 'power2.inOut' }, '-=1');
-					}
-					if (index !== $mentHighlights.length - 1) {
-						timeline.to($highlight, { opacity: 0.2, duration: 1, delay: index > 0 ? 0.1 : 0, ease: 'power2.inOut' });
-					}
-				});
+        $mentHighlights.forEach(($highlight, index) => {
+          if (index > 0) {
+            timeline.to($highlight, { opacity: 1, duration: 1, ease: 'power2.inOut' }, '-=1');
+          }
+          if (index !== $mentHighlights.length - 1) {
+            timeline.to($highlight, { opacity: 0.2, duration: 1, delay: index > 0 ? 0.1 : 0, ease: 'power2.inOut' });
+          }
+        });
 
         // $ment.innerHTML = `<span>${ $ment.dataset.content.split(state.states.media === 'mobile' ? /<br *(?=class=".+")[^>]*\/?>/ : /<br *\/?>/).join('</span><span>') }</span>`;
         // for (let i = 0, max = $ment.children.length; i < max; i++) {
@@ -96,13 +96,13 @@ state.on('enter', () => {
         // }
       }
 
-		})();
+    })();
 
 
 
-		// program
-		(() => {
-			const $section = $main.querySelector('.program');
+    // program
+    (() => {
+      const $section = $main.querySelector('.program');
       const $eyebrow = $section.querySelector('.eyebrow');
       const $title = $section.querySelector('.title');
       const $moon = $section.querySelector('.bg .moon');
@@ -113,24 +113,24 @@ state.on('enter', () => {
       state.on('scroll', (scrollTop) => {
         const rect = $section.getBoundingClientRect();
         if (rect.top < areaHeight && rect.bottom > 0) {
-          const progress = -(rect.top - areaHeight/2) / areaHeight;
+          const progress = -(rect.top - areaHeight / 2) / areaHeight;
           timeline && timeline.progress(progress);
 
-          if ( !isTablet ) $moon.style.transform = `translate3d(0, ${progress*-100}px, 0)`;
+          if (!isTablet) $moon.style.transform = `translate3d(0, ${progress * -100}px, 0)`;
 
-          if ( progress > 0 && !$section.classList.contains('active') ) {
+          if (progress > 0 && !$section.classList.contains('active')) {
             $section.classList.add('active')
           }
 
           if ($video.paused) {
             $video.play();
           }
-        } 
+        }
         else {
           if (!$video.paused) {
             $video.pause();
           }
-          if ( $section.classList.contains('active') ) {
+          if ($section.classList.contains('active')) {
             $section.classList.remove('active');
           }
         }
@@ -144,7 +144,7 @@ state.on('enter', () => {
         sectionHeight = $section.offsetHeight - areaHeight;
       });
 
-      function createTimeline () {
+      function createTimeline() {
         timeline && timeline.kill();
         timeline = gsap.timeline({ paused: true });
 
@@ -152,34 +152,42 @@ state.on('enter', () => {
         timeline.fromTo($title, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, delay: .2, ease: 'power3.out' }, 'seq-1');
       }
 
-		})();
+    })();
 
 
 
-		// apply
-		(() => {
-			const $section = $main.querySelector('.apply');
+    // apply
+    (() => {
+      const $section = $main.querySelector('.apply');
       const $eyebrow = $section.querySelector('.eyebrow');
       const $title = $section.querySelector('.title');
       const $btn = $section.querySelector('.btn-hud');
       const $earth = $section.querySelector('.bg .earth');
       const $video = $earth.querySelector('video');
       const $kids = $section.querySelector('.bg .kids');
+      const $research = $section.querySelector('.research-results');
+      const $pdfFrame = $section.querySelector('.pdf-frame');
+      const $pdfDown = $section.querySelector('.pdf-down-btn');
+      const $popupWrap = $section.querySelector('.popup-wrap');
+      const $researchPopupBtn = $section.querySelectorAll('.research-results .swiper-slide button');
+      const $header = document.querySelector('#header');
+      const $sideSticky = document.querySelector('.side-sticky-wrap');
+
 
       let timeline, sectionHeight;
 
       state.on('scroll', (scrollTop) => {
         const rect = $section.getBoundingClientRect();
         if (rect.top < areaHeight && rect.bottom > 0) {
-          const progress = -(rect.top - areaHeight/2) / areaHeight;
+          const progress = -(rect.top - areaHeight / 2) / areaHeight;
           timeline && timeline.progress(progress);
           if ($video.paused) {
             $video.play();
           }
 
-          $earth.style.transform = `translate3d(-50%, ${Math.max(600, areaWidth)*0.08 * progress}px, 0)`;
-          $kids.style.transform = `translate3d(-50%, ${Math.max(600, areaWidth)*-0.15 * progress}px, 0)`;
-        } 
+          $earth.style.transform = `translate3d(-50%, ${Math.max(600, areaWidth) * 0.08 * progress}px, 0)`;
+          $kids.style.transform = `translate3d(-50%, ${Math.max(600, areaWidth) * -0.15 * progress}px, 0)`;
+        }
         else if (!$video.paused) {
           $video.pause();
         }
@@ -193,7 +201,7 @@ state.on('enter', () => {
         sectionHeight = $section.offsetHeight - areaHeight;
       });
 
-      function createTimeline () {
+      function createTimeline() {
         timeline && timeline.kill();
         timeline = gsap.timeline({ paused: true });
 
@@ -202,13 +210,88 @@ state.on('enter', () => {
         timeline.fromTo($btn, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, delay: .4, ease: 'power3.out' }, 'seq-1');
       }
 
-		})();
+      // 250317 우주의 조약돌 슬라이드
+      state.on('scroll', (scrollTop) => {
+        const rect = $research.getBoundingClientRect();
+        if (rect.top < areaHeight && rect.bottom > 0) {
+          const researchResults = -(rect.top - areaHeight / 2) / areaHeight;
+
+          if (researchResults > 0 && !$research.classList.contains('active')) {
+            $research.classList.add('active')
+          }
+        }
+        else {
+          if ($research.classList.contains('active')) {
+            $research.classList.remove('active');
+          }
+        }
+      });
+
+      const slider = new Swiper('.swiper.research-results', {
+        modules: [Pagination, Navigation],
+        slidesPerView: 1.15,
+        spaceBetween: 20,
+        speed: 1000,
+        centeredSlides: true,
+        loop: true,
+        loopedSlides: 2,
+        navigation: {
+          prevEl: ".swiper.research-results .slide-nav.prv",
+          nextEl: ".swiper.research-results .slide-nav.nxt",
+        },
+        pagination: {
+          el: ".apply .slide-pagi",
+          clickable: true
+        },
+        on: {
+          slideChangeTransitionStart: function () {
+            let frame = document.querySelector('.apply .research-results .frame');
+            frame.classList.add('active');
+            setTimeout(() => {
+              frame.classList.remove('active');
+            }, 500);
+          }
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 'auto',
+            spaceBetween: 160,
+          },
+        },
+      });
+
+      $researchPopupBtn.forEach(button => {
+        button.addEventListener('click', function () {
+          const pdfSrc = this.getAttribute('data-pdf');
+          if (window.innerWidth <= 767) {
+            window.open(pdfSrc, '_blank');
+          } else {
+            $pdfFrame.src = pdfSrc;
+            $pdfDown.href = pdfSrc;
+            $popupWrap.classList.add('on');
+            $header.style.touchAction = "none";
+            $header.style.pointerEvents = "none";
+            $sideSticky.style.zIndex = "-1";
+          }
+        });
+      });
+
+      document.querySelector('.close-popup').addEventListener('click', function () {
+        $pdfFrame.src = '';
+        $pdfDown.href = '';
+        $popupWrap.classList.remove('on');
+        $header.style.touchAction = "auto";
+        $header.style.pointerEvents = "auto";
+        $sideSticky.style.zIndex = "1";
+      });
+
+    })();
 
 
 
-		// mediaroom
-		(() => {
-			const $section = $main.querySelector('.mediaroom');
+    // mediaroom
+    (() => {
+      const $section = $main.querySelector('.mediaroom');
       const $title = $section.querySelector('.title');
       const $btn = $section.querySelector('.btns .btn-hud');
       const $sns = $section.querySelector('.btns .sns');
@@ -221,14 +304,14 @@ state.on('enter', () => {
       state.on('scroll', (scrollTop) => {
         const rect = $section.getBoundingClientRect();
         if (rect.top < areaHeight && rect.bottom > 0) {
-          const progress = -(rect.top - areaHeight/2) / areaHeight;
-          timeline && timeline.progress(progress*1.2);
-        } 
+          const progress = -(rect.top - areaHeight / 2) / areaHeight;
+          timeline && timeline.progress(progress * 1.2);
+        }
       });
 
       state.on('mediachange', (media) => {
         createTimeline();
-        if ( media === 'desktop' ) {
+        if (media === 'desktop') {
           mediaroomSlider && mediaroomSlider.destroy();
           mediaroomSlider = new Swiper('.mediaroom .swiper', {
             modules: [Pagination, Navigation, Autoplay],
@@ -261,14 +344,14 @@ state.on('enter', () => {
             },
           });
         }
-        
+
       });
 
       state.on('resize', (areaWidth, areaHeight) => {
         sectionHeight = $section.offsetHeight - areaHeight;
       });
 
-      function createTimeline () {
+      function createTimeline() {
         timeline && timeline.kill();
         timeline = gsap.timeline({ paused: true });
 
@@ -278,48 +361,49 @@ state.on('enter', () => {
         timeline.fromTo($sns, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, delay: .3, ease: 'power3.out' }, 'seq-1');
       }
 
-		})();
+    })();
 
 
 
-		// support
-		(() => {
-			const $section = $main.querySelector('.support');
-			const $visual = $section.querySelector('.visual');
-			const $title = $section.querySelector('.title');
-			const $partners = $section.querySelector('.partners');
-			const $partnersChild = [...$partners.children];
+    // support
+    (() => {
+      const $section = $main.querySelector('.support');
+      const $visual = $section.querySelector('.visual');
+      const $title = $section.querySelector('.title');
+      const $partners = $section.querySelector('.partners');
+      const $partnersChild = [...$partners.children];
 
-			let sectionHeight, timeline;
+      let sectionHeight, timeline;
 
-			state.on('scroll', (scrollTop) => {
-				const rect = $section.getBoundingClientRect();
-				if (rect.top < areaHeight && rect.bottom > 0) {
-					const progress = -rect.top / sectionHeight;
-					timeline && timeline.progress(Math.max(0, progress));
+      state.on('scroll', (scrollTop) => {
+        const rect = $section.getBoundingClientRect();
+        if (rect.top < areaHeight && rect.bottom > 0) {
+          const progress = -rect.top / sectionHeight;
+          timeline && timeline.progress(Math.max(0, progress));
 
-					$visual.style.opacity = Math.min(.9, (0.7 - rect.top / areaHeight) * 1);
-				} 
-			});
+          $visual.style.opacity = Math.min(.9, (0.7 - rect.top / areaHeight) * 1);
+        }
+      });
 
-			state.on('resize', (areaWidth, areaHeight) => {
-				sectionHeight = $section.offsetHeight - areaHeight;
+      state.on('resize', (areaWidth, areaHeight) => {
+        sectionHeight = $section.offsetHeight - areaHeight;
 
-				createTimeline();
-			});
+        createTimeline();
+      });
 
-			function createTimeline () {
-				timeline && timeline.kill();
-				timeline = gsap.timeline({ paused: true, delay: 1 });
+      function createTimeline() {
+        timeline && timeline.kill();
+        timeline = gsap.timeline({ paused: true, delay: 1 });
 
-				timeline.fromTo($title, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, ease: 'quart.out' }, );
-				timeline.to($title, { opacity: 0, duration: 1, ease: 'quart.out' }, );
-				timeline.fromTo($partnersChild[0], { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1.5, ease: 'quart.out' }, 'seq-3');
-				timeline.fromTo($partnersChild[1], { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1.5, delay: .2, ease: 'quart.out' }, 'seq-3');
-				timeline.fromTo($partnersChild[2], { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1.5, delay: .4, ease: 'quart.out' }, 'seq-3');
-			}
-		})();
-	})();
+        timeline.fromTo($title, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, ease: 'quart.out' },);
+        timeline.to($title, { opacity: 0, duration: 1, ease: 'quart.out' },);
+        timeline.fromTo($partnersChild[0], { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1.5, ease: 'quart.out' }, 'seq-3');
+        timeline.fromTo($partnersChild[1], { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1.5, delay: .2, ease: 'quart.out' }, 'seq-3');
+        timeline.fromTo($partnersChild[2], { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1.5, delay: .4, ease: 'quart.out' }, 'seq-3');
+      }
+    })();
+
+  })();
 });
 
 

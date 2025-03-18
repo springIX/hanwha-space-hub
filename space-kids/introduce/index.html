@@ -1,17 +1,18 @@
-<%- include('./src/include/header.ejs', { title: '우주의 조약돌 소개', gnbActive: 5 }) %>
+<%- include('./src/include/header.ejs', { title: '우주의 조약돌 소개' , gnbActive: 5 }) %>
 
-	<main class="space-kids-introduce">
-  
+  <main class="space-kids-introduce">
+
     <!-- sections -->
     <section id="introduce" class="introduce" data-section-name="소개">
       <span class="blind">소개</span>
       <div class="sticky">
-				<div class="bg">
-					<video class="video-content" poster="/resources/images/space-kids/introduce/introduce-bg.webp" loop muted playsinline>
-						<source src="/resources/images/space-kids/introduce/introduce-bg.mov" type="video/mp4; codecs=hvc1" />
-						<source src="/resources/images/space-kids/introduce/introduce-bg.mp4" type="video/mp4" />
-					</video>
-				</div>
+        <div class="bg">
+          <video class="video-content" poster="/resources/images/space-kids/introduce/introduce-bg.webp" loop muted
+            playsinline>
+            <source src="/resources/images/space-kids/introduce/introduce-bg.mov" type="video/mp4; codecs=hvc1" />
+            <source src="/resources/images/space-kids/introduce/introduce-bg.mp4" type="video/mp4" />
+          </video>
+        </div>
         <div class="texts">
           <h2><img src="/resources/images/space-kids/introduce/logo-spacekids.svg" alt="우주의 조약돌"></h2>
           <h3>세상에 없던 우주 교육</h3>
@@ -111,10 +112,324 @@
         <div class="texts">
           <span class="eyebrow">[ 우주의 조약돌 세번째 탐사 : 지구 ]</span>
           <h3 class="title">
-            지구의 미래를 위한 탐사로​ <br>
-            미래 우주 과학자 <br class="mobile">여러분을 초대합니다.
+            지구를 위한 세번째 탐사를 <br class="mobile">마치고 돌아온 <br class="pc">
+            우주 과학자들의 <br class="mobile">연구 성과를 지금 확인하세요.
           </h3>
-          <a href="../apply/" class="btn-hud"><span>지원 안내 자세히 보기</span></a>
+          <div class="swiper research-results">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <button data-pdf="/resources/pdf/theSpaceKids_researchResults1.pdf">
+                  <div class="img-box">
+                    <img src="/resources/images/space-kids/introduce/team-01.png" alt="">
+                    <video poster="/resources/images/space-kids/introduce/apply-noise.mp4" loop muted playsinline
+                      autoplay>
+                      <source src="/resources/images/space-kids/introduce/apply-noise.mp4" type="video/mp4;" />
+                    </video>
+                  </div>
+                  <div class="txt-box">
+                    <p class="team"><span>TEAM 01</span></p>
+                    <div class="tit">
+                      <p><span>L1 지점에서의 군집형 태양 가림막을 통한</span></p>
+                      <p><span>지구 기후 제어</span></p>
+                    </div>
+                  </div>
+                  <p class="more">자세히 보기</p>
+                </button>
+              </li>
+              <li class="swiper-slide">
+                <button data-pdf="/resources/pdf/theSpaceKids_researchResults2.pdf">
+                  <div class="img-box">
+                    <img src="/resources/images/space-kids/introduce/team-02.png" alt="">
+                    <video poster="/resources/images/space-kids/introduce/apply-noise.mp4" loop muted playsinline
+                      autoplay>
+                      <source src="/resources/images/space-kids/introduce/apply-noise.mp4" type="video/mp4;" />
+                    </video>
+                  </div>
+                  <div class="txt-box">
+                    <p class="team"><span>TEAM 02</span></p>
+                    <div class="tit">
+                      <p><span>우주태양광 발전을 위한 집광 위성 설계</span></p>
+                    </div>
+                  </div>
+                  <p class="more">자세히 보기</p>
+                </button>
+              </li>
+              <li class="swiper-slide">
+                <button data-pdf="/resources/pdf/theSpaceKids_researchResults3.pdf">
+                  <div class="img-box">
+                    <img src="/resources/images/space-kids/introduce/team-03.png" alt="">
+                    <video poster="/resources/images/space-kids/introduce/apply-noise.mp4" loop muted playsinline
+                      autoplay>
+                      <source src="/resources/images/space-kids/introduce/apply-noise.mp4" type="video/mp4;" />
+                    </video>
+                  </div>
+                  <div class="txt-box">
+                    <p class="team"><span>TEAM 03</span></p>
+                    <div class="tit">
+                      <p><span>저공해 우주 발사체 개발</span></p>
+                    </div>
+                  </div>
+                  <p class="more">자세히 보기</p>
+                </button>
+              </li>
+              <li class="swiper-slide">
+                <button data-pdf="/resources/pdf/theSpaceKids_researchResults4.pdf">
+                  <div class="img-box">
+                    <img src="/resources/images/space-kids/introduce/team-04.png" alt="">
+                    <video poster="/resources/images/space-kids/introduce/apply-noise.mp4" loop muted playsinline
+                      autoplay>
+                      <source src="/resources/images/space-kids/introduce/apply-noise.mp4" type="video/mp4;" />
+                    </video>
+                  </div>
+                  <div class="txt-box">
+                    <p class="team"><span>TEAM 04</span></p>
+                    <div class="tit">
+                      <p><span>인공위성 레이저를 이용한 우주 쓰레기 제거</span></p>
+                    </div>
+                  </div>
+                  <p class="more">자세히 보기</p>
+                </button>
+              </li>
+              <li class="swiper-slide">
+                <button data-pdf="/resources/pdf/theSpaceKids_researchResults5.pdf">
+                  <div class="img-box">
+                    <img src="/resources/images/space-kids/introduce/team-05.png" alt="">
+                    <video poster="/resources/images/space-kids/introduce/apply-noise.mp4" loop muted playsinline
+                      autoplay>
+                      <source src="/resources/images/space-kids/introduce/apply-noise.mp4" type="video/mp4;" />
+                    </video>
+                  </div>
+                  <div class="txt-box">
+                    <p class="team"><span>TEAM 05</span></p>
+                    <div class="tit">
+                      <p><span>우주 쓰레기 재활용을 위한</span></p>
+                      <p><span>우주 재활용 센터 구상</span></p>
+                    </div>
+                  </div>
+                  <p class="more">자세히 보기</p>
+                </button>
+              </li>
+              <li class="swiper-slide">
+                <button data-pdf="/resources/pdf/theSpaceKids_researchResults6.pdf">
+                  <div class="img-box">
+                    <img src="/resources/images/space-kids/introduce/team-06.png" alt="">
+                    <video poster="/resources/images/space-kids/introduce/apply-noise.mp4" loop muted playsinline
+                      autoplay>
+                      <source src="/resources/images/space-kids/introduce/apply-noise.mp4" type="video/mp4;" />
+                    </video>
+                  </div>
+                  <div class="txt-box">
+                    <p class="team"><span>TEAM 06</span></p>
+                    <div class="tit">
+                      <p><span>지구의 미래 소행성 충돌을 피하는</span></p>
+                      <p><span>소행성 궤도 수정 전략</span></p>
+                    </div>
+                  </div>
+                  <p class="more">자세히 보기</p>
+                </button>
+              </li>
+            </ul>
+            <div class="frame">
+              <svg xmlns="http://www.w3.org/2000/svg" width="348" height="84.5" viewBox="0 0 348 84.5" class="frame-lt">
+                <path data-name="패스 1510327" d="M-15552.206 14947.606v-3.99l2.314-2.474h47.4l3.4 3.4h62.373"
+                  transform="translate(15553.34 -14940.643)" style="opacity:.12;stroke:#fff;fill:none" />
+                <path data-name="패스 1510328" d="M-15548.773 14943.467h20.754l3.42 3.419h183.65"
+                  transform="translate(15552.537 -14941.185)" style="opacity:.12;stroke:#fff;fill:none" />
+                <path data-name="패스 1510329" d="M-15270.889 14951.929h111.412"
+                  transform="translate(15485.594 -14946.227)" style="opacity:.2;stroke:#fff;fill:none" />
+                <g data-name="사각형 464127" style="stroke-linejoin:bevel;opacity:.12;stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h4.599v4.599H0z" transform="translate(343.401 3.457)" />
+                  <path style="fill:none" d="M.5.5h3.599v3.599H.5z" transform="translate(343.401 3.457)" />
+                </g>
+                <g data-name="사각형 464128" style="stroke-linejoin:bevel;opacity:.2;stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h4.599v4.599H0z" transform="translate(334.202 3.457)" />
+                  <path style="fill:none" d="M.5.5h3.599v3.599H.5z" transform="translate(334.202 3.457)" />
+                </g>
+                <g data-name="사각형 464133" style="opacity:.08;stroke-linejoin:bevel;stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h4.599v4.599H0z" transform="translate(334.969 3.457)" />
+                  <path style="fill:none" d="M.5.5h3.599v3.599H.5z" transform="translate(334.969 3.457)" />
+                </g>
+                <g data-name="사각형 464129" style="stroke-linejoin:bevel;opacity:.12;stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h4.599v4.599H0z" transform="translate(328.07 3.457)" />
+                  <path style="fill:none" d="M.5.5h3.599v3.599H.5z" transform="translate(328.07 3.457)" />
+                </g>
+                <g data-name="사각형 464130" style="stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h1.533v1.533H0z" transform="translate(177.715 4.99)" />
+                  <path style="fill:none" d="M.5.5h.533v.533H.5z" transform="translate(177.715 4.99)" />
+                </g>
+                <g data-name="사각형 464131" transform="translate(116.351 2.69)" style="fill:#fff;stroke:#fff">
+                  <rect width="2.3" height="2.3" rx="1.15" style="stroke:none" />
+                  <rect x=".5" y=".5" width="1.3" height="1.3" rx=".65" style="fill:none" />
+                </g>
+                <path data-name="패스 1510339" d="M-15550.469 14952.835v27.771l1.584 1.585v28.079"
+                  transform="translate(15551.603 -14943.372)" style="opacity:.2;stroke:#fff;fill:none" />
+                <path data-name="패스 1510338" d="M.965 0a1.15 1.15 0 1 1-1.15 1.15A1.15 1.15 0 0 1 .965 0z"
+                  transform="translate(.185 5.757)" style="fill:#fff" />
+                <path data-name="패스 1510340" d="M-15550.138 15008.455v32.77" transform="translate(15552.857 -14956.725)"
+                  style="opacity:.2;stroke:#fff;fill:none" />
+                <g data-name="사각형 464132" style="stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h1.533v1.533H0z" transform="translate(2.058 51.522)" />
+                  <path style="fill:none" d="M.5.5h.533v.533H.5z" transform="translate(2.058 51.522)" />
+                </g>
+                <path data-name="패스 1510341" d="M-15274.366 14947.929h-59.79"
+                  transform="translate(15452.824 -14942.227)" style="opacity:.2;stroke:#fff;fill:none" />
+                <path data-name="패스 1510342" d="M-15548.733 14943.467h20.773l3.414 3.413h70.189"
+                  transform="translate(15552.529 -14941.185)" style="opacity:.04;stroke:#fff;fill:none" />
+                <path data-name="패스 1510343" d="m-15517.365 14943.467 1.6 1.595h22.023l-1.594-1.595z"
+                  transform="translate(15542.907 -14941.185)" style="opacity:.04;fill:#fff" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="348" height="84.5" viewBox="0 0 348 84.5" class="frame-rt">
+                <path data-name="패스 1510327" d="M-15436.716 14947.606v-3.99l-2.314-2.474h-47.4l-3.4 3.4h-62.373"
+                  transform="translate(15783.582 -14940.643)" style="opacity:.12;stroke:#fff;fill:none" />
+                <path data-name="패스 1510328" d="M-15340.949 14943.467h-20.754l-3.42 3.419h-183.65"
+                  transform="translate(15685.186 -14941.185)" style="opacity:.12;stroke:#fff;fill:none" />
+                <path data-name="패스 1510329" d="M-15159.477 14951.929h-111.412"
+                  transform="translate(15292.771 -14946.227)" style="opacity:.2;stroke:#fff;fill:none" />
+                <g data-name="사각형 464127" style="stroke-linejoin:bevel;opacity:.12;stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h4.599v4.599H0z" transform="translate(0 3.457)" />
+                  <path style="fill:none" d="M.5.5h3.599v3.599H.5z" transform="translate(0 3.457)" />
+                </g>
+                <g data-name="사각형 464128" style="stroke-linejoin:bevel;opacity:.2;stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h4.599v4.599H0z" transform="translate(9.199 3.457)" />
+                  <path style="fill:none" d="M.5.5h3.599v3.599H.5z" transform="translate(9.199 3.457)" />
+                </g>
+                <g data-name="사각형 464133" style="opacity:.08;stroke-linejoin:bevel;stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h4.599v4.599H0z" transform="translate(8.432 3.457)" />
+                  <path style="fill:none" d="M.5.5h3.599v3.599H.5z" transform="translate(8.432 3.457)" />
+                </g>
+                <g data-name="사각형 464129" style="stroke-linejoin:bevel;opacity:.12;stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h4.599v4.599H0z" transform="translate(15.331 3.457)" />
+                  <path style="fill:none" d="M.5.5h3.599v3.599H.5z" transform="translate(15.331 3.457)" />
+                </g>
+                <g data-name="사각형 464130" style="stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h1.533v1.533H0z" transform="translate(168.752 4.99)" />
+                  <path style="fill:none" d="M.5.5h.533v.533H.5z" transform="translate(168.752 4.99)" />
+                </g>
+                <g data-name="사각형 464131" transform="translate(229.35 2.69)" style="fill:#fff;stroke:#fff">
+                  <rect width="2.3" height="2.3" rx="1.15" style="stroke:none" />
+                  <rect x=".5" y=".5" width="1.3" height="1.3" rx=".65" style="fill:none" />
+                </g>
+                <path data-name="패스 1510339" d="M-15548.885 14952.835v27.771l-1.584 1.585v28.079"
+                  transform="translate(15895.751 -14943.372)" style="opacity:.2;stroke:#fff;fill:none" />
+                <path data-name="패스 1510338" d="M.965 0a1.15 1.15 0 1 0 1.15 1.15A1.15 1.15 0 0 0 .965 0z"
+                  transform="translate(345.885 5.757)" style="fill:#fff" />
+                <path data-name="패스 1510340" d="M-15550.138 15008.455v32.77" transform="translate(15895.418 -14956.725)"
+                  style="opacity:.2;stroke:#fff;fill:none" />
+                <g data-name="사각형 464132" style="stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h1.533v1.533H0z" transform="translate(344.409 51.522)" />
+                  <path style="fill:none" d="M.5.5h.533v.533H.5z" transform="translate(344.409 51.522)" />
+                </g>
+                <path data-name="패스 1510341" d="M-15334.157 14947.929h59.79" transform="translate(15503.699 -14942.227)"
+                  style="opacity:.2;stroke:#fff;fill:none" />
+                <path data-name="패스 1510342" d="M-15454.356 14943.467h-20.773l-3.414 3.413h-70.189"
+                  transform="translate(15798.561 -14941.185)" style="opacity:.04;stroke:#fff;fill:none" />
+                <path data-name="패스 1510343" d="m-15493.746 14943.467-1.6 1.595h-22.023l1.594-1.595z"
+                  transform="translate(15816.204 -14941.185)" style="opacity:.04;fill:#fff" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="348" height="84.5" viewBox="0 0 348 84.5" class="frame-lb">
+                <path data-name="패스 1510327" d="M-15552.206 14941.144v3.99l2.314 2.474h47.4l3.4-3.4h62.373"
+                  transform="translate(15553.34 -14863.607)" style="opacity:.12;stroke:#fff;fill:none" />
+                <path data-name="패스 1510328" d="M-15548.773 14946.885h20.754l3.42-3.419h183.65"
+                  transform="translate(15552.537 -14864.667)" style="opacity:.12;stroke:#fff;fill:none" />
+                <path data-name="패스 1510329" d="M-15270.889 14951.929h111.412"
+                  transform="translate(15485.594 -14873.131)" style="opacity:.2;stroke:#fff;fill:none" />
+                <g data-name="사각형 464127" style="stroke-linejoin:bevel;opacity:.12;stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h4.599v4.599H0z" transform="translate(343.401 76.444)" />
+                  <path style="fill:none" d="M.5.5h3.599v3.599H.5z" transform="translate(343.401 76.444)" />
+                </g>
+                <g data-name="사각형 464128" style="stroke-linejoin:bevel;opacity:.2;stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h4.599v4.599H0z" transform="translate(334.202 76.444)" />
+                  <path style="fill:none" d="M.5.5h3.599v3.599H.5z" transform="translate(334.202 76.444)" />
+                </g>
+                <g data-name="사각형 464133" style="opacity:.08;stroke-linejoin:bevel;stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h4.599v4.599H0z" transform="translate(334.969 76.444)" />
+                  <path style="fill:none" d="M.5.5h3.599v3.599H.5z" transform="translate(334.969 76.444)" />
+                </g>
+                <g data-name="사각형 464129" style="stroke-linejoin:bevel;opacity:.12;stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h4.599v4.599H0z" transform="translate(328.07 76.444)" />
+                  <path style="fill:none" d="M.5.5h3.599v3.599H.5z" transform="translate(328.07 76.444)" />
+                </g>
+                <g data-name="사각형 464130" style="stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h1.533v1.533H0z" transform="translate(177.715 77.977)" />
+                  <path style="fill:none" d="M.5.5h.533v.533H.5z" transform="translate(177.715 77.977)" />
+                </g>
+                <g data-name="사각형 464131" transform="translate(116.351 79.51)" style="fill:#fff;stroke:#fff">
+                  <rect width="2.3" height="2.3" rx="1.15" style="stroke:none" />
+                  <rect x=".5" y=".5" width="1.3" height="1.3" rx=".65" style="fill:none" />
+                </g>
+                <path data-name="패스 1510339" d="M-15550.469 15010.271v-27.771l1.584-1.585v-28.079"
+                  transform="translate(15551.603 -14935.233)" style="opacity:.2;stroke:#fff;fill:none" />
+                <path data-name="패스 1510338" d="M.965 2.3a1.15 1.15 0 1 0-1.15-1.15A1.15 1.15 0 0 0 .965 2.3z"
+                  transform="translate(.185 76.446)" style="fill:#fff" />
+                <path data-name="패스 1510340" d="M-15550.138 15041.225v-32.77"
+                  transform="translate(15552.857 -15008.455)" style="opacity:.2;stroke:#fff;fill:none" />
+                <g data-name="사각형 464132" style="stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h1.533v1.533H0z" transform="translate(2.058 31.445)" />
+                  <path style="fill:none" d="M.5.5h.533v.533H.5z" transform="translate(2.058 31.445)" />
+                </g>
+                <path data-name="패스 1510341" d="M-15274.366 14947.929h-59.79"
+                  transform="translate(15452.824 -14869.131)" style="opacity:.2;stroke:#fff;fill:none" />
+                <path data-name="패스 1510342" d="M-15548.733 14946.881h20.773l3.414-3.413h70.189"
+                  transform="translate(15552.529 -14864.663)" style="opacity:.04;stroke:#fff;fill:none" />
+                <path data-name="패스 1510343" d="m-15517.365 14945.061 1.6-1.595h22.023l-1.594 1.595z"
+                  transform="translate(15542.907 -14862.843)" style="opacity:.04;fill:#fff" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="348" height="84.5" viewBox="0 0 348 84.5" class="frame-rb">
+                <path data-name="패스 1510327" d="M-15436.716 14941.144v3.99l-2.314 2.474h-47.4l-3.4-3.4h-62.373"
+                  transform="translate(15783.582 -14863.607)" style="opacity:.12;stroke:#fff;fill:none" />
+                <path data-name="패스 1510328" d="M-15340.949 14946.885h-20.754l-3.42-3.419h-183.65"
+                  transform="translate(15685.186 -14864.667)" style="opacity:.12;stroke:#fff;fill:none" />
+                <path data-name="패스 1510329" d="M-15159.477 14951.929h-111.412"
+                  transform="translate(15292.771 -14873.131)" style="opacity:.2;stroke:#fff;fill:none" />
+                <g data-name="사각형 464127" style="stroke-linejoin:bevel;opacity:.12;stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h4.599v4.599H0z" transform="translate(0 76.444)" />
+                  <path style="fill:none" d="M.5.5h3.599v3.599H.5z" transform="translate(0 76.444)" />
+                </g>
+                <g data-name="사각형 464128" style="stroke-linejoin:bevel;opacity:.2;stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h4.599v4.599H0z" transform="translate(9.199 76.444)" />
+                  <path style="fill:none" d="M.5.5h3.599v3.599H.5z" transform="translate(9.199 76.444)" />
+                </g>
+                <g data-name="사각형 464133" style="opacity:.08;stroke-linejoin:bevel;stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h4.599v4.599H0z" transform="translate(8.432 76.444)" />
+                  <path style="fill:none" d="M.5.5h3.599v3.599H.5z" transform="translate(8.432 76.444)" />
+                </g>
+                <g data-name="사각형 464129" style="stroke-linejoin:bevel;opacity:.12;stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h4.599v4.599H0z" transform="translate(15.331 76.444)" />
+                  <path style="fill:none" d="M.5.5h3.599v3.599H.5z" transform="translate(15.331 76.444)" />
+                </g>
+                <g data-name="사각형 464130" style="stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h1.533v1.533H0z" transform="translate(168.752 77.977)" />
+                  <path style="fill:none" d="M.5.5h.533v.533H.5z" transform="translate(168.752 77.977)" />
+                </g>
+                <g data-name="사각형 464131" transform="translate(229.35 79.51)" style="fill:#fff;stroke:#fff">
+                  <rect width="2.3" height="2.3" rx="1.15" style="stroke:none" />
+                  <rect x=".5" y=".5" width="1.3" height="1.3" rx=".65" style="fill:none" />
+                </g>
+                <path data-name="패스 1510339" d="M-15548.885 15010.271v-27.771l-1.584-1.585v-28.079"
+                  transform="translate(15895.751 -14935.233)" style="opacity:.2;stroke:#fff;fill:none" />
+                <path data-name="패스 1510338" d="M.965 2.3a1.15 1.15 0 1 1 1.15-1.15A1.15 1.15 0 0 1 .965 2.3z"
+                  transform="translate(345.885 76.446)" style="fill:#fff" />
+                <path data-name="패스 1510340" d="M-15550.138 15041.225v-32.77"
+                  transform="translate(15895.418 -15008.455)" style="opacity:.2;stroke:#fff;fill:none" />
+                <g data-name="사각형 464132" style="stroke:#fff;fill:none">
+                  <path style="stroke:none" d="M0 0h1.533v1.533H0z" transform="translate(344.409 31.445)" />
+                  <path style="fill:none" d="M.5.5h.533v.533H.5z" transform="translate(344.409 31.445)" />
+                </g>
+                <path data-name="패스 1510341" d="M-15334.157 14947.929h59.79" transform="translate(15503.699 -14869.131)"
+                  style="opacity:.2;stroke:#fff;fill:none" />
+                <path data-name="패스 1510342" d="M-15454.356 14946.881h-20.773l-3.414-3.413h-70.189"
+                  transform="translate(15798.561 -14864.663)" style="opacity:.04;stroke:#fff;fill:none" />
+                <path data-name="패스 1510343" d="m-15493.746 14945.061-1.6-1.595h-22.023l1.594 1.595z"
+                  transform="translate(15816.204 -14862.843)" style="opacity:.04;fill:#fff" />
+              </svg>
+            </div>
+            <div class="nav">
+              <span class="slide-nav prv"></span>
+              <span class="slide-nav nxt"></span>
+            </div>
+          </div>
+          <div class="slide-pagi"></div>
+          <a href="../apply/" class="btn-hud"><span>3기 지원 안내 자세히 보기</span></a>
           <div class="bg">
             <div class="earth">
               <video poster="/resources/images/space-kids/introduce/apply-earth.webp" loop muted playsinline>
@@ -126,6 +441,27 @@
           </div>
         </div>
       </div>
+
+      <!-- 발표자료 PDF 팝업 -->
+      <div class="popup-wrap">
+        <div class="popup inwrap">
+          <div class="close-popup"><svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+              <path data-name="사각형 462831" style="fill:none" d="M0 0h80v80H0z" />
+              <g data-name="그룹 634080">
+                <path data-name="사각형 462808" transform="rotate(-45 82.287 8.93)" style="fill:#fff" d="M0 0h28v2H0z" />
+                <path data-name="사각형 462839" transform="rotate(45 -28.29 71.7)" style="fill:#fff" d="M0 0h28v2H0z" />
+                <path data-name="사각형 462840" transform="rotate(-45 65.875 -30.696)" style="fill:#fff"
+                  d="M0 0h28v2H0z" />
+                <path data-name="사각형 462847" transform="rotate(45 -11.868 32.07)" style="fill:#fff" d="M0 0h28v2H0z" />
+              </g>
+            </svg></div>
+          <div class="pdf-wrap">
+            <iframe src="" frameborder="0" class="pdf-frame"></iframe>
+          </div>
+          <a href="" target="_blank" donwload class="btn-hud pdf-down-btn"><span>PDF 다운로드</span></a>
+        </div>
+      </div>
+      <!-- //발표자료 PDF 팝업 -->
     </section>
 
     <section id="mediaroom" class="mediaroom" data-section-name="미디어">
@@ -141,20 +477,22 @@
         <div class="slider">
           <div class="swiper">
             <div class="swiper-wrapper">
-              <% for (let i = 0; i < Math.min(4, spaceKidsMediaRoomData.spaceHubTv.length); i++) { %>
-                <div class="swiper-slide" data-category="<%= spaceKidsMediaRoomData.spaceHubTv[i].category %>" data-item-id="<%= spaceKidsMediaRoomData.spaceHubTv[i].id %>">
+              <% for (let i=0; i < Math.min(4, spaceKidsMediaRoomData.spaceHubTv.length); i++) { %>
+                <div class="swiper-slide" data-category="<%= spaceKidsMediaRoomData.spaceHubTv[i].category %>"
+                  data-item-id="<%= spaceKidsMediaRoomData.spaceHubTv[i].id %>">
                   <div class="inner-video video-container">
                     <div class="mov" data-youtubeid="<%= spaceKidsMediaRoomData.spaceHubTv[i].videoId %>"></div>
                     <button class="control-play">
-                      <img src="/resources/images/media-room/<%= spaceKidsMediaRoomData.spaceHubTv[i].thumbnail %>" alt="" />
+                      <img src="/resources/images/media-room/<%= spaceKidsMediaRoomData.spaceHubTv[i].thumbnail %>"
+                        alt="" />
                       <span class="play"><img src="/resources/images/icon-play.svg" alt="youtube play" /></span>
                     </button>
                   </div>
                 </div>
-              <% } %>
+                <% } %>
             </div>
           </div>
-          
+
           <div class="swiper-nav">
             <div class="swiper-button">
               <div class="swiper-button-prev"></div>
@@ -192,15 +530,15 @@
       </div>
     </section>
 
-		<section id="support" class="support" data-section-name="후원">
+    <section id="support" class="support" data-section-name="후원">
       <span class="blind">후원</span>
-			<div class="sticky">
-				<div class="visual">
-				</div>
+      <div class="sticky">
+        <div class="visual">
+        </div>
         <article class="copy">
           <h3 class="title">우주의 조약돌은 <br class="mobile">우주 대표 기관에서 지원합니다.</h3>
         </article>
-				<article class="partners">
+        <article class="partners">
           <div class="organizer">
             <strong>[ 주관 ]</strong>
             <ul>
@@ -223,11 +561,11 @@
               <li><img src="/resources/images/logo-galdar.png" alt="갈다" /></li>
             </ul>
           </div>
-				</article>
-			</div>
-		</section>
+        </article>
+      </div>
+    </section>
 
-		<!-- 참가신청 링크 -->
+    <!-- 참가신청 링크 -->
     <!-- <div class="signup-link-wrap sk-after-open">
       <div class="sticky">
         <div class="signup-link active">
@@ -239,6 +577,6 @@
       </div>
     </div> -->
 
-	</main>
+  </main>
 
-<%- include('./src/include/footer.ejs') %>
+  <%- include('./src/include/footer.ejs') %>

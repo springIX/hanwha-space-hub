@@ -1,17 +1,18 @@
-<%- include('./src/include/header.ejs', { title: '우주의 조약돌 지원안내', gnbActive: 5 }) %>
+<%- include('./src/include/header.ejs', { title: '우주의 조약돌 지원안내' , gnbActive: 5 }) %>
 
-	<main class="space-kids-apply">
-  
+  <main class="space-kids-apply">
+
     <!-- sections -->
     <section id="vision" class="vision" data-section-name="소개">
       <span class="blind">소개</span>
       <div class="sticky">
-				<div class="bg">
-					<video class="video-content" poster="/resources/images/space-kids/apply/visual-bg.webp" loop muted playsinline>
-						<source src="/resources/images/space-kids/apply/visual-bg.mov" type="video/mp4; codecs=hvc1" />
-						<source src="/resources/images/space-kids/apply/visual-bg.mp4" type="video/mp4" />
-					</video>
-				</div>
+        <div class="bg">
+          <video class="video-content" poster="/resources/images/space-kids/apply/visual-bg.webp" loop muted
+            playsinline>
+            <source src="/resources/images/space-kids/apply/visual-bg.mov" type="video/mp4; codecs=hvc1" />
+            <source src="/resources/images/space-kids/apply/visual-bg.mp4" type="video/mp4" />
+          </video>
+        </div>
         <div class="texts">
           <h2>지원 안내</h2>
           <p>
@@ -37,9 +38,10 @@
               </h3>
               <div class="files sk-after-open" aria-hidden="true">
                 <ul>
-                  <li><a href="/resources/pdf/TheSpaceKids_Invitation.pdf" target="_blank" class="invite">우주의 조약돌 초대장</a></li>
-                  <li><a href="/resources/pdf/TheSpaceKids_Essay_Guide.pdf" target="_blank" >에세이 작성 가이드</a></li>
-                  <li><a href="/resources/pdf/TheSpaceKids_Recruitment_Notice.pdf" target="_blank" >모집 안내문</a></li>
+                  <li><a href="/resources/pdf/TheSpaceKids_Invitation.pdf" target="_blank" class="invite">우주의 조약돌
+                      초대장</a></li>
+                  <li><a href="/resources/pdf/TheSpaceKids_Essay_Guide.pdf" target="_blank">에세이 작성 가이드</a></li>
+                  <li><a href="/resources/pdf/TheSpaceKids_Recruitment_Notice.pdf" target="_blank">모집 안내문</a></li>
                 </ul>
               </div>
               <!-- <a href="https://www.hanwhain.com/web/apply/notification/view.do?rtSeq=13114" target="_blank" class="btn-hud">
@@ -56,7 +58,7 @@
           <div class="heading">
             <!-- # 모바일용 # -->
             <div class="sticky">
-              <h3 class="title">우주를 꿈꾸는 누구든,​ <br>우주의 조약돌이 기다립니다.</h3>
+              <h3 class="title">우주를 꿈꾸는 누구든, <br>우주의 조약돌이 기다립니다.</h3>
             </div>
           </div>
           <div class="contents">
@@ -131,9 +133,10 @@
               <h3 class="title">우주의 조약돌과 함께​ <br>꿈의 탐사를 시작하세요</h3>
               <div class="files sk-after-open">
                 <ul>
-                  <li><a href="/resources/pdf/TheSpaceKids_Invitation.pdf" target="_blank" class="invite">우주의 조약돌 초대장</a></li>
-                  <li><a href="/resources/pdf/TheSpaceKids_Essay_Guide.pdf" target="_blank" >에세이 작성 가이드</a></li>
-                  <li><a href="/resources/pdf/TheSpaceKids_Recruitment_Notice.pdf" target="_blank" >모집 안내문</a></li>
+                  <li><a href="/resources/pdf/TheSpaceKids_Invitation.pdf" target="_blank" class="invite">우주의 조약돌
+                      초대장</a></li>
+                  <li><a href="/resources/pdf/TheSpaceKids_Essay_Guide.pdf" target="_blank">에세이 작성 가이드</a></li>
+                  <li><a href="/resources/pdf/TheSpaceKids_Recruitment_Notice.pdf" target="_blank">모집 안내문</a></li>
                 </ul>
                 <!-- <a href="https://www.hanwhain.com/web/apply/notification/view.do?rtSeq=13114" target="_blank" class="btn-hud">
                   <span>지원 사이트로 이동</span>
@@ -236,7 +239,8 @@
               </ul>
             </div>
             <div class="faq-list">
-              <p class="total">총 <%= faqData.participation.length + faqData.screening.length + faqData.curriculum.length + faqData.etc.length %>개</p>
+              <p class="total">총 <%= faqData.participation.length + faqData.screening.length + faqData.curriculum.length
+                  + faqData.etc.length %>개</p>
               <div class="faq-content">
                 <ul class="accordion">
                   <li class="" data-category="<%= faqData.etc[0].category %>" data-item-id="<%= faqData.etc[0].id %>">
@@ -247,8 +251,9 @@
                       <p><%- faqData.etc[0].desc %></p>
                     </div>
                   </li>
-                  <% for (let i = 0; i < faqData.participation.length; i++) { %>
-                    <li class="" data-category="<%= faqData.participation[i].category %>" data-item-id="<%= faqData.participation[i].id %>">
+                  <% for (let i=0; i < faqData.participation.length; i++) { %>
+                    <li class="" data-category="<%= faqData.participation[i].category %>"
+                      data-item-id="<%= faqData.participation[i].id %>">
                       <button type="button">
                         <strong><%- faqData.participation[i].title %></strong>
                       </button>
@@ -256,40 +261,41 @@
                         <p><%- faqData.participation[i].desc %></p>
                       </div>
                     </li>
-                  <% } %>
-                  <% for (let i = 0; i < faqData.screening.length; i++) { %>
-                    <li class="" data-category="<%= faqData.screening[i].category %>" data-item-id="<%= faqData.screening[i].id %>">
-                      <button type="button">
-                        <strong><%- faqData.screening[i].title %></strong>
-                      </button>
-                      <div class="content">
-                        <p><%- faqData.screening[i].desc %></p>
-                      </div>
-                    </li>
-                  <% } %>
-                  <% for (let i = 0; i < faqData.curriculum.length; i++) { %>
-                    <li class="" data-category="<%= faqData.curriculum[i].category %>" data-item-id="<%= faqData.curriculum[i].id %>">
-                      <button type="button">
-                        <strong><%- faqData.curriculum[i].title %></strong>
-                      </button>
-                      <div class="content">
-                        <p><%- faqData.curriculum[i].desc %></p>
-                      </div>
-                    </li>
-                  <% } %>
-                  <% for (let i = 0; i < faqData.etc.length; i++) { 
-                    if (i !== 0) { %> 
-                    <!-- 1번항목은 최상단에 있음 -->
-                    <li class="" data-category="<%= faqData.etc[i].category %>" data-item-id="<%= faqData.etc[i].id %>">
-                      <button type="button">
-                        <strong><%- faqData.etc[i].title %></strong>
-                      </button>
-                      <div class="content">
-                        <p><%- faqData.etc[i].desc %></p>
-                      </div>
-                    </li>
-                    <% } 
-                    } %>
+                    <% } %>
+                      <% for (let i=0; i < faqData.screening.length; i++) { %>
+                        <li class="" data-category="<%= faqData.screening[i].category %>"
+                          data-item-id="<%= faqData.screening[i].id %>">
+                          <button type="button">
+                            <strong><%- faqData.screening[i].title %></strong>
+                          </button>
+                          <div class="content">
+                            <p><%- faqData.screening[i].desc %></p>
+                          </div>
+                        </li>
+                        <% } %>
+                          <% for (let i=0; i < faqData.curriculum.length; i++) { %>
+                            <li class="" data-category="<%= faqData.curriculum[i].category %>"
+                              data-item-id="<%= faqData.curriculum[i].id %>">
+                              <button type="button">
+                                <strong><%- faqData.curriculum[i].title %></strong>
+                              </button>
+                              <div class="content">
+                                <p><%- faqData.curriculum[i].desc %></p>
+                              </div>
+                            </li>
+                            <% } %>
+                              <% for (let i=0; i < faqData.etc.length; i++) { if (i !==0) { %>
+                                <!-- 1번항목은 최상단에 있음 -->
+                                <li class="" data-category="<%= faqData.etc[i].category %>"
+                                  data-item-id="<%= faqData.etc[i].id %>">
+                                  <button type="button">
+                                    <strong><%- faqData.etc[i].title %></strong>
+                                  </button>
+                                  <div class="content">
+                                    <p><%- faqData.etc[i].desc %></p>
+                                  </div>
+                                </li>
+                                <% } } %>
                 </ul>
               </div>
               <button type="button" class="btn-more">더보기</button>
@@ -328,7 +334,7 @@
       </article>
     </section>
 
-		<!-- 참가신청 링크 -->
+    <!-- 참가신청 링크 -->
     <!-- <div class="signup-link-wrap sk-after-open">
       <div class="sticky">
         <div class="signup-link active">
@@ -340,6 +346,6 @@
       </div>
     </div> -->
 
-	</main>
+  </main>
 
-<%- include('./src/include/footer.ejs') %>
+  <%- include('./src/include/footer.ejs') %>
