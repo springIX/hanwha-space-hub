@@ -273,17 +273,20 @@ main.space-kids-introduce {
       }
     }
 
-    .popup-wrap{ position: fixed; left: 0; top: 0; width: 100%; height: 100vh; overflow:hidden; background-color: rgba(#000, 0.3); touch-action: none; pointer-events: none; opacity: 0; transition: 1s ease; z-index: 999;
+    .popup-wrap{ position: fixed; left: 0; top: 0; width: 100%; height: 100vh; overflow:hidden; background-color: rgba(#000, 0.6); touch-action: none; pointer-events: none; opacity: 0; transition: 1s ease; z-index: 999;
       &.on{ opacity: 1; touch-action: auto; pointer-events: auto;
         .popup{
           .close-popup{ transform: translateX(0%) rotate(0deg);}
         }
       }
-      .popup{ width: 100%; height: 100%; display: flex; flex-direction: column; align-items: flex-end; justify-content: center; 
-        .close-popup{ transition: .5s ease; transform: translateX(-50%) rotate(180deg); cursor: pointer; width: 80px;
+      .popup{ width: 100%; height: 100%; display: flex
+        ; flex-direction: column; align-items: flex-end; padding-top: 30px;
+        padding-bottom: 106px;
+        
+        .close-popup{ transition: .5s ease; transform: translateX(-50%) rotate(180deg); cursor: pointer; width: 80px; flex-shrink: 0;
           svg{width: 100%;}
         }
-        .pdf-wrap{ width: 100%; height: calc(100vh - 300px); margin-top: 16px;
+        .pdf-wrap{ width: 100%; height: 100%; margin-top: 16px;
           iframe{ width: 100%; height: 100%;}
         }
         .btn-hud{ margin: 20px 0 0 auto;

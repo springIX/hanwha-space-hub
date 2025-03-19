@@ -167,11 +167,11 @@ state.on('enter', () => {
       const $kids = $section.querySelector('.bg .kids');
       const $research = $section.querySelector('.research-results');
       const $pdfFrame = $section.querySelector('.pdf-frame');
-      const $pdfDown = $section.querySelector('.pdf-down-btn');
       const $popupWrap = $section.querySelector('.popup-wrap');
       const $researchPopupBtn = $section.querySelectorAll('.research-results .swiper-slide button');
       const $header = document.querySelector('#header');
       const $sideSticky = document.querySelector('.side-sticky-wrap');
+      // const $pdfDown = $section.querySelector('.pdf-down-btn');
 
 
       let timeline, sectionHeight;
@@ -267,10 +267,11 @@ state.on('enter', () => {
             window.open(pdfSrc, '_blank');
           } else {
             $pdfFrame.src = pdfSrc;
-            $pdfDown.href = pdfSrc;
+            // $pdfDown.href = pdfSrc;
             $popupWrap.classList.add('on');
             $header.style.touchAction = "none";
             $header.style.pointerEvents = "none";
+            $header.style.opacity = 0.3;
             $sideSticky.style.zIndex = "-1";
           }
         });
@@ -278,10 +279,11 @@ state.on('enter', () => {
 
       document.querySelector('.close-popup').addEventListener('click', function () {
         $pdfFrame.src = '';
-        $pdfDown.href = '';
+        // $pdfDown.href = '';
         $popupWrap.classList.remove('on');
         $header.style.touchAction = "auto";
         $header.style.pointerEvents = "auto";
+        $header.style.opacity = 1;
         $sideSticky.style.zIndex = "1";
       });
 

@@ -224,6 +224,7 @@ html[lang=en] .font-hh {
   height: 78px;
   -background: rgba(255, 255, 255, 0.1);
   z-index: 2;
+  transition: 1s ease opacity;
 }
 #header h1 {
   position: absolute;
@@ -9593,7 +9594,7 @@ main.space-kids-introduce .apply .popup-wrap {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.6);
   touch-action: none;
   pointer-events: none;
   opacity: 0;
@@ -9614,20 +9615,22 @@ main.space-kids-introduce .apply .popup-wrap .popup {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 106px;
 }
 main.space-kids-introduce .apply .popup-wrap .popup .close-popup {
   transition: 0.5s ease;
   transform: translateX(-50%) rotate(180deg);
   cursor: pointer;
   width: 80px;
+  flex-shrink: 0;
 }
 main.space-kids-introduce .apply .popup-wrap .popup .close-popup svg {
   width: 100%;
 }
 main.space-kids-introduce .apply .popup-wrap .popup .pdf-wrap {
   width: 100%;
-  height: calc(100vh - 300px);
+  height: 100%;
   margin-top: 16px;
 }
 main.space-kids-introduce .apply .popup-wrap .popup .pdf-wrap iframe {
