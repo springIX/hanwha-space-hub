@@ -266,7 +266,7 @@ state.on('enter', () => {
           if (window.innerWidth <= 767) {
             window.open(pdfSrc, '_blank');
           } else {
-            $pdfFrame.src = pdfSrc;
+            $pdfFrame.src = pdfSrc + '#toolbar=0&navpanes=0&scrollbar=0';
             // $pdfDown.href = pdfSrc;
             $popupWrap.classList.add('on');
             $header.style.touchAction = "none";
