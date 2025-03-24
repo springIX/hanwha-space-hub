@@ -518,7 +518,7 @@ main.satellite {
         position: absolute;
         
         &-1 {
-          display: flex; justify-content: space-between;
+          display: flex; justify-content: end;
           left: 0; bottom: 0;
           width: 100%; padding: 0 calc(var(--side-margin) * 2) 100px;
 
@@ -528,7 +528,7 @@ main.satellite {
 
 					@include laptop {
 						padding: 0 var(--side-margin) 100px;
-						.text{ max-width: 360px; margin-left: 30px; }
+						.text{ max-width: 458px;}
 					}
           @include tablet {
             display: block; bottom: auto; top: 0; padding: 124px var(--side-margin) 0;
