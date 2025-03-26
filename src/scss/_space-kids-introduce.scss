@@ -332,8 +332,9 @@ main.space-kids-introduce {
                   }
                 }
               }
+              .more {width: auto !important; left: auto; right: 20px; bottom: 16px !important; transform: none; font-weight: 400;}
+              .more::after{ display: none !important;}
             }
-            .more{display: none;}
           }
         }
         .frame{ display: none;}
