@@ -352,7 +352,7 @@ main.satellite {
 								opacity: 0;
 								transition: width 1s, height 1s, opacity 1s;
 								
-								@include tablet { opacity: 0; }
+								@include tablet { opacity: 1; }
 							}
 						}
 
@@ -518,7 +518,7 @@ main.satellite {
         position: absolute;
         
         &-1 {
-          display: flex; justify-content: end;
+          display: flex; justify-content: space-between;
           left: 0; bottom: 0;
           width: 100%; padding: 0 calc(var(--side-margin) * 2) 100px;
 
@@ -1714,7 +1714,7 @@ main.satellite {
 				}
 
         .drone{
-          position: absolute; top: 4%; left: 70%;
+          position: absolute; top: 2%; left: 36.4%;
           width: 5.625%; height: 4.895vw;
           background: url('#{ $image-path }satellite/roadmap-sats-service-drone.png') no-repeat center / contain; 
 

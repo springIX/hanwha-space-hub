@@ -367,7 +367,6 @@ state.on('enter', () => {
         (() => {
           const $communication = $spaceInternet.querySelector('.communication');
           const $textses = $communication.querySelectorAll('.texts');
-          const $textses2 = $communication.querySelector('.texts-2');
           const $earthVisuals = $communication.querySelectorAll('[class*="earth-visual-"]');
           const $satsLeo = $earthVisuals[0].querySelector('.sats-leo');
           const $satsLeoIn = $earthVisuals[0].querySelector('.sats-leo-in');
@@ -440,49 +439,49 @@ state.on('enter', () => {
             const toEarthVis2 = getEarthPositionAndScale($earthVisualAll[5]);
             const leoRotateProgress = { value: 0 };
             
-            // // scene1
-            // timeline.fromTo( $stars, { scale: 1, y: 0 }, { scale: 0.8, x: -100, duration: 2, ease: 'cubic.inOut' }, 'scene1');
-            // timeline.fromTo( 
-            //   $earth, 
-            //   getEarthPositionAndScale($earthVisualAll[2]), 
-            //   { ...toEarthVis0, duration: 2, ease: 'cubic.inOut' }, 
-            //   'scene1'
-            // );
-            // timeline.fromTo( $textses[0], { opacity: 0, y: '100%' }, { opacity: 1, y: 0, duration: 1, delay: 1, ease: 'Power1.easeOut', 
-            //   onUpdate: () => { $earthVisuals[0].classList.contains('on') && $earthVisuals[0].classList.remove('on'); }
-            // }, 'scene1');
+            // scene1
+            timeline.fromTo( $stars, { scale: 1, y: 0 }, { scale: 0.8, x: -100, duration: 2, ease: 'cubic.inOut' }, 'scene1');
+            timeline.fromTo( 
+              $earth, 
+              getEarthPositionAndScale($earthVisualAll[2]), 
+              { ...toEarthVis0, duration: 2, ease: 'cubic.inOut' }, 
+              'scene1'
+            );
+            timeline.fromTo( $textses[0], { opacity: 0, y: '100%' }, { opacity: 1, y: 0, duration: 1, delay: 1, ease: 'Power1.easeOut', 
+              onUpdate: () => { $earthVisuals[0].classList.contains('on') && $earthVisuals[0].classList.remove('on'); }
+            }, 'scene1');
 
-            // // scene2 visual 1 등장
-            // timeline.fromTo( $earthVisuals[0], { opacity: 0 }, { opacity: 1, duration: 0.5, ease: 'Power1.easeOut',  
-            //   onUpdate: () => { 
-            //     !$earthVisuals[0].classList.contains('on') && $earthVisuals[0].classList.add('on');
-            //     controlVideo($earthVisuals[0].querySelector('video'), 'play');
-            //   }, 
-            // }, 'scene2');
+            // scene2 visual 1 등장
+            timeline.fromTo( $earthVisuals[0], { opacity: 0 }, { opacity: 1, duration: 0.5, ease: 'Power1.easeOut',  
+              onUpdate: () => { 
+                !$earthVisuals[0].classList.contains('on') && $earthVisuals[0].classList.add('on');
+                controlVideo($earthVisuals[0].querySelector('video'), 'play');
+              }, 
+            }, 'scene2');
 
-            // // scene2-blank
-            // timeline.to( $earthVisuals[0], { opacity: 1, duration: 1, 
-            //   onUpdate: () => { 
-            //     controlVideo($earthVisuals[0].querySelector('video'), 'play');
+            // scene2-blank
+            timeline.to( $earthVisuals[0], { opacity: 1, duration: 1, 
+              onUpdate: () => { 
+                controlVideo($earthVisuals[0].querySelector('video'), 'play');
 
-            //     if ( !isTablet ) {
-            //       if (lottieInternet1.isPaused || lottieInternet2.isPaused) {
-            //         lottieInternet1._resetted = false;
-            //         lottieInternet1.play();
+                if ( !isTablet ) {
+                  if (lottieInternet1.isPaused || lottieInternet2.isPaused) {
+                    lottieInternet1._resetted = false;
+                    lottieInternet1.play();
   
-            //         lottieInternet2._resetted = false;
-            //         lottieInternet2.play();
-            //       }
-            //     }
+                    lottieInternet2._resetted = false;
+                    lottieInternet2.play();
+                  }
+                }
 
-            //     $earthVisuals[0].children[2].style = ''; 
-            //   }
-            // }, 'scene2-blank');
+                $earthVisuals[0].children[2].style = ''; 
+              }
+            }, 'scene2-blank');
 
             
-            // // scene3 earthvis1 -> 2
-            // timeline.to( $earthVisuals[0].children[0], { opacity: 0, duration: 1, delay: 0, ease: 'Power1.easeOut' }, 'scene3');
-            // timeline.to( $earthVisuals[0].children[2], { opacity: 0, duration: 1, delay: 0, ease: 'Power1.easeOut' }, 'scene3');
+            // scene3 earthvis1 -> 2
+            timeline.to( $earthVisuals[0].children[0], { opacity: 0, duration: 1, delay: 0, ease: 'Power1.easeOut' }, 'scene3');
+            timeline.to( $earthVisuals[0].children[2], { opacity: 0, duration: 1, delay: 0, ease: 'Power1.easeOut' }, 'scene3');
             timeline.fromTo(leoRotateProgress, { value: 0 }, { value: 1, duration: 1, delay: 0, ease: 'Power1.easeOut',
               onUpdate: () => { $satsLeo.style.setProperty('--progress', leoRotateProgress.value) }
             }, 'scene3');
@@ -520,17 +519,15 @@ state.on('enter', () => {
                 $satsLeo.classList.contains('change1') && $satsLeo.classList.remove('change1'); 
               }, 
             }, 'scene3');
-            timeline.fromTo( $earth, 
-              getEarthPositionAndScale($earthVisualAll[2]), 
-              { ...toEarthVis1, duration: 1, delay: 0, ease: 'cubic.inOut' }, 'scene3');
-            // timeline.to( $textses[0], { opacity: 0, y: -100, duration: 0.5, delay: 0, ease: 'Power1.easeOut' }, 'scene3');
-            timeline.fromTo( $textses2.querySelector('.subtitle'), { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 1, delay: 0.5, ease: 'Power1.easeOut' }, 'scene3');
-            timeline.fromTo( $textses2.querySelector('.text:nth-child(1)'), { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 1, delay: 0.6, ease: 'Power1.easeOut' }, 'scene3');
-            timeline.fromTo( $textses2.querySelector('.text:nth-child(2)'), { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 1, delay: 0.7, ease: 'Power1.easeOut' }, 'scene3');
+            timeline.to( $earth, { ...toEarthVis1, duration: 1, delay: 0, ease: 'cubic.inOut' }, 'scene3');
+            timeline.to( $textses[0], { opacity: 0, y: -100, duration: 0.5, delay: 0, ease: 'Power1.easeOut' }, 'scene3');
+            timeline.fromTo( $textses[1].querySelector('.subtitle'), { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 1, delay: 0.5, ease: 'Power1.easeOut' }, 'scene3');
+            timeline.fromTo( $textses[1].querySelector('.text:nth-child(1)'), { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 1, delay: 0.6, ease: 'Power1.easeOut' }, 'scene3');
+            timeline.fromTo( $textses[1].querySelector('.text:nth-child(2)'), { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 1, delay: 0.7, ease: 'Power1.easeOut' }, 'scene3');
             timeline.fromTo( $earthVisuals[1].children[0], { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 1, delay: 1, ease: 'Power1.easeOut' }, 'scene3');
 
             // sceen3-blank
-            timeline.fromTo( $textses2, { opacity: 1, x: 0, y: 0 }, { opacity: 1, duration: 1, 
+            timeline.fromTo( $textses[1], { opacity: 1, x: 0, y: 0 }, { opacity: 1, duration: 1, 
               onUpdate: () => { 
                 !$satsLeo.classList.contains('change1') && $satsLeo.classList.add('change1'); 
                 controlVideo($earthVisuals[1].querySelector('video'), 'play'); 
