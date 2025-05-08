@@ -92,7 +92,7 @@ main.space-kids-apply {
       display: flex; justify-content: center; align-items: center; position: relative; width: 100%; height: 100%; text-align: center;
 
       h2{ font-family: "YDIYGO"; font-size: 120px; font-weight: 300; color: #fff; line-height: 1; 
-        &::after{ content: '2024년 우주의 조약돌 3기 모집은 마감되었습니다'; display: block; font-size: 24px; opacity:0; transform: translateY(50px); color: #fff; padding-top: 36px; transition: 1s ease .3s; font-weight: 200;}
+        &::after{ content: '2025년 우주의 조약돌 4기 모집을 시작합니다! \A (모집기간: 5/19(월) ~ 6/13(금) 15:00 마감)'; display: block; font-size: 24px; opacity:0; transform: translateY(50px); color: #fff; padding-top: 36px; transition: 1s ease .3s; font-weight: 200;white-space: pre-line; line-height: 30px;}
         &.show::after{ opacity: .6; transform: translateY(0);}
       }
       p{ font-size: 60px; font-weight: 300; color: #fff; line-height: 1.4;
