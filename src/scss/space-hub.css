@@ -11563,20 +11563,25 @@ main.space-kids-apply #vision .texts h2.show::after {
   opacity: 0.6;
   transform: translateY(0);
 }
-main.space-kids-apply #vision .texts p {
+main.space-kids-apply #vision .texts .text2 {
   font-size: 60px;
   font-weight: 300;
   color: #fff;
   line-height: 1.4;
 }
-main.space-kids-apply #vision .texts p span {
+main.space-kids-apply #vision .texts .text2 span {
   display: block;
+}
+main.space-kids-apply #vision .texts .files {
+  position: absolute;
+  left: 40px;
+  bottom: 22px;
 }
 @media (min-width: 1024px) and (max-width: 1440px) {
   main.space-kids-apply #vision .texts h2 {
     font-size: 90px;
   }
-  main.space-kids-apply #vision .texts p {
+  main.space-kids-apply #vision .texts .text2 {
     font-size: 40px;
   }
 }
@@ -11584,8 +11589,15 @@ main.space-kids-apply #vision .texts p span {
   main.space-kids-apply #vision .texts h2 {
     font-size: 76px;
   }
-  main.space-kids-apply #vision .texts p {
+  main.space-kids-apply #vision .texts .text2 {
     font-size: 30px;
+  }
+}
+@media (max-width: 1023px) {
+  main.space-kids-apply #vision .texts .files {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 96px;
   }
 }
 @media (max-width: 767px) {
@@ -11596,20 +11608,19 @@ main.space-kids-apply #vision .texts p span {
     font-size: 14px;
     padding-top: 16px;
   }
-  main.space-kids-apply #vision .texts p {
+  main.space-kids-apply #vision .texts .text2 {
     font-size: 20px;
   }
 }
-main.space-kids-apply #procedure .heading .files {
+main.space-kids-apply .files {
   width: 320px;
   max-width: 100%;
-  margin-top: 120px;
   transition: opacity 0.3s ease-out;
 }
-main.space-kids-apply #procedure .heading .files li + li {
+main.space-kids-apply .files li + li {
   margin-top: 20px;
 }
-main.space-kids-apply #procedure .heading .files li a {
+main.space-kids-apply .files li a {
   display: block;
   position: relative;
   padding: 12px;
@@ -11620,7 +11631,7 @@ main.space-kids-apply #procedure .heading .files li a {
   color: #fff;
   line-height: 1.56;
 }
-main.space-kids-apply #procedure .heading .files li a::after {
+main.space-kids-apply .files li a::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -11630,7 +11641,7 @@ main.space-kids-apply #procedure .heading .files li a::after {
   height: 16px;
   background: url("/resources/images/space-kids/apply/procedure-icon-download.svg") no-repeat bottom/contain;
 }
-main.space-kids-apply #procedure .heading .files li a::before {
+main.space-kids-apply .files li a::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -11640,10 +11651,10 @@ main.space-kids-apply #procedure .heading .files li a::before {
   height: 16px;
   background: url("/resources/images/space-kids/apply/procedure-icon-docu.svg") no-repeat bottom/contain;
 }
-main.space-kids-apply #procedure .heading .files li a.invite::before {
+main.space-kids-apply .files li a.invite::before {
   background: url("/resources/images/space-kids/apply/procedure-icon-invite.svg") no-repeat bottom/contain;
 }
-main.space-kids-apply #procedure .heading .files li a:hover::after {
+main.space-kids-apply .files li a:hover::after {
   animation: down-ani 0.3s 1;
 }
 @keyframes down-ani {
@@ -11657,10 +11668,28 @@ main.space-kids-apply #procedure .heading .files li a:hover::after {
     transform: translate3d(0, -50%, 0);
   }
 }
-main.space-kids-apply #procedure .heading .files.fixed {
+main.space-kids-apply .files.fixed {
   position: fixed;
   bottom: 40px;
   left: 40px;
+}
+@media (max-width: 1023px) {
+  main.space-kids-apply .files li + li {
+    margin-top: 12px;
+  }
+  main.space-kids-apply .files li a {
+    padding: 9px;
+    padding-left: 20px;
+    font-size: 12px;
+  }
+  main.space-kids-apply .files.fixed {
+    bottom: 100px;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+main.space-kids-apply #procedure .heading .files {
+  margin-top: 120px;
 }
 main.space-kids-apply #procedure .heading .btn-hud {
   --btn-width: 320px;
@@ -11701,19 +11730,6 @@ main.space-kids-apply #procedure .headings .titles .title:nth-child(1) {
 @media (max-width: 1023px) {
   main.space-kids-apply #procedure .heading .files {
     width: 280px;
-  }
-  main.space-kids-apply #procedure .heading .files li + li {
-    margin-top: 12px;
-  }
-  main.space-kids-apply #procedure .heading .files li a {
-    padding: 9px;
-    padding-left: 20px;
-    font-size: 12px;
-  }
-  main.space-kids-apply #procedure .heading .files.fixed {
-    bottom: 100px;
-    left: 50%;
-    transform: translate3d(-50%, 0, 0);
   }
   main.space-kids-apply #procedure .heading .btn-hud {
     --btn-width: 300px;

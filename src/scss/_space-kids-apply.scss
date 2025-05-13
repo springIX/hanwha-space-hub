@@ -95,59 +95,73 @@ main.space-kids-apply {
         &::after{ content: '2025년 우주의 조약돌 4기 모집을 시작합니다! \A (모집기간: 5/19(월) ~ 6/13(금) 15:00 마감)'; display: block; font-size: 24px; opacity:0; transform: translateY(50px); color: #fff; padding-top: 36px; transition: 1s ease .3s; font-weight: 200;white-space: pre-line; line-height: 30px;}
         &.show::after{ opacity: .6; transform: translateY(0);}
       }
-      p{ font-size: 60px; font-weight: 300; color: #fff; line-height: 1.4;
+      .text2{ font-size: 60px; font-weight: 300; color: #fff; line-height: 1.4;
         span{ display: block; }
       }
+      .files{ position: absolute; left: 40px; bottom: 22px;}
     }
 
     @include laptop-only{
       .texts{
         h2{ font-size: 90px; }
-        p{ font-size: 40px; }
+        .text2{ font-size: 40px; }
       }
     }
     @include tablet-only{
       .texts{
         h2{ font-size: 76px; }
-        p{ font-size: 30px; }
+        .text2{ font-size: 30px; }
       }
     }
+    @include tablet{
+      .texts .files{ left: 50%; transform: translateX(-50%); bottom: 96px;}
+      
+    }
+
     @include mobile{
       .texts{
         h2{ font-size: 40px; 
           &::after{ font-size: 14px; padding-top: 16px;}
         }
-        p{ font-size: 20px; }
+        .text2{ font-size: 20px; }
       }
     }
   }
 
+
+    .files{ 
+    width: 320px; max-width: 100%;
+    transition: opacity .3s ease-out;
+
+      li + li{ margin-top: 20px; }
+      li a{ 
+      display: block; position: relative; padding: 12px; padding-left: 28px; border-bottom: 1px solid #666; font-size: 18px; font-weight: 400; color: #fff; line-height: 1.56;
+      &::after{ content: ''; position: absolute; top: 50%; right: 0; transform: translate3d(0, -50%, 0); width: 16px; height: 16px; background: url('#{ $image-path }space-kids/apply/procedure-icon-download.svg') no-repeat bottom / contain; }
+      &::before{ content: ''; position: absolute; top: 50%; left: 0; transform: translate3d(0, -50%, 0); width: 16px; height: 16px; background: url('#{ $image-path }space-kids/apply/procedure-icon-docu.svg') no-repeat bottom / contain; }
+      &.invite::before{ background: url('#{ $image-path }space-kids/apply/procedure-icon-invite.svg') no-repeat bottom / contain; }
+      &:hover::after{ animation: down-ani .3s 1;}
+
+      @keyframes down-ani {
+        0%{ transform: translate3d(0, -50%, 0); }
+        50%{ transform: translate3d(0, -30%, 0); }
+        100%{ transform: translate3d(0, -50%, 0); }
+      }
+    }
+
+    &.fixed{ position: fixed; bottom: 40px; left: 40px; }
+  
+    @include tablet{ 
+      li + li{ margin-top: 12px; }
+      li a{ padding: 9px; padding-left: 20px; font-size: 12px; }
+      &.fixed{ bottom: 100px; left: 50%; transform: translate3d(-50%, 0, 0); }
+    }
+  }
   // procedure
   #procedure {
     
     // heading
     .heading{
-      .files{ 
-        width: 320px; max-width: 100%; margin-top: 120px;
-        transition: opacity .3s ease-out;
-
-        li + li{ margin-top: 20px; }
-        li a{ 
-          display: block; position: relative; padding: 12px; padding-left: 28px; border-bottom: 1px solid #666; font-size: 18px; font-weight: 400; color: #fff; line-height: 1.56;
-          &::after{ content: ''; position: absolute; top: 50%; right: 0; transform: translate3d(0, -50%, 0); width: 16px; height: 16px; background: url('#{ $image-path }space-kids/apply/procedure-icon-download.svg') no-repeat bottom / contain; }
-          &::before{ content: ''; position: absolute; top: 50%; left: 0; transform: translate3d(0, -50%, 0); width: 16px; height: 16px; background: url('#{ $image-path }space-kids/apply/procedure-icon-docu.svg') no-repeat bottom / contain; }
-          &.invite::before{ background: url('#{ $image-path }space-kids/apply/procedure-icon-invite.svg') no-repeat bottom / contain; }
-          &:hover::after{ animation: down-ani .3s 1;}
-
-          @keyframes down-ani {
-            0%{ transform: translate3d(0, -50%, 0); }
-            50%{ transform: translate3d(0, -30%, 0); }
-            100%{ transform: translate3d(0, -50%, 0); }
-          }
-        }
-
-        &.fixed{ position: fixed; bottom: 40px; left: 40px; }
-      }
+      .files{ margin-top: 120px;}
       .btn-hud{ --btn-width: 320px; margin-top: 60px; }
     }
     .headings{
@@ -170,9 +184,6 @@ main.space-kids-apply {
       .heading{
         .files{ 
           width: 280px;
-          li + li{ margin-top: 12px; }
-          li a{ padding: 9px; padding-left: 20px; font-size: 12px; }
-          &.fixed{ bottom: 100px; left: 50%; transform: translate3d(-50%, 0, 0); }
         }
         .btn-hud{ --btn-width: 300px; margin-top: 40px; }
       }
