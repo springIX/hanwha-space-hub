@@ -195,7 +195,8 @@ state.on('enter', () => {
             timeline.fromTo($title, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }, 0.25);
             timeline.fromTo($btn, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }, 0.5);
             timeline.to($video, { scale: 1.3, opacity:0, duration: 0}, 0);
-            timeline.to($video, { scale: 1, opacity:1, duration: 1, ease: 'power3.out'}, 0.75);
+            timeline.to($video, { opacity:1, duration: 1, ease: 'power3.out'}, 0.75);
+            timeline.to($video, { scale: 1, duration: 1, ease: 'power3.out'}, 3);
 
             timeline.fromTo($section.querySelector('.mercury'), { y:0, x: 0}, {y:4, x: -10, duration: 1, ease: "power.out"}, 4.5)
             timeline.fromTo($section.querySelector('.venus'), { y:0, x: 0}, {y:10, x: -10, duration: 1, ease: "power.out"}, 4.5)

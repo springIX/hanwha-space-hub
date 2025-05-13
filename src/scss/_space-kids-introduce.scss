@@ -154,10 +154,10 @@ main.space-kids-introduce {
             }
             .solar-system {
                 // overflow: hidden;
-                // position: sticky;
+                position: sticky;
                 top: 0;
                 width: 100%;
-                // height: 100vh;
+                height: 100vh;
                 > nav {
                     padding-top: 42px;
                     @include tablet{
