@@ -1,5 +1,4 @@
 import gsap, { Cubic } from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Swiper, { Pagination, Navigation, Autoplay } from 'swiper';
 
 import * as state from './state';
@@ -155,143 +154,67 @@ state.on('enter', () => {
 
     })();
 
-    // invitation
+    // explore
     (() => {
-      const $section = $main.querySelector('.invitation');
-      const $eyebrow = $section.querySelector('.eyebrow');
-      const $btn = $section.querySelector('.btn-hud');
-      const $title = $section.querySelector('.title');
-      const $bg = $section.querySelector('.bg');
-      const $sun = $section.querySelector('.bg .sun');
-      const $video = $section.querySelector('.bg video');
-      const $planet1 = $section.querySelector('.planet1');
-      const $planet2 = $section.querySelector('.planet2');
-      const $planet3 = $section.querySelector('.planet3');
-      const $planet4 = $section.querySelector('.planet4');
-      const $planet5 = $section.querySelector('.planet5');
-      const $planet6 = $section.querySelector('.planet6');
-
-      let timeline, sectionHeight, timeline2;
-
-      state.on('scroll', (scrollTop) => {
-        const rect = $section.getBoundingClientRect();
-        if (rect.top < areaHeight && rect.bottom > 0) {
-          const progress = -(rect.top - areaHeight / 2) / areaHeight;
-          timeline && timeline.progress(progress);
+        const $section = $main.querySelector(".explore");
+        const $eyebrow = $section.querySelector('.eyebrow');
+        const $title = $section.querySelector('.title');
+        const $btn = $section.querySelector('.btn-hud');
+        const $video = $section.querySelector('.video-wrapper video');
+        const $arraySolarSystemImg = $section.querySelectorAll('.planet-wrapper img');
 
 
-          if (progress > 0 && !$section.classList.contains('active')) {
-            $section.classList.add('active')
-          }
-
-          if ($video.paused) {
-            $video.play();
-          }
+        const setSolarSystemTop = ()=>{
+            document.querySelector(".solar-system").style.top = document.querySelector("#header").getBoundingClientRect().height + "px"
         }
-        else {
-          if (!$video.paused) {
-            $video.pause();
-          }
-          if ($section.classList.contains('active')) {
-            $section.classList.remove('active');
-          }
-        }
-      });
 
-      state.on('mediachange', (media) => {
-        createTimeline();
-      });
+        let timeline, sectionHeight;
 
-      state.on('resize', (areaWidth, areaHeight) => {
-        sectionHeight = $section.offsetHeight - areaHeight;
-      });
-
-
-      function createTimeline() {
-
-
-        // 첫 번째 타임라인 (스크롤에 따라 sun 애니메이션)
-        timeline && timeline.kill();
-        timeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: $bg,
-            start: "top 60%",
-            end: "bottom",
-            scrub: true,
-            pinSpacing: true,
-            markers: true
-          }
+        state.on('scroll', (scrollTop) => {
+            const rect = $section.getBoundingClientRect();
+            if (rect.top < areaHeight && rect.bottom > 0) {
+                const progress = -(rect.top - areaHeight / 2) / areaHeight;
+                timeline && timeline.progress(progress);
+            }
         });
 
-        timeline.fromTo(
-          $eyebrow, 
-          { y: 50, opacity: 0 }, 
-          { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }, 
-          'seq-1'
-        );
+        state.on('mediachange', (media) => {
+            createTimeline();
+        });
 
-        timeline.fromTo(
-          $title, 
-          { y: 50, opacity: 0 }, 
-          { y: 0, opacity: 1, duration: 1, delay: 0.2, ease: 'power3.out' }, 
-          'seq-1'
-        );
+        state.on('resize', (areaWidth, areaHeight) => {
+            sectionHeight = $section.offsetHeight - areaHeight;
+            setSolarSystemTop();
+        }); 
 
-        timeline.fromTo(
-          $btn, 
-          { y: 50, opacity: 0 }, 
-          { y: 0, opacity: 1, duration: 1, delay: 0.4, ease: 'power3.out' }, 
-          'seq-1'
-        );
+        function createTimeline() {
+            timeline && timeline.kill();
+            timeline = gsap.timeline({ paused: true });
 
-        timeline.fromTo(
-          $sun,
-          { transform: "translate3d(0px, 0px, 0px) scale(1.2, 1.2)" },
-          { 
-            transform: "translate3d(0px, -150px, 0px) scale(0.71, 0.71)", 
-            duration: 1, 
-            ease: "none" 
-          },
-          'seq-1'
-        );
+            timeline.fromTo($eyebrow, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }, 0);
+            timeline.fromTo($title, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }, 0.25);
+            timeline.fromTo($btn, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }, 0.5);
+            timeline.to($video, { scale: 1.3, opacity:0, duration: 0}, 0);
+            timeline.to($video, { scale: 1, opacity:1, duration: 1, ease: 'power3.out'}, 0.75);
 
-        timeline.fromTo(".planet1", 
-          { opacity: 0 }, 
-          { opacity: 1, duration: 0.5, ease: "power2.out" },
-          "seq-2"
-        )
-        .fromTo(".planet2", 
-          { opacity: 0 }, 
-          { opacity: 1, duration: 0.5, ease: "power2.out" },
-          "seq-2+=0.2"
-        )
-        .fromTo(".planet3", 
-          { opacity: 0 }, 
-          { opacity: 1, duration: 0.5, ease: "power2.out" },
-          "seq-2+=0.3"
-        )
-        .fromTo(".planet4", 
-          { opacity: 0 }, 
-          { opacity: 1, duration: 0.5, ease: "power2.out" },
-          "seq-2+=0.4"
-        )
-        .fromTo(".planet5", 
-          { opacity: 0 }, 
-          { opacity: 1, duration: 0.5, ease: "power2.out" },
-          "seq-2+=0.5"
-        )
-        .fromTo(".planet6", 
-          { opacity: 0 }, 
-          { opacity: 1, duration: 0.5, ease: "power2.out" },
-          "seq-2+=0.6"
-        );
-      }
-      
+            timeline.fromTo($section.querySelector('.mercury'), { y:0, x: 0}, {y:4, x: -10, duration: 1, ease: "power.out"}, 4.5)
+            timeline.fromTo($section.querySelector('.venus'), { y:0, x: 0}, {y:10, x: -10, duration: 1, ease: "power.out"}, 4.5)
+            timeline.fromTo($section.querySelector('.earth'), { y:0, x: 0}, {y:7, x: -10, duration: 1, ease: "power.out"}, 4.5)
+            timeline.fromTo($section.querySelector('.mars'), { y:0, x: 0}, {y:2, x: -10, duration: 1, ease: "power.out"}, 4.5)
+            timeline.fromTo($section.querySelector('.jupiter'), { y:0, x: 0}, {y:-3, x: 5, duration: 1, ease: "power.out"}, 4.5)
+            timeline.fromTo($section.querySelector('.saturn'), { y:0, x: 0}, {y:5, x: -10, duration: 1, ease: "power.out"}, 4.5)
+            timeline.fromTo($section.querySelector('.neptune'), { y:0, x: 0}, {y:3, x: 5, duration: 1, ease: "power.out"}, 4.5)
+            timeline.fromTo($section.querySelector('.pluto'), { y:0, x: 0}, {y:2, x: 5, duration: 1, ease: "power.out"}, 4.5)
+            timeline.fromTo($section.querySelector('.uranus'), { y:0, x: 0}, {y:-5, x: -10, duration: 1, ease: "power.out"}, 4.5)
+
+            $arraySolarSystemImg.forEach(($element, index) => {
+                timeline.to($element, { opacity: 1, duration: 1, ease: 'power3.out' }, (index*0.2)+1);
+            });
+        }
+
     })();
-    
-    
-        
 
+    
 
     // apply
     (() => {

@@ -9194,114 +9194,132 @@ main.space-kids-introduce .program.active .list li:nth-child(4) {
 main.space-kids-introduce .program.active .btn-hud {
   transition: opacity 0.5s ease-out 0.5s;
 }
-main.space-kids-introduce .invitation {
-  overflow: hidden;
-  height: max-content;
-}
-main.space-kids-introduce .invitation .bg {
+main.space-kids-introduce .explore .inwrap {
   position: relative;
-  height: 948px;
-  overflow: hidden;
+  height: 175vh;
 }
-main.space-kids-introduce .invitation .bg .sun {
-  position: absolute;
-  top: 0;
-}
-main.space-kids-introduce .invitation .bg .sun video {
-  width: 100%;
-  height: 100%;
-  margin-top: -67px;
-}
-main.space-kids-introduce .invitation .bg .planet_list {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-main.space-kids-introduce .invitation .bg .planet_list .planet {
-  position: absolute;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-main.space-kids-introduce .invitation .bg .planet_list .planet img {
-  position: absolute;
-}
-main.space-kids-introduce .invitation .bg .planet_list .planet1 {
-  background-image: url("/resources/images/space-kids/introduce/planet1_line.svg");
-}
-main.space-kids-introduce .invitation .bg .planet_list .planet1 img {
-  top: 300px;
-  left: 1106px;
-}
-main.space-kids-introduce .invitation .bg .planet_list .planet2 {
-  background-image: url("/resources/images/space-kids/introduce/planet2_line.svg");
-}
-main.space-kids-introduce .invitation .bg .planet_list .planet2 img {
-  top: 252px;
-  left: 1245px;
-}
-main.space-kids-introduce .invitation .bg .planet_list .planet3 {
-  background-image: url("/resources/images/space-kids/introduce/planet3_line.svg");
-}
-main.space-kids-introduce .invitation .bg .planet_list .planet3 img {
-  top: 317px;
-  left: 1277px;
-}
-main.space-kids-introduce .invitation .bg .planet_list .planet4 {
-  background-image: url("/resources/images/space-kids/introduce/planet4_line.svg");
-}
-main.space-kids-introduce .invitation .bg .planet_list .planet4 img {
-  top: 550px;
-  left: 860px;
-}
-main.space-kids-introduce .invitation .bg .planet_list .planet5 {
-  background-image: url("/resources/images/space-kids/introduce/planet5_line.svg");
-}
-main.space-kids-introduce .invitation .bg .planet_list .planet5 .img1 {
-  top: 369px;
-  left: 360px;
-}
-main.space-kids-introduce .invitation .bg .planet_list .planet5 .img2 {
-  top: 459px;
-  left: 1396px;
-}
-main.space-kids-introduce .invitation .bg .planet_list .planet6 {
-  background-image: url("/resources/images/space-kids/introduce/planet6_line.svg");
-}
-main.space-kids-introduce .invitation .bg .planet_list .planet6 .img1 {
-  top: 40px;
-  left: 1754px;
-}
-main.space-kids-introduce .invitation .bg .planet_list .planet6 .img2 {
-  top: 19px;
-  left: 1809px;
-}
-main.space-kids-introduce .invitation .bg .planet_list .planet6 .img3 {
-  top: 808px;
-  left: 183px;
-}
-main.space-kids-introduce .invitation .inwrap {
-  width: 100%;
-  max-width: 2560px;
-  margin: 0 auto;
-  padding: 0 var(--side-margin);
+main.space-kids-introduce .explore .inwrap .texts {
   text-align: center;
+  margin-bottom: 34px;
 }
-main.space-kids-introduce .invitation .inwrap .texts {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@media (max-width: 1023px) {
+  main.space-kids-introduce .explore .inwrap .texts {
+    margin-bottom: 25.5px;
+  }
 }
-main.space-kids-introduce .invitation .inwrap .texts .btn-hud {
-  margin-top: 78px;
+@media (max-width: 767px) {
+  main.space-kids-introduce .explore .inwrap .texts {
+    margin-bottom: 17px;
+  }
+}
+main.space-kids-introduce .explore .inwrap .solar-system {
+  top: 0;
+  width: 100%;
+}
+main.space-kids-introduce .explore .inwrap .solar-system > nav {
+  padding-top: 42px;
+}
+@media (max-width: 1023px) {
+  main.space-kids-introduce .explore .inwrap .solar-system > nav {
+    padding-top: 31.5px;
+  }
+}
+@media (max-width: 767px) {
+  main.space-kids-introduce .explore .inwrap .solar-system > nav {
+    padding-top: 21px;
+  }
+}
+main.space-kids-introduce .explore .inwrap .solar-system > nav .btn-hud {
+  margin: 0 auto;
+  z-index: 1;
+}
+main.space-kids-introduce .explore .inwrap .solar-system > article {
+  position: absolute;
+  width: 100%;
+  min-width: 907px;
+  margin: 0 auto;
+}
+@media (max-width: 907px) {
+  main.space-kids-introduce .explore .inwrap .solar-system > article {
+    left: calc((100% - 907px) / 2);
+  }
+}
+main.space-kids-introduce .explore .inwrap .solar-system > article > .video-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 70%;
+  aspect-ratio: 1344/690;
+  margin: 0 auto;
+}
+main.space-kids-introduce .explore .inwrap .solar-system > article > .video-wrapper > video {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  opacity: 0;
+  scale: 1.3;
+}
+main.space-kids-introduce .explore .inwrap .solar-system > article > .planet-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1920/948;
+}
+main.space-kids-introduce .explore .inwrap .solar-system > article > .planet-wrapper > .orbit {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  opacity: 0;
+}
+main.space-kids-introduce .explore .inwrap .solar-system > article > .planet-wrapper > .planet {
+  position: absolute;
+  opacity: 0;
+}
+main.space-kids-introduce .explore .inwrap .solar-system > article > .planet-wrapper > .planet.mercury {
+  width: 1.3541666667%;
+  top: 31.6455696203%;
+  left: 57.6041666667%;
+}
+main.space-kids-introduce .explore .inwrap .solar-system > article > .planet-wrapper > .planet.venus {
+  width: 1.6666666667%;
+  top: 26.582278481%;
+  left: 64.84375%;
+}
+main.space-kids-introduce .explore .inwrap .solar-system > article > .planet-wrapper > .planet.earth {
+  width: 1.875%;
+  top: 33.4388185654%;
+  left: 66.5104166667%;
+}
+main.space-kids-introduce .explore .inwrap .solar-system > article > .planet-wrapper > .planet.mars {
+  width: 1.6666666667%;
+  top: 58.0168776371%;
+  left: 44.7916666667%;
+}
+main.space-kids-introduce .explore .inwrap .solar-system > article > .planet-wrapper > .planet.jupiter {
+  width: 1.25%;
+  top: 37.9746835443%;
+  left: 19.21875%;
+}
+main.space-kids-introduce .explore .inwrap .solar-system > article > .planet-wrapper > .planet.saturn {
+  width: 6.4583333333%;
+  top: 48.417721519%;
+  left: 71.3020833333%;
+}
+main.space-kids-introduce .explore .inwrap .solar-system > article > .planet-wrapper > .planet.neptune {
+  width: 1.4583333333%;
+  top: 4.2194092827%;
+  left: 91.3541666667%;
+}
+main.space-kids-introduce .explore .inwrap .solar-system > article > .planet-wrapper > .planet.pluto {
+  width: 1.09375%;
+  top: 2.0042194093%;
+  left: 94.21875%;
+}
+main.space-kids-introduce .explore .inwrap .solar-system > article > .planet-wrapper > .planet.uranus {
+  width: 2.5%;
+  top: 85.2320675105%;
+  left: 9.53125%;
 }
 main.space-kids-introduce .apply {
   overflow: hidden;
