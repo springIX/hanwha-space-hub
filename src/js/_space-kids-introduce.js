@@ -198,15 +198,17 @@ state.on('enter', () => {
             timeline.to($video, { opacity:1, duration: 1, ease: 'power3.out'}, 0.75);
             timeline.to($video, { scale: 1, duration: 1, ease: 'power3.out'}, 3);
 
-            timeline.fromTo($section.querySelector('.mercury'), { y:0, x: 0}, {y:4, x: -10, duration: 1, ease: "power.out"}, 6)
-            timeline.fromTo($section.querySelector('.venus'), { y:0, x: 0}, {y:10, x: -10, duration: 1, ease: "power.out"}, 6)
-            timeline.fromTo($section.querySelector('.earth'), { y:0, x: 0}, {y:7, x: -10, duration: 1, ease: "power.out"}, 6)
-            timeline.fromTo($section.querySelector('.mars'), { y:0, x: 0}, {y:2, x: -10, duration: 1, ease: "power.out"}, 6)
-            timeline.fromTo($section.querySelector('.jupiter'), { y:0, x: 0}, {y:-3, x: 5, duration: 1, ease: "power.out"}, 6)
-            timeline.fromTo($section.querySelector('.saturn'), { y:0, x: 0}, {y:5, x: -10, duration: 1, ease: "power.out"}, 6)
-            timeline.fromTo($section.querySelector('.neptune'), { y:0, x: 0}, {y:3, x: 5, duration: 1, ease: "power.out"}, 6)
-            timeline.fromTo($section.querySelector('.pluto'), { y:0, x: 0}, {y:2, x: 5, duration: 1, ease: "power.out"}, 6)
-            timeline.fromTo($section.querySelector('.uranus'), { y:0, x: 0}, {y:-5, x: -10, duration: 1, ease: "power.out"}, 6)
+            const planetMoveDelay = 6
+
+            timeline.fromTo($section.querySelector('.mercury'), { y:0, x: 0}, {y:-4, x: 10, duration: 1, ease: "power.out"}, planetMoveDelay)
+            timeline.fromTo($section.querySelector('.venus'), { y:0, x: 0}, {y:-10, x: 7, duration: 1, ease: "power.out"}, planetMoveDelay)
+            timeline.fromTo($section.querySelector('.earth'), { y:0, x: 0}, {y:-7, x: 10, duration: 1, ease: "power.out"}, planetMoveDelay)
+            timeline.fromTo($section.querySelector('.mars'), { y:0, x: 0}, {y:-2, x: 10, duration: 1, ease: "power.out"}, planetMoveDelay)
+            timeline.fromTo($section.querySelector('.jupiter'), { y:0, x: 0}, {y:3, x: -5, duration: 1, ease: "power.out"}, planetMoveDelay)
+            timeline.fromTo($section.querySelector('.saturn'), { y:0, x: 0}, {y:-5, x: 10, duration: 1, ease: "power.out"}, planetMoveDelay)
+            timeline.fromTo($section.querySelector('.neptune'), { y:0, x: 0}, {y:1, x: -5, duration: 1, ease: "power.out"}, planetMoveDelay)
+            timeline.fromTo($section.querySelector('.pluto'), { y:0, x: 0}, {y:1, x: -5, duration: 1, ease: "power.out"}, planetMoveDelay)
+            timeline.fromTo($section.querySelector('.uranus'), { y:0, x: 0}, {y:5, x: 10, duration: 1, ease: "power.out"}, planetMoveDelay)
 
             $arraySolarSystemImg.forEach(($element, index) => {
                 timeline.to($element, { opacity: 1, duration: 1, ease: 'power3.out' }, (index*0.2)+3.5);
