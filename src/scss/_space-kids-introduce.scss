@@ -143,8 +143,10 @@ main.space-kids-introduce {
             position: relative;
             height: 175vh;
             .texts{
+                position: relative;
                 text-align: center;
                 margin-bottom: 34px;
+                z-index: 1;
                 @include tablet{
                     margin-bottom: 25.5px;
                 }
@@ -181,7 +183,6 @@ main.space-kids-introduce {
                     }
                     > .video-wrapper {
                         position: relative;
-                        overflow: hidden;
                         width: 70%;
                         aspect-ratio: 1344/690;
                         margin: 0 auto;
