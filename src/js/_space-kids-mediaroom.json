@@ -329,6 +329,13 @@
 
   "spaceHubTv" : [
     {
+      "id": "8",
+      "category": "Space Hub TV",
+      "thumbnail": "spaceHubTv-img-45.jpg",
+      "title": "우주 덕후들의 로망! 🚀 우주의 조약돌 3기, 꿈의 NASA 여행기!",
+      "url": "https://youtu.be/4wyVnGaHbKU?si=IS_iWMgV1PB_aOij"
+    },
+    {
       "id": "7",
       "category": "Space Hub TV",
       "thumbnail": "spaceHubTv-img-44.jpg",

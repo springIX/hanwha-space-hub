@@ -137,6 +137,52 @@ main.space-kids-introduce {
     }
   }
 
+  //invitation
+  .invitation {
+    overflow: hidden; height: max-content;
+    .bg{
+      position: relative; height: 948px; overflow: hidden;
+      .sun{
+        position: absolute; top: 0;
+        video{ width: 100%; height: 100%; margin-top: -67px;}
+      }
+      .planet_list {position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+        .planet {position: absolute; background-size: cover; background-repeat: no-repeat; background-position: top;  top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease;
+          img {
+            position: absolute;
+          }
+        }
+        .planet1 {background-image: url('#{ $image-path }space-kids/introduce/planet1_line.svg');
+          img {top: 300px; left: 1106px;}
+        }
+        .planet2 {background-image: url('#{ $image-path }space-kids/introduce/planet2_line.svg');
+          img {top: 252px; left: 1245px;}
+        }
+        .planet3 {background-image: url('#{ $image-path }space-kids/introduce/planet3_line.svg');
+          img {top: 317px; left: 1277px;}
+        }
+        .planet4 {background-image: url('#{ $image-path }space-kids/introduce/planet4_line.svg');
+          img {top: 550px; left: 860px;}
+        }
+        .planet5 {background-image: url('#{ $image-path }space-kids/introduce/planet5_line.svg');
+          .img1 {top: 369px; left: 360px;}
+          .img2 {top: 459px; left: 1396px;}
+        }
+        .planet6 {background-image: url('#{ $image-path }space-kids/introduce/planet6_line.svg');
+          .img1 {top: 40px; left: 1754px;}
+          .img2 {top: 19px; left: 1809px;}
+          .img3 {top: 808px; left: 183px;}
+        }
+      }
+    }
+    .inwrap{ width: 100%; max-width: 2560px; margin: 0 auto; padding: 0 var(--side-margin); text-align: center; 
+      .texts {display: flex; flex-direction: column; align-items: center;
+        .btn-hud {margin-top: 78px;}
+      }
+    }
+
+  }
+
 
   // apply
   .apply{
