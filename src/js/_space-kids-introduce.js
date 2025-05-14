@@ -194,24 +194,41 @@ state.on('enter', () => {
             timeline.fromTo($eyebrow, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }, 0);
             timeline.fromTo($title, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }, 0.25);
             timeline.fromTo($btn, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }, 0.5);
-            timeline.to($video, { scale: 1.3, opacity:0, duration: 0}, 0);
-            timeline.to($video, { opacity:1, duration: 1, ease: 'power3.out'}, 0.75);
-            timeline.to($video, { scale: 1, duration: 1, ease: 'power3.out'}, 3);
-
-            const planetMoveDelay = 6
-
-            timeline.fromTo($section.querySelector('.mercury'), { y:0, x: 0}, {y:-4, x: 10, duration: 1, ease: "power.out"}, planetMoveDelay)
-            timeline.fromTo($section.querySelector('.venus'), { y:0, x: 0}, {y:-10, x: 7, duration: 1, ease: "power.out"}, planetMoveDelay)
-            timeline.fromTo($section.querySelector('.earth'), { y:0, x: 0}, {y:-7, x: 10, duration: 1, ease: "power.out"}, planetMoveDelay)
-            timeline.fromTo($section.querySelector('.mars'), { y:0, x: 0}, {y:-2, x: 10, duration: 1, ease: "power.out"}, planetMoveDelay)
-            timeline.fromTo($section.querySelector('.jupiter'), { y:0, x: 0}, {y:3, x: -5, duration: 1, ease: "power.out"}, planetMoveDelay)
-            timeline.fromTo($section.querySelector('.saturn'), { y:0, x: 0}, {y:-5, x: 10, duration: 1, ease: "power.out"}, planetMoveDelay)
-            timeline.fromTo($section.querySelector('.neptune'), { y:0, x: 0}, {y:1, x: -5, duration: 1, ease: "power.out"}, planetMoveDelay)
-            timeline.fromTo($section.querySelector('.pluto'), { y:0, x: 0}, {y:1, x: -5, duration: 1, ease: "power.out"}, planetMoveDelay)
-            timeline.fromTo($section.querySelector('.uranus'), { y:0, x: 0}, {y:5, x: 10, duration: 1, ease: "power.out"}, planetMoveDelay)
+            timeline.to($video, { scale: 1, y:0, duration: 3, ease: 'power3.out'}, 3.5);
+            const planetMotionDelay = 6;
 
             $arraySolarSystemImg.forEach(($element, index) => {
-                timeline.to($element, { opacity: 1, duration: 1, ease: 'power3.out' }, (index*0.2)+3.5);
+                timeline.to($element, { opacity: 1, duration: 1, ease: 'power3.out' }, (index*0.2) + planetMotionDelay);
+
+                let planetMoveDelay = (index*0.2) + planetMotionDelay + 0.2;
+
+                if($element.classList.contains("mercury")) {
+                  timeline.fromTo($element, { y:0, x: 0}, {y:-4, x: 10, duration: 1, ease: "power.out"}, planetMoveDelay)
+                }
+                if($element.classList.contains("venus")) {
+                  timeline.fromTo($element, { y:0, x: 0}, {y:-10, x: 7, duration: 1, ease: "power.out"}, planetMoveDelay)
+                }
+                if($element.classList.contains("earth")) {
+                  timeline.fromTo($element, { y:0, x: 0}, {y:-7, x: 10, duration: 1, ease: "power.out"}, planetMoveDelay)
+                }
+                if($element.classList.contains("mars")) {
+                  timeline.fromTo($element, { y:0, x: 0}, {y:-2, x: 10, duration: 1, ease: "power.out"}, planetMoveDelay)
+                }
+                if($element.classList.contains("jupiter")) {
+                  timeline.fromTo($element, { y:0, x: 0}, {y:3, x: -5, duration: 1, ease: "power.out"}, planetMoveDelay)
+                }
+                if($element.classList.contains("saturn")) {
+                  timeline.fromTo($element, { y:0, x: 0}, {y:-5, x: 10, duration: 1, ease: "power.out"}, planetMoveDelay)
+                }
+                if($element.classList.contains("neptune")) {
+                  timeline.fromTo($element, { y:0, x: 0}, {y:1, x: -5, duration: 1, ease: "power.out"}, planetMoveDelay)
+                }
+                if($element.classList.contains("pluto")) {
+                  timeline.fromTo($element, { y:0, x: 0}, {y:1, x: -5, duration: 1, ease: "power.out"}, planetMoveDelay)
+                }
+                if($element.classList.contains("uranus")) {
+                  timeline.fromTo($element, { y:0, x: 0}, {y:5, x: 10, duration: 1, ease: "power.out"}, planetMoveDelay)
+                }
             });
         }
 
