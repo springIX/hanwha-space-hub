@@ -141,6 +141,7 @@ main.space-kids-introduce {
     .explore {
         .inwrap {
             position: relative;
+            overflow: hidden;
             height: 175vh;
             .texts{
                 position: relative;
@@ -191,8 +192,8 @@ main.space-kids-introduce {
                             bottom: 0;
                             display: block;
                             width: 100%;
-                            opacity: 0;
-                            scale: 1.3;
+                            scale: 2;
+                            transform: translate3d(0px, 300px, 0px) scale(2, 2);
                         }
                     }
                     > .planet-wrapper {
