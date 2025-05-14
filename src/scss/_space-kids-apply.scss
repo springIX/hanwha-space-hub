@@ -91,14 +91,25 @@ main.space-kids-apply {
     .texts{
       display: flex; justify-content: center; align-items: center; position: relative; width: 100%; height: 100%; text-align: center;
 
-      h2{ font-family: "YDIYGO"; font-size: 120px; font-weight: 300; color: #fff; line-height: 1; 
-        &::after{ content: '2025년 우주의 조약돌 4기 모집을 시작합니다! \A (모집기간: 5/19(월) ~ 6/13(금) 15:00 마감)'; display: block; font-size: 24px; opacity:0; transform: translateY(50px); color: #fff; padding-top: 36px; transition: 1s ease .3s; font-weight: 200;white-space: pre-line; line-height: 30px;}
-        &.show::after{ opacity: .6; transform: translateY(0);}
+      h2{ font-family: "YDIYGO"; font-size: 120px; font-weight: 300; color: #fff; line-height: 1; width: 100%;
+        &::after{ 
+          content: '2025년 우주의 조약돌 4기 모집을 시작합니다!'; display: block; font-size: 24px; opacity:0; transform: translateY(50px); color: #fff; padding-top: 36px; transition: 1s ease .3s; font-weight: 200;white-space: pre-line; line-height: 30px;
+          @include laptop{
+            font-size: 20px;
+          }
+          @include tablet {
+            font-size: 18px;
+          }
+          @include mobile{
+            font-size: 15px;
+          }
+        }
+        &.show::after{ opacity: 1; transform: translateY(0);}
       }
       .text2{ font-size: 60px; font-weight: 300; color: #fff; line-height: 1.4;
         span{ display: block; }
       }
-      .files{ position: absolute; left: 40px; bottom: 22px;}
+      .files{ position: absolute; left: 40px; bottom: 22px; text-align: left;}
     }
 
     @include laptop-only{

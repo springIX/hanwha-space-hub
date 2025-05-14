@@ -139,11 +139,12 @@ main.space-kids-introduce {
 
   // explore
     .explore {
+      overflow:hidden;
       padding-top: 440px;
-      overflow: hidden;
         .inwrap {
             position: relative;
             height: 175vh;
+
             .texts{
                 position: relative;
                 text-align: center;
@@ -157,11 +158,9 @@ main.space-kids-introduce {
                 }
             }
             .solar-system {
-                // overflow: hidden;
-                position: sticky;
-                top: 0;
                 width: 100%;
-                height: 100vh;
+                margin: 0 auto;
+                max-width: 1920px;
                 > nav {
                     padding-top: 42px;
                     @include tablet{

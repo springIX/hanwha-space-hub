@@ -164,17 +164,16 @@ state.on('enter', () => {
         const $arraySolarSystemImg = $section.querySelectorAll('.planet-wrapper img');
 
 
-        const setSolarSystemTop = ()=>{
-            document.querySelector(".solar-system").style.top = document.querySelector("#header").getBoundingClientRect().height + "px"
-        }
+
 
         let timeline, sectionHeight;
 
         state.on('scroll', (scrollTop) => {
             const rect = $section.getBoundingClientRect();
             if (rect.top < areaHeight && rect.bottom > 0) {
-                const progress = -(rect.top - areaHeight / 2) / areaHeight;
+                const progress = -rect.top / sectionHeight;
                 timeline && timeline.progress(progress);
+                console.log(progress)
             }
         });
 
@@ -184,7 +183,6 @@ state.on('enter', () => {
 
         state.on('resize', (areaWidth, areaHeight) => {
             sectionHeight = $section.offsetHeight - areaHeight;
-            setSolarSystemTop();
         }); 
 
         function createTimeline() {
@@ -192,15 +190,15 @@ state.on('enter', () => {
             timeline = gsap.timeline({ paused: true });
 
             timeline.fromTo($eyebrow, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }, 0);
-            timeline.fromTo($title, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }, 0.25);
-            timeline.fromTo($btn, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }, 0.5);
-            timeline.to($video, { scale: 1, y:0, duration: 3, ease: 'power3.out'}, 3.5);
-            const planetMotionDelay = 6;
+            timeline.fromTo($title, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }, 0.5);
+            timeline.fromTo($btn, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }, 1);
+            timeline.to($video, { scale: 1, y:0, duration: 2, ease: 'power3.out'}, 1.5);
+            const planetMotionDelay = 2.5;
 
             $arraySolarSystemImg.forEach(($element, index) => {
                 timeline.to($element, { opacity: 1, duration: 1, ease: 'power3.out' }, (index*0.2) + planetMotionDelay);
 
-                let planetMoveDelay = (index*0.2) + planetMotionDelay + 0.2;
+                let planetMoveDelay = (index*0.2) + planetMotionDelay + 0.1;
 
                 if($element.classList.contains("mercury")) {
                   timeline.fromTo($element, { y:0, x: 0}, {y:-4, x: 10, duration: 1, ease: "power.out"}, planetMoveDelay)
