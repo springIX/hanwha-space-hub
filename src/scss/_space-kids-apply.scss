@@ -145,7 +145,8 @@ main.space-kids-apply {
     transition: opacity .3s ease-out;
 
       li + li{ margin-top: 20px; }
-      li a{ 
+      li a, li button{
+        width:100%;
       display: block; position: relative; padding: 12px; padding-left: 28px; border-bottom: 1px solid #666; font-size: 18px; font-weight: 400; color: #fff; line-height: 1.56;
       &::after{ content: ''; position: absolute; top: 50%; right: 0; transform: translate3d(0, -50%, 0); width: 16px; height: 16px; background: url('#{ $image-path }space-kids/apply/procedure-icon-download.svg') no-repeat bottom / contain; }
       &::before{ content: ''; position: absolute; top: 50%; left: 0; transform: translate3d(0, -50%, 0); width: 16px; height: 16px; background: url('#{ $image-path }space-kids/apply/procedure-icon-docu.svg') no-repeat bottom / contain; }

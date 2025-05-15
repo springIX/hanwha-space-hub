@@ -89,6 +89,14 @@ state.on('enter', () => {
           headingTiemline.fromTo($titles.children[0], { opacity: 1, y: 0 }, { opacity: 0, y: -50, duration: 1, ease: 'cubic.out' }, 'seq1');
           headingTiemline.fromTo($titles.children[1], { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, ease: 'cubic.out' }, 'seq1');
         }
+
+        document.querySelectorAll(".procedure .files ul button, .vision .files ul button, .together .files ul button").forEach(
+          (element)=>{
+            element.addEventListener("click", ()=>{
+              alert("업데이트 예정입니다.")
+            })
+          }
+        )
       })();
 
       // people
