@@ -216,26 +216,35 @@ main.space-kids-program {
     .people-container{
       margin-top: 200px;
       .station-desc{
-        padding-bottom: 60px;
+        padding-bottom: 125px;
+        @include mobile {
+          padding-bottom:120px;
+        }
       }
       .people-wrap{
         border-top: 1px solid rgba(255,255,255,.2); padding-top: 40px;
+        padding-bottom: 120px;
+        @include mobile {
+          padding-bottom: 80px;
+        }
         .people-list{
           display: flex; 
           li{width: 50%; max-width: 560px;}
         }
       }
       .people-list{
-        margin-bottom: 120px; 
         li{
-          margin-top: 100px;
+          margin-top: 120px;
           .picture{
-            position:relative; max-width: 250px; display: block;
+            position:relative; max-width: 240px; display: block;
             img{max-width: 100%;}
           }
           dl{
+            display: flex;
+            flex-flow: column;
+            gap: 20px;
             font-size: 17px; line-height: 1.65; margin-top: 28px; padding-right: 10%;
-            dt{font-weight: 400; color: #e6e6e6; margin-bottom: 20px;}
+            dt{font-weight: 400; color: #e6e6e6;}
             dd{font-weight: 300; color: #ccc;}
           }
         }
@@ -266,7 +275,6 @@ main.space-kids-program {
       .people-container{
         margin-top: 160px;
         .people-list{
-          margin-bottom: 90px;
           li{
             margin-top: 80px;
             .picture{
@@ -292,20 +300,17 @@ main.space-kids-program {
       padding: 20px var(--side-margin) 80px;
       .people-container{
         margin-top: 120px;
-        .station-desc{
-          padding-bottom: 40px;
-        }
         .people-wrap{
           padding-top: 20px;
           .people-list{
-            display: block; 
+            display: block;
             li{
               width: auto; max-width: none;
             }
           }
         }
         .people-list{
-          display: block; margin-bottom: 80px; 
+          display: block;
           li{
             margin-top: 80px;
             & + li{margin-top: 60px;}
@@ -317,8 +322,9 @@ main.space-kids-program {
               }
             }
             dl{
-              font-size: 12px; line-height: 1.67; margin-top: 16px; padding-right: 0;
-              dt{font-size: 15px; margin-bottom: 16px;}
+              gap: 16px;
+              font-size: 12px; line-height: 1.67; margin-top: 24px; padding-right: 0;
+              dt{font-size: 15px;}
             }
           }
         }
