@@ -159,7 +159,7 @@ main.space-kids-apply {
         display: block;
         width: 100%;
         min-height: 100%;
-        background: url('#{ $image-path }space-kids/apply/polygon_border_orange.svg');
+        background: url('#{ $image-path }space-kids/apply/polygon_border_orange.svg') no-repeat center / contain;;
         background-size: 100%;
         transition: 0.29s;
       }
