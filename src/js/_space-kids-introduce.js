@@ -173,7 +173,6 @@ state.on('enter', () => {
             if (rect.top < areaHeight && rect.bottom > 0) {
                 const progress = -rect.top / sectionHeight;
                 timeline && timeline.progress(progress);
-                console.log(progress)
             }
         });
 
