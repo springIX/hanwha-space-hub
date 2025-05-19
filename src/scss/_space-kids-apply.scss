@@ -242,6 +242,9 @@ main.space-kids-apply {
         50%{ transform: translate3d(0, -30%, 0); }
         100%{ transform: translate3d(0, -50%, 0); }
       }
+      span {
+        color: #f37331;
+      }
     }
 
     &.fixed{ position: fixed; bottom: 40px; left: 40px; }
