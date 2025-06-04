@@ -326,6 +326,10 @@ function observing($target) {
   const options = { root: null, rootMargin: '0px', threshold: 0 }
   const observer = new IntersectionObserver(io, options);
   observer.observe($target);
+
+  document.querySelector(".button-close").addEventListener("click", ()=>{
+    document.querySelector(".due-date-popup").classList.add("display-none")
+  })
 }
 
 
