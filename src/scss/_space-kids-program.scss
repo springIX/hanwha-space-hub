@@ -229,11 +229,11 @@ main.space-kids-program {
         }
         .people-list{
           display: flex; 
-          li{width: 50%; max-width: 560px;}
+          > li{width: 50%; max-width: 560px;}
         }
       }
       .people-list{
-        li{
+        > li{
           margin-top: 120px;
           .picture{
             position:relative; max-width: 240px; display: block;
@@ -245,7 +245,22 @@ main.space-kids-program {
             gap: 20px;
             font-size: 17px; line-height: 1.65; margin-top: 28px; padding-right: 10%;
             dt{font-weight: 400; color: #e6e6e6;}
-            dd{font-weight: 300; color: #ccc;}
+            dd{
+              font-weight: 300; 
+              color: #ccc;
+              ul {
+                > li {
+                    width: 100%;
+                    margin-top: 0;
+                   display: flex;
+                   gap: 6px;
+                   &::before {
+                    content: '▪︎';
+                    display: block;
+                   }
+                }
+              }
+            }
           }
         }
       }
@@ -275,7 +290,7 @@ main.space-kids-program {
       .people-container{
         margin-top: 160px;
         .people-list{
-          li{
+          > li{
             margin-top: 80px;
             .picture{
               max-width: 150px;
@@ -311,7 +326,7 @@ main.space-kids-program {
         }
         .people-list{
           display: block;
-          li{
+          > li{
             margin-top: 80px;
             & + li{margin-top: 60px;}
             .picture{
