@@ -9,114 +9,6 @@ main.media-room{
   + div + #footer{
     background-color: #000;
   }
-
-  .media-room-header{
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    height:100vh;
-    pointer-events: none;
-
-    &:before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 20vh;
-      display: block;
-      background: linear-gradient(rgba(0, 0, 0, 0.8) 10%, rgba(0,0,0,0));
-
-      @include mobile{
-        height: 204px;
-        top: -32px;
-      }
-  }
-
-    .list-tabs{
-      pointer-events: auto;
-      padding: 126px 1px 100px 0;
-      display: flex; flex-direction: row; justify-content: center;
-      opacity: 0;
-      transform: translate3d(0, 60px ,0);
-      transition: opacity .3s ease-out, transform .7s $ease-out-quart;
-  
-      @at-root .pace-done &{
-        opacity: 1; transform: translate3d(0, 0 ,0);
-      }
-  
-      @include mobile{
-        padding: 92px 17px 40px 16px;
-      }
-      @media (max-width: 470px) {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-      }
-  
-      button{
-        width: 210px; height: 56px;
-        padding: 0; margin: 0 -1px 0 0;
-        border: solid 1px #333;
-        background-color: transparent;
-        font-family: 'YDIYGO'; font-size: 12px; font-weight: 500;
-        transition: border-color 0.2s ease-out;
-
-        @include mobile{
-          width: 109px; height: 40px;
-          font-size: 10px;
-        }
-        @media (max-width: 470px) {
-          width: 50%; margin-bottom: -1px;
-        }
-
-        span{
-          font-family: $font-h;
-          pointer-events: none;
-        }
-  
-        &:hover{
-          border-color: #fff;
-          z-index: 1;
-        }
-
-        &.active{
-          color:#000; background-color: #fff;
-          border-color: #fff;
-        }
-      }
-    }
-
-      
-    .bg-frame{
-      position: absolute; top:86px; left:40px; z-index: -1;
-      width: calc(100% - 80px); height: calc(100% - 86px - 116px); display: block;
-      transform: scale(1.2);
-      background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.45) 40px, rgba(255, 255, 255, 0.15) 40px, rgba(255, 255, 255, 0.15) calc(100% - 40px), rgba(255, 255, 255, 0.45) calc(100% - 40px)), linear-gradient(90deg, rgba(255, 255, 255, 0.45) 40px, rgba(255, 255, 255, 0.15) 40px, rgba(255, 255, 255, 0.15) calc(100% - 40px), rgba(255, 255, 255, 0.45) calc(100% - 40px)), linear-gradient(180deg, rgba(255, 255, 255, 0.45) 40px, rgba(255, 255, 255, 0.15) 40px, rgba(255, 255, 255, 0.15) calc(100% - 40px), rgba(255, 255, 255, 0.45) calc(100% - 40px)), linear-gradient(180deg, rgba(255, 255, 255, 0.45) 40px, rgba(255, 255, 255, 0.15) 40px, rgba(255, 255, 255, 0.15) calc(100% - 40px), rgba(255, 255, 255, 0.45) calc(100% - 40px));
-      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-      background-size: 100% 1px, 100% 1px, 1px 100%, 1px 100%, 120px, 54px auto;
-      background-position: 0 0, 0 100%, 0 0, 100% 0, 12px calc(100% - 12px), 12px calc(100% - 140px);
-      pointer-events: none;
-      transition: opacity .3s .5s ease-out, transform .7s .5s $ease-out-quart;
-      opacity: 0;
-      z-index: 2;
-      pointer-events: none;
-
-      @at-root .pace-done &{
-        opacity: 1; transform: scale(1);
-      }
-
-      @media (max-width:1440px) {
-        height: calc(100% - 116px);
-      }
-
-      @include mobile{
-        opacity: 0;
-
-        @at-root .pace-done &{
-          opacity: 0;
-        }
-      }
-    }
-  }
-
   
   section{
     margin: 0 auto;
@@ -141,22 +33,6 @@ main.media-room{
 
       @include mobile{
         background-size: 768px 100%;
-      }
-    }
-
-    .space-bg{
-      display: block;
-      width: 100%;
-      height: 1742px; 
-      background: url('#{ $image-path }media-room/media-room-bg-space.png') no-repeat 50% 50% / cover;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      transition: background-position .5s ease-out;
-
-      @include mobile{
-        opacity: 0;
       }
     }
   }
@@ -353,51 +229,127 @@ main.media-room{
       }
     }
   }
+}
 
+.media-room-header{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    height:100vh;
+    pointer-events: none;
 
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 20vh;
+      display: block;
+      background: linear-gradient(rgba(0, 0, 0, 0.8) 10%, rgba(0,0,0,0));
 
-  &.space-kids-mediaroom{
-    section:after{ background: url('#{ $image-path }space-kids/media-room/media-room-bg-space.png') no-repeat center / 100% 100%; }
-    .titles{ 
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      padding-top: 174px;
-
-      strong{ width: 480px; }
-      img{ width: 100%; }
-      h2{ margin-top: 12px; font-size: 40px; font-weight: 200; color: #fff; line-height: 1;} 
-
-      @include laptop{
-        padding-top: 200px;
-        strong{ width: 360px; }
-        h2{ font-size: 30px; }
-      }
-      @include tablet{
-        padding-top: 150px;
-        strong{ width: 280px; }
-        h2{ font-size: 20px; }
-      }
       @include mobile{
-        padding-top: 100px;
-        strong{ width: 160px; }
-        h2{ font-size: 17px; }
+        height: 204px;
+        top: -32px;
       }
-    }
-    .media-room-header {
-      &::before{ display: none; }
-      .bg-frame{ display: none; }
+  }
 
-      @include laptop{
-        .list-tabs{  padding-top: 100px; }
+    .list-tabs{
+      pointer-events: auto;
+      padding: 126px 1px 100px 0;
+      display: flex; flex-direction: row; justify-content: center;
+      opacity: 0;
+      transform: translate3d(0, 60px ,0);
+      transition: opacity .3s ease-out, transform .7s $ease-out-quart;
+  
+      @at-root .pace-done &{
+        opacity: 1; transform: translate3d(0, 0 ,0);
       }
-      @include tablet{
-        .list-tabs{  padding-top: 80px; }
-      }
+  
       @include mobile{
-        .list-tabs{ 
-          padding-top: 60px;
-          button{ width: 33.3%; }
+        padding: 92px 17px 40px 16px;
+      }
+      @media (max-width: 470px) {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+  
+      button{
+        width: 210px; height: 56px;
+        padding: 0; margin: 0 -1px 0 0;
+        border: solid 1px #333;
+        background-color: transparent;
+        font-family: 'YDIYGO'; font-size: 12px; font-weight: 500;
+        transition: border-color 0.2s ease-out;
+
+        @include mobile{
+          width: 109px; height: 40px;
+          font-size: 10px;
+        }
+        @media (max-width: 470px) {
+          width: 50%; margin-bottom: -1px;
+        }
+
+        span{
+          font-family: $font-h;
+          pointer-events: none;
+        }
+  
+        &:hover{
+          border-color: #fff;
+          z-index: 1;
+        }
+
+        &.active{
+          color:#000; background-color: #fff;
+          border-color: #fff;
         }
       }
     }
+
+      
+    .bg-frame{
+      position: absolute; top:86px; left:40px; z-index: -1;
+      width: calc(100% - 80px); height: calc(100% - 86px - 116px); display: block;
+      transform: scale(1.2);
+      background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.45) 40px, rgba(255, 255, 255, 0.15) 40px, rgba(255, 255, 255, 0.15) calc(100% - 40px), rgba(255, 255, 255, 0.45) calc(100% - 40px)), linear-gradient(90deg, rgba(255, 255, 255, 0.45) 40px, rgba(255, 255, 255, 0.15) 40px, rgba(255, 255, 255, 0.15) calc(100% - 40px), rgba(255, 255, 255, 0.45) calc(100% - 40px)), linear-gradient(180deg, rgba(255, 255, 255, 0.45) 40px, rgba(255, 255, 255, 0.15) 40px, rgba(255, 255, 255, 0.15) calc(100% - 40px), rgba(255, 255, 255, 0.45) calc(100% - 40px)), linear-gradient(180deg, rgba(255, 255, 255, 0.45) 40px, rgba(255, 255, 255, 0.15) 40px, rgba(255, 255, 255, 0.15) calc(100% - 40px), rgba(255, 255, 255, 0.45) calc(100% - 40px));
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+      background-size: 100% 1px, 100% 1px, 1px 100%, 1px 100%, 120px, 54px auto;
+      background-position: 0 0, 0 100%, 0 0, 100% 0, 12px calc(100% - 12px), 12px calc(100% - 140px);
+      pointer-events: none;
+      transition: opacity .3s .5s ease-out, transform .7s .5s $ease-out-quart;
+      opacity: 0;
+      z-index: 2;
+      pointer-events: none;
+
+      @at-root .pace-done &{
+        opacity: 1; transform: scale(1);
+      }
+
+      @media (max-width:1440px) {
+        height: calc(100% - 116px);
+      }
+
+      @include mobile{
+        opacity: 0;
+
+        @at-root .pace-done &{
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .space-bg{
+  display: block;
+  width: 100%;
+  height: 1742px; 
+  background: url('#{ $image-path }media-room/media-room-bg-space.png') no-repeat 50% 50% / cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: background-position .5s ease-out;
+
+  @include mobile{
+    opacity: 0;
   }
 }

@@ -1,0 +1,118 @@
+.space-kids-mediaroom{
+  section:after{ background: url('#{ $image-path }space-kids/media-room/media-room-bg-space.png') no-repeat center / 100% 100%; }
+  .titles{ 
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    padding-top: 174px;
+
+    strong{ width: 480px; }
+    img{ width: 100%; }
+    h2{ margin-top: 12px; font-size: 40px; font-weight: 200; color: #fff; line-height: 1;} 
+
+    @include laptop{
+      padding-top: 200px;
+      strong{ width: 360px; }
+      h2{ font-size: 30px; }
+    }
+    @include tablet{
+      padding-top: 150px;
+      strong{ width: 280px; }
+      h2{ font-size: 20px; }
+    }
+    @include mobile{
+      padding-top: 100px;
+      strong{ width: 160px; }
+      h2{ font-size: 17px; }
+    }
+  }
+  .media-room-header {
+    height: auto;
+    &::before{ display: none; }
+    .bg-frame{ display: none; }
+
+    @include laptop{
+      .list-tabs{  padding-top: 100px; }
+    }
+    @include tablet{
+      .list-tabs{  padding-top: 80px; }
+    }
+    @include mobile{
+      .list-tabs{ 
+        padding-top: 60px;
+        button{ width: 33.3%; }
+      }
+    }
+  }
+  + div + #footer{
+    background-color: #000;
+  }
+}
+
+.content-list-wrapper {
+  > ul {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1752px;
+    margin: 0 auto;
+    column-gap: 36px;
+    row-gap: 100px;
+    padding: 36px 36px 200px 36px;
+
+    &.active {
+      display: grid;
+    }
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    > li {
+      transform: translate(0, 100px);
+      opacity: 0;
+      transition-property: opacity, transform;
+      transition-duration: 1s;
+
+      &.on {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+
+      a {
+        display: block;
+        width: 100%;
+        .img-wrap {
+          display: flex;
+          width: 100%;
+          overflow: hidden;
+          aspect-ratio: 536/302;
+          align-items: center;
+          justify-content: center;
+          background-color: #000;
+          transition: transform 0.7s cubic-bezier(0.19, 0.92, 0.32, 1);
+          img {
+            display: block;
+            width: auto;
+            max-width: 100%;
+            height: 100%;
+            
+          }
+        }
+
+        .title {
+          margin-top: 24px;
+          font-size: 20px;
+          line-height: 1.6;
+        }
+        .category {
+          margin-top: 16px;
+          font-size: 12px;
+          line-height: 1.67;
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+  
+}

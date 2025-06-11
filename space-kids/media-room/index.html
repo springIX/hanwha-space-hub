@@ -1,13 +1,13 @@
 <%- include('./src/include/header.ejs', { title: '우주의 조약돌 미디어룸', gnbActive: 5 }) %>
 
-<main class="media-room space-kids-mediaroom">
+<main class="space-kids-mediaroom">
 
 	<div class="titles">
 		<strong><img src="/resources/images/space-kids/media-room/logo-spacekids.svg" alt="우주의 조약돌"></strong>
 		<h2>미디어룸</h2>
 	</div>
 	
-	<header class="media-room-header">
+	<header class="media-room-header space-kids">
 		<h2 class="page-title blind">미디어룸</h2>
 		<div class="list-tabs">
 			<button id="press-release" class="active">Press Release</button>
@@ -17,7 +17,7 @@
 		<div class="bg-frame"></div>
 	</header>
 
-	<section class="contens-list">
+	<section class="content-list-wrapper">
 		<ul class="list-wrap active" data-filter="Press Release">
 			<% for (let i = 0; i < spaceKidsMediaRoomData.pressRelease.length; i++) { %>
 				<li class="list-item" data-category="<%= spaceKidsMediaRoomData.pressRelease[i].category %>" data-item-id="<%= spaceKidsMediaRoomData.pressRelease[i].id %>">

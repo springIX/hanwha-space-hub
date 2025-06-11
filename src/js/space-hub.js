@@ -17,6 +17,7 @@ import './_media-room.js';
 import './_space-kids.js';
 import './_space-kids-introduce.js';
 import './_space-kids-program.js';
+import './_space-kids-mediaroom.js';
 import './_space-kids-apply.js';
 
 var xmlHttp;
