@@ -348,22 +348,17 @@ document.querySelectorAll(".link-site, .signup-link a").forEach(
   (element)=>{
 
     const now = new Date();
-    
+
     element.addEventListener('click', function(event) {
-    const targetAlertTime = new Date('2025-06-13T15:00:00+09:00');
+      const targetAlertTime = new Date('2025-06-13T15:00:00+09:00');
 
-    if (now >= targetAlertTime) {
-      event.preventDefault();
-      alert('우주의 조약돌 4기 모집이 마감되었습니다. \n지원해주신 모든 분들께 감사드립니다.');
-    }
-  });
-}
+      if (now >= targetAlertTime) {
+        event.preventDefault();
+        alert('우주의 조약돌 4기 모집이 마감되었습니다. \n지원해주신 모든 분들께 감사드립니다.');
+      }
+    });
+  }
 )
-
-
-
-
-
 
 
 
