@@ -334,7 +334,7 @@ function observing($target) {
   })
 }
 
-document.querySelectorAll(".link-site, .signup-link a").forEach((element)=>{
+document.querySelectorAll(".link-site, .signup-link a, .due-date-popup").forEach((element)=>{
   
   const targetHideTime = new Date('2025-06-16T00:01:00+09:00');
   const now = new Date();
@@ -342,7 +342,13 @@ document.querySelectorAll(".link-site, .signup-link a").forEach((element)=>{
   if ( now >= targetHideTime ) {
     element.style.display = 'none'
   }
+})
 
+document.querySelectorAll(".link-site, .signup-link a").forEach(
+  (element)=>{
+
+    const now = new Date();
+    
     element.addEventListener('click', function(event) {
     const targetAlertTime = new Date('2025-06-13T15:00:00+09:00');
 
@@ -351,7 +357,8 @@ document.querySelectorAll(".link-site, .signup-link a").forEach((element)=>{
       alert('우주의 조약돌 4기 모집이 마감되었습니다. \n지원해주신 모든 분들께 감사드립니다.');
     }
   });
-})
+}
+)
 
 
 
