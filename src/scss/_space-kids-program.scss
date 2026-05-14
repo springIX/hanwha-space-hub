@@ -410,9 +410,9 @@ main.space-kids-program {
         .list{
           display: grid; grid-template-columns: repeat(7, 1fr); gap: 48px;
 
-          @for $i from 5 through 8 {
+          @for $i from 5 through 9 {
             li:nth-child(#{$i}) {
-              grid-column: $i - 1;
+              grid-column: $i - 2;
               margin-top: 32px;
             }
           }
@@ -456,9 +456,9 @@ main.space-kids-program {
           .list{
             grid-template-columns: repeat(6, 1fr); gap: 30px;
 
-            @for $i from 5 through 8 {
+            @for $i from 5 through 9 {
               li:nth-child(#{$i}) {
-                grid-column: $i - 2;
+                grid-column: $i - 3;
               }
             }
             
@@ -541,7 +541,7 @@ main.space-kids-program {
           .list{
             grid-template-columns: repeat(3, 1fr); gap: 11px;
   
-            @for $i from 5 through 8 {
+            @for $i from 5 through 9 {
               li:nth-child(#{$i}) {
                 grid-column: auto;
                 margin-top: 35px;

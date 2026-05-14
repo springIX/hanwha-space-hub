@@ -47,8 +47,27 @@ state.on('enter', () => {
       const $ment = $section.querySelector('.texts .ment');
       const $video = $section.querySelector('.visual video');
       const $bannerLink = $section.querySelector('.banner-link');
+      const $popupBanner = $section.querySelector('.popup-banner');
+      const $popupCloseBtn = $popupBanner && $popupBanner.querySelector('.close-btn');
 
       let timeline, sectionHeight;
+
+      if ($popupBanner) {
+        $popupBanner.addEventListener('click', (event) => {
+          const target = event.target;
+          if (target instanceof Element && target.closest('.close-btn')) return;
+
+          const href = $popupBanner.dataset.href;
+          if (href) window.location.href = href;
+        });
+      }
+
+      if ($popupBanner && $popupCloseBtn) {
+        $popupCloseBtn.addEventListener('click', (event) => {
+          event.stopPropagation();
+          $popupBanner.style.display = 'none';
+        });
+      }
 
       // action
       state.on('scroll', (scrollTop) => {

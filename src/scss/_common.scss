@@ -816,9 +816,9 @@ main:not(.main) {
 
 // signup-link
 .signup-link-wrap{
-	pointer-events: none; display: flex; align-items: flex-end; position: absolute; top: 0; left: 50%; transform: translate3d(-50%, 0, 0); z-index: 2; height: 100%;
-	.sticky{ overflow: visible !important; bottom: 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; }
-	.signup-link{ pointer-events: auto; position: static; transform: translate3d(0, -22px, 0);
+	pointer-events: none; display: flex; align-items: flex-end; position: absolute; top: 0; right: 40px; left: auto; transform: none; z-index: 2; height: 100%;
+	.sticky{ overflow: visible !important; bottom: 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end; }
+	.signup-link{ pointer-events: auto; position: static; transform: translate3d(0, -100px, 0);
 		&:not(.active){ opacity: 0; visibility: hidden; transform: translate3d(0, 100%, 0); transition: transform .5s ease-in-out, opacity .5s ease-in-out, visibility 0s .5s; }
 		&.active{ transition: transform .5s ease-in-out, opacity .5s ease-in-out; }
 	}
@@ -828,7 +828,7 @@ main:not(.main) {
 		.signup-link{ transform: translate3d(0, -22px, 0); }
 	}
 	@include tablet{ 
-		right: 50%; transform: translate3d(50%, 0, 0);
+		right: 20px; left: auto; transform: none;
 		.signup-link{ transform: translate3d(0, -20px, 0); }
 	}
 }
@@ -885,7 +885,7 @@ main:not(.main) {
 
 	&-em{
 		--color: #f37331;
-		--border-color: #F3733171;
+		// --border-color: #F3733171;
 		--bg-color: transparent;
 		--bg-gap: 3px;
 

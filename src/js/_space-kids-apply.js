@@ -340,7 +340,7 @@ document.querySelectorAll(".link-site, .signup-link a, .due-date-popup").forEach
   const now = new Date();
 
   if ( now >= targetHideTime ) {
-    element.style.display = 'none'
+    // element.style.display = 'none'
   }
 })
 

@@ -178,7 +178,10 @@ main.space-kids-introduce {
                     position: absolute;
                     width: 100%;
                     min-width: 907px;
-                    margin: 0 auto;
+                    margin: 0 auto 0;
+                    img{
+                      width: 100%;
+                    }
                     @media (max-width: 907px) {
                         left: calc((100% - 907px)/2);
                     }
@@ -633,15 +636,37 @@ main.space-kids-introduce {
           }
         }
       }
+      .sponsor{
+        ul{
+          display: flex; flex-direction: column; align-items: center; row-gap: 8px;
+          li{
+            max-width: 360px; height: 46px;
+            img{
+              width: 100%; height: 100%;
+            }
+          }
+        }
+      }
 		}
 
     @include laptop{
       .partners{
         & > div + div{ margin-left: 40px; }
+        .organizer{
+          max-width: 250px;
+        }
         .host{
           max-width: 440px;
           ul li{
             &:not(.space-hub) + li{ margin-left: 12px; }
+          }
+        }
+        .sponsor{
+          max-width: 290px;
+          ul{
+            li{
+              height: 40px;
+            }
           }
         }
       }
@@ -661,6 +686,13 @@ main.space-kids-introduce {
             &:not(.space-hub){ 
               height: 36px; 
               & + li{ margin-left: 15px; }
+            }
+          }
+        }
+        .sponsor{
+          ul{
+            li{
+              height: 30px;
             }
           }
         }

@@ -2578,6 +2578,46 @@ main.main #visual .decos .credit .image::after {
 main.main #visual .decos .credit .txt {
   width: 200px;
 }
+main.main #visual .popup-banner {
+  position: absolute;
+  left: 50px;
+  right: 50px;
+  top: calc(var(--header-height) + 20px);
+  z-index: 1;
+  height: 56px;
+  overflow: hidden;
+}
+main.main #visual .popup-banner picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+main.main #visual .popup-banner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+main.main #visual .popup-banner .banner-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  text-align: center;
+  pointer-events: none;
+}
+main.main #visual .popup-banner .banner-text p {
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.4;
+}
 @media (min-width: 1024px) {
   main.main #visual .mark-scroll {
     position: absolute;
@@ -2737,6 +2777,17 @@ main.main #visual.active .bg {
     right: 16px;
     top: 52px;
     bottom: 48px;
+  }
+  main.main #visual .popup-banner {
+    left: 25px;
+    right: 25px;
+    top: calc(var(--header-height) + 15px);
+    height: 80px;
+  }
+  main.main #visual .popup-banner p {
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.4;
   }
 }
 main.main #launch {
