@@ -344,13 +344,19 @@ document.querySelectorAll(".link-site, .signup-link a, .due-date-popup").forEach
   }
 })
 
-document.querySelectorAll(".link-site, .signup-link a").forEach(
+document.querySelectorAll(".link-site, main.space-kids-apply .signup-link a, main.space-kids-introduce .signup-link a").forEach(
   (element)=>{
 
-    const now = new Date();
-
     element.addEventListener('click', function(event) {
+      const now = new Date();
+      const targetOpenTime = new Date('2026-05-18T09:00:00+09:00');
       const targetAlertTime = new Date('2026-06-12T18:00:00+09:00');
+
+      if (now < targetOpenTime) {
+        event.preventDefault();
+        alert('2026년 5월 18일 오전 9시부터 지원이 가능합니다.');
+        return;
+      }
 
       if (now >= targetAlertTime) {
         event.preventDefault();
