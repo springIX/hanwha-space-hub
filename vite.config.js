@@ -13,6 +13,15 @@ const projectName = 'space-hub';
 const directory = __dirname;
 const title = 'Hanwha Space-Hub';
 
+const toSafeBuildName = (name = projectName) => {
+	return String(name)
+		.replace(/^[A-Za-z]:[\\/]/, '')
+		.replace(/[\\/]+/g, '-')
+		.replace(/[^a-zA-Z0-9._-]/g, '-')
+		.replace(/-+/g, '-')
+		.replace(/^-|-$/g, '') || projectName;
+}
+
 // js 상단 배너 추가
 const bannerPlugin = (banner) => {
   return {
@@ -111,7 +120,8 @@ export default defineConfig({
 					}
 					extType = extType[1];
 					if (/(css)/i.test(extType)) {
-						return `resources/${ extType }/${ projectName }-[hash][extname]`;
+						const cssName = toSafeBuildName(path.parse(assetInfo.name || `${projectName}.css`).name);
+						return `resources/${ extType }/${ cssName }[extname]`;
 					} else if (/(png|jpe?g|svg|gif|tiff|bmp|ico)/i.test(extType)) {
 						extType = 'images';
 					} else if (/(woff2|woff2|otf|ttf)/i.test(extType)) {
@@ -119,8 +129,12 @@ export default defineConfig({
 					}
 					return `resources/${extType}/[name][extname]`; // remove hash
 				},
-				chunkFileNames: `resources/js/${ projectName }-[hash].js`,
-				entryFileNames: `resources/js/${ projectName }-[hash].js`
+				chunkFileNames: (chunkInfo) => {
+					return `resources/js/${toSafeBuildName(chunkInfo.name)}.js`;
+				},
+				entryFileNames: (chunkInfo) => {
+					return `resources/js/${toSafeBuildName(chunkInfo.name)}.js`;
+				}
 			}
 		}
 	},
